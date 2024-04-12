@@ -36,3 +36,8 @@ mainmenu .navbar a{
 mainmenu .navbar a:hover{
   color: #B118C8;
 }
+
+
+mainmenu .navbar a:active{
+  color: #B118C8;
+}

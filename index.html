@@ -8,14 +8,16 @@
   <meta name="description" content="">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="stylesheet" href="css/product-card.css">
 </head>
+
 <body>
 <div class="flex-wrapper">
 <mainmenu>
   <a href="#" class="logo">
     Bloom Buddy</a>
   <div class="navbar">
-    <a href="#">Search</a>
+    <a href="searchpage.html">Search</a>
     <a href="#">My garden</a>
     <a href="#">My shopping cart</a>
     <a href="#">My account</a>
@@ -26,12 +28,68 @@
       <div class="subheading">Expand and create</div>
       your own garden
     </a>
-
   </div>
-  <div class="card">
-    lorem ipsum
-  </div>
+  <div class="product-grid"></div>
 </div>
+<script>
+  var products = [
+    { name: "Iridarium", image: "/img/iridarium.jpg", price: "$10.00" },
+    { name: "Lalele", image: "/img/lalele.jpg", price: "$15.00" },
+    { name: "Hortesia", image: "/img/hortesia.jpg", price: "$26.00" },
+    { name: "Limba mielului", image: "/img/limba_mielului_2.jpg", price: "$12.00" },
+  ];
+
+  function createProductCard(product) {
+    var card = document.createElement('div');
+    card.classList.add('product-card');
+
+    var image = document.createElement('img');
+    image.src = product.image;
+    image.alt = product.name;
+
+    var info = document.createElement('div');
+    info.classList.add('product-info');
+
+    var titlePriceContainer = document.createElement('div');
+    titlePriceContainer.classList.add('title-price-container');
+
+    var title = document.createElement('div');
+    title.classList.add('product-title');
+    title.textContent = product.name;
+
+    var price = document.createElement('div');
+    price.classList.add('product-price');
+    price.textContent = product.price;
+
+    var button = document.createElement('button');
+    button.textContent = 'Add to Cart';
+    button.classList.add('add-to-cart');
+
+    titlePriceContainer.appendChild(title);
+    titlePriceContainer.appendChild(price);
+
+    info.appendChild(titlePriceContainer);
+    info.appendChild(button);
+
+    card.appendChild(image);
+    card.appendChild(info);
+
+    return card;
+  }
+
+  // Function to add product cards to the grid
+  function addProductCards() {
+    var grid = document.querySelector('.product-grid');
+    products.forEach(function(product) {
+      var card = createProductCard(product);
+      grid.appendChild(card);
+    });
+  }
+
+  // Call the function to add product cards when the DOM is loaded
+  document.addEventListener('DOMContentLoaded', addProductCards);
+
+</script>
 </body>
 </html>
 
