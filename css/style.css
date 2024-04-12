@@ -13,34 +13,60 @@ html{
   text-decoration: none;
   transition: 2s linear all;
 }
-header .logo{
+mainmenu .logo{
   font-size: 2rem;
   font-weight: bold;
 }
-
-header {
+.flex-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top:0; left: 0; right: 0;
+}
+body {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
+body .heading {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration-color: #433E0E;
+  align-items: center;
+  font-size: 4rem;
+}
+body .subheading{
+  font-size: 4rem;
+  display: block;
+  text-transform: lowercase;
+  text-decoration-color: #333333;
+  align-content: inherit;
+}
+mainmenu {
   height: 10vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
   background-color: #ffffff;
   text-decoration-color: #433E0E;
-  top:0; left: 0; right: 0;
-  padding: 50px;
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1000;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
-header .navbar a{
+mainmenu .navbar a{
+  width: 100%;
   color: #433E0E;
   background-color: inherit;
   font-size: 1.5rem;
   padding: 0 1.5rem;
 }
-header .navbar{
+mainmenu .navbar{
   background-color: inherit;
 }
-header .navbar a:hover{
+mainmenu .navbar a:hover{
   color: #B118C8;
 }
 .logo {
