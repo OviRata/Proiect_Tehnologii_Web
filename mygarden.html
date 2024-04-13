@@ -13,31 +13,31 @@
 
 <body>
 <div class="flex-wrapper">
-<mainmenu>
-  <a href="#" class="logo">
-    Bloom Buddy</a>
-  <div class="navbar">
-    <a href="search.html">Search</a>
-    <a href="mygarden.html">My garden</a>
-    <a href="#">My shopping cart</a>
-    <a href="#">My account</a>
-  </div>
-</mainmenu>
+  <mainmenu>
+    <a href="#" class="logo">
+      Bloom Buddy</a>
+    <div class="navbar">
+      <a href="search.html">Search</a>
+      <a href="mygarden.html">My garden</a>
+      <a href="#">My shopping cart</a>
+      <a href="#">My account</a>
+    </div>
+  </mainmenu>
   <div class="content">
-  <div class="mainTitle">
-    <a class="heading">
-      <div class="subheading">Expand and create</div>
-      your own garden
-    </a>
+    <div class="mainTitle">
+      <a class="heading">
+        <div class="subheading">explore and take care of</div>
+        your own garden
+      </a>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+    <div id="product-page-container"></div>
   </div>
-  <div class="product-grid" id="product-grid"></div>
-  <div id="product-page-container"></div>
-</div>
 </div>
 <script type="module" src="js/products-grid.js"></script>
 <script type="module">
   import { initializeProductGrid } from './js/products-grid.js';
-  initializeProductGrid(0);
+  initializeProductGrid(1);
 </script>
 
 </body>

@@ -1,9 +1,9 @@
 
 var products = [
-  { name: "Iridarium", image: "/img/iridarium.jpg", price: "$10.00", description: "Description of Product 1"  },
-  { name: "Lalele", image: "/img/lalele.jpg", price: "$15.00", description: "Description of Product 1"  },
-  { name: "Hortesia", image: "/img/hortesia.jpg", price: "$26.00" , description: "Description of Product 1" },
-  { name: "Limba mielului", image: "/img/limba_mielului_2.jpg", price: "$12.00", description: "Description of Product 1"  },
+  {userID:2, name: "Iridarium", image: "/img/iridarium.jpg", price: "$10.00", description: "Description of Product 1"  },
+  { userID:1, name: "Lalele", image: "/img/lalele.jpg", price: "$15.00", description: "Description of Product 1"  },
+  { userID:0, name: "Hortesia", image: "/img/hortesia.jpg", price: "$26.00" , description: "Description of Product 1" },
+  { userID:0, name: "Limba mielului", image: "/img/limba_mielului_2.jpg", price: "$12.00", description: "Description of Product 1"  },
 
 ];
 
@@ -45,13 +45,14 @@ function createProductCard(product) {
 }
 
 
-function addProductCards() {
+function addProductCards(number) {
   // debug purpose only
   console.log("Adding product cards...");
   var grid = document.getElementById('product-grid');
   products.forEach(function(product) {
+   if(number===0 || product.userID===number){
     var card = createProductCard(product);
-    grid.appendChild(card);
+    grid.appendChild(card);}
   });
 }
 function viewProductDetails(product) {
@@ -98,10 +99,15 @@ function addToCart(product) {
   // [!] Need to add product adding logic
   console.log('Product added to cart:', product.name);
 }
-function initializeProductGrid() {
+function initializeProductGrid(number) {
 
   document.addEventListener('DOMContentLoaded', function() {
-    addProductCards();
+    addProductCards(number);
+  });
+}
+function initializeAllProductsGrid() {
+  document.addEventListener('DOMContentLoaded', function() {
+    addProductCards(0);
   });
 }
 export { initializeProductGrid };
