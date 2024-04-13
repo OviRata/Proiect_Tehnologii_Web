@@ -1,3 +1,9 @@
+
+.form-wrapper .btn:hover {
+  background-color:#596475 ;
+}
+
+
 @media only screen and (min-width: 1025px) {
 
   .form-wrapper {
@@ -62,8 +68,8 @@
     width: 92%;
     height: 70px;
     border-radius: 20px;
-    background: #CDD3CE;
-    color: #433E0E;
+    background: #B118C8;
+    color: #F9F8F8;
     font-size: 30px;
   }
 
@@ -145,8 +151,8 @@
     width: 85%;
     height: 90px;
     border-radius: 20px;
-    background: #CDD3CE;
-    color: #433E0E;
+    background: #B118C8;
+    color: #F9F8F8;
     font-size: 43px;
   }
 
@@ -227,10 +233,11 @@
     width: 85%;
     height: 80px;
     border-radius: 20px;
-    background: #CDD3CE;
-    color: #433E0E;
+    background: #B118C8;
+    color: #F9F8F8;
     font-size: 34px;
   }
+
 
   .form-wrapper .register-link {
     padding-top: 3px;
