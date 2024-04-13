@@ -17,7 +17,7 @@
   <a href="#" class="logo">
     Bloom Buddy</a>
   <div class="navbar">
-    <a href="searchpage.html">Search</a>
+    <a href="search.html">Search</a>
     <a href="#">My garden</a>
     <a href="#">My shopping cart</a>
     <a href="#">My account</a>
@@ -34,7 +34,12 @@
   <div id="product-page-container"></div>
 </div>
 </div>
-<script src="\js\products-grid.js"></script>
+<script type="module" src="js/products-grid.js"></script>
+<script type="module">
+  import { initializeProductGrid } from './js/products-grid.js';
+  initializeProductGrid();
+</script>
+
 </body>
 </html>
 

@@ -98,6 +98,10 @@ function addToCart(product) {
   // [!] Need to add product adding logic
   console.log('Product added to cart:', product.name);
 }
+function initializeProductGrid() {
 
-
-document.addEventListener('DOMContentLoaded', addProductCards);
+  document.addEventListener('DOMContentLoaded', function() {
+    addProductCards();
+  });
+}
+export { initializeProductGrid };

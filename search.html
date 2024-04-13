@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Search</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="stylesheet" href="css/productpage-styles.css">
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+<div class="flex-wrapper">
+  <mainmenu>
+    <a href="index.html" class="logo">Bloom Buddy</a>
+    <div class="navbar">
+      <a href="#">Search</a>
+      <a href="#">My garden</a>
+      <a href="#">My shopping cart</a>
+      <a href="#">My account</a>
+    </div>
+  </mainmenu>
+  <div class="content">
+    <div class="searchTitle">
+      Search your next plant...
+    </div>
+    <div class="searchBar">
+
+<form id="search-form">
+  <input type="text" id="search-input" placeholder="Search for products...">
+  <button type="submit">Search</button>
+</form>
+    </div>
+<div id="search-results" class="product-grid"></div>
+</div></div>
+<script src="/js/search.js" type="module"></script>
+
+
+</body>
+</html>
