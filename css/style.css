@@ -22,7 +22,10 @@ html{
   align-items: center;
   top:0; left: 0; right: 0;
 }
-
+body .content{
+  margin-left: 10%;
+  margin-right: 10%;
+}
 body {
   flex-grow: 1;
   width: 100%;
@@ -37,13 +40,6 @@ body .subheading{
   text-transform: lowercase;
   color: #333333;
   align-content: inherit;
-}
-.mainpagetitle{
-  padding: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 4rem;
 }
 
 .dropdown {

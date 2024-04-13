@@ -29,6 +29,7 @@ mainmenu .navbar{
   font-size: 1.5rem;
 }
 mainmenu .navbar a{
+  color:inherit;
   background-color: #ffffff;
   padding: 1rem;
 }
