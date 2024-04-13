@@ -1,33 +1,39 @@
 
 .profile-container {
-  margin-top: 5%;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 70%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
 .profile-container .profile-container-title{
   text-align: center;
+  color: #596475;
+  background: #FFFFFF;
 }
 .profile {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  background: #FFFFFF;
 }
 
 .profile-info {
   flex: 1;
   padding-right: 20px;
+  background: #FFFFFF;
 }
 
 .profile-info h2 {
   margin-top: 0;
+  color: #596475;
+  background: #FFFFFF;
 }
 
 .profile-info label {
   display: block;
   margin-bottom: 5px;
+  background: #FFFFFF;
 }
 
 .profile-info input[type="text"],
@@ -35,29 +41,36 @@
 .profile-info textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
+
+  border: 1px solid #CDD3CE;
   border-radius: 3px;
+  background:#F9F8F8;
 }
 
 .profile-info textarea {
   height: 100px;
+  background: #F9F8F8;
 }
 
 .profile-info button {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #B118C8;
+  color: #F9F8F8;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
+.profile-info button:hover {
+  background-color: #596475;
+}
+
 .profile-avatar {
   flex: 1;
   text-align: center;
+  background: #FFFFFF;
 }
 
 .profile-avatar img {
@@ -65,15 +78,107 @@
   height: auto;
   border-radius: 50%;
   margin-bottom: 15px;
+
+  background: #FFFFFF;
 }
 
 .profile-avatar input[type="file"] {
   display: none;
+
+  background: #FFFFFF;
 }
 
 .profile-avatar label {
   display: block;
-  color: #007bff;
+  color: #B118C8;
+  cursor: pointer;
+
+  background: #FFFFFF;
+}
+
+.profile-info .option-button{
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 30px;
+}
+
+.notification-button-container {
+  display: flex;
+}
+.notification-button-container button{
+  display: block;
+  padding: 10px;
+  background-color: #B118C8;
+  color: #F9F8F8;
+  border: none;
+  border-radius: 3px;
   cursor: pointer;
 }
 
+.notification-button-container button:hover{
+  background-color: #596475;
+}
+
+@media only screen and (min-width: 1301px) {
+  .profile-container {
+    margin-top: 1%;
+    width: 70%;
+  }
+  .notification-button-container {
+    margin-top: 4%;
+    width: 100%;
+  }
+  .notification-button-container button{
+    width: 100%;
+    margin-left: 33%;
+    margin-right: 33%;
+    height: 50px;
+    font-size: 22px;
+  }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1300px) {
+  .profile-container {
+    margin-top: 2%;
+    width: 90%;
+  }
+
+  .notification-button-container {
+    margin-top: 13%;
+    width: 70%;
+  }
+  .notification-button-container button{
+    width: 100%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 60px;
+    font-size: 28px;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .profile-container {
+    margin-top: 8%;
+    width: 80%;
+  }
+  .profile-avatar img{
+    width: 100%;
+  }
+  .notification-button-container {
+    margin-top: 10%;
+    width: 100%;
+  }
+  .notification-button-container button{
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 50px;
+    font-size: 22px;
+  }
+
+}
