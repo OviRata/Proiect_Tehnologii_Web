@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="stylesheet" href="css/profileContainer.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+<div class="flex-wrapper">
+  <mainmenu>
+    <a href="#" class="logo">
+      Bloom Buddy</a>
+    <div class="navbar">
+      <a href="#">Search</a>
+      <a href="#">My garden</a>
+      <a href="#">My shopping cart</a>
+      <a href="#">My account</a>
+    </div>
+  </mainmenu>
+
+  <div class="profile-container">
+    <h1 class="profile-container-title">User Profile</h1>
+    <div class="profile">
+      <div class="profile-info">
+        <h2>Profile Information</h2>
+        <form id="profile-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" value="JohnDoe" disabled>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="johndoe@example.com">
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" value="John Doe">
+          <label for="bio">Bio:</label>
+          <textarea id="bio" name="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+      <div class="profile-avatar">
+        <img src="avatar.jpg" alt="Profile Picture">
+        <input type="file" id="avatar" name="avatar" accept="image/*">
+        <label for="avatar">Change Avatar</label>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>
+
