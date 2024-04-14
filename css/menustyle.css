@@ -2,7 +2,7 @@ mainmenu {
   overflow: hidden;
   display: flex;
   position: relative;
-
+  justify-content: space-between;
   padding: 50px;
   height: 10vh;
   width: 100%;
@@ -149,7 +149,7 @@ mainmenu .navbar-desktop a:active{
   .navbar-nav {
     flex-direction: column;
     position: absolute;
-    top: 120px;
+    top: 100px;
     left: 0;
     width: 100%;
     background-color: #ffffff;
@@ -197,6 +197,14 @@ mainmenu .navbar-desktop a:active{
 }
 
 
+
+@media only screen and (min-width: 768px) and (max-width: 1300px){
+
+  .navbar-nav {
+    top: 190px;
+  }
+
+}
 
 
 
