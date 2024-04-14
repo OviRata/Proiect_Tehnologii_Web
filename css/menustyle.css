@@ -1,4 +1,4 @@
-mainmenu {
+.mainmenu {
   overflow: hidden;
   display: flex;
   position: relative;
@@ -12,7 +12,7 @@ mainmenu {
   z-index: 1000;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
-mainmenu .logo{
+.mainmenu .logo{
   font-size: 2rem;
   font-weight: bold;
   background-color: #ffffff;
@@ -20,7 +20,7 @@ mainmenu .logo{
   float: left;
   margin-left: 1.5rem;
 }
-mainmenu .navbar-desktop{
+.mainmenu .navbar-desktop{
   width: 100%;
   color: #333333;
   background-color: #ffffff;
@@ -28,18 +28,18 @@ mainmenu .navbar-desktop{
   text-align: right;
   font-size: 1.5rem;
 }
-mainmenu .navbar-desktop a{
+.mainmenu .navbar-desktop a{
   color:inherit;
   background-color: #ffffff;
   padding: 1rem;
 }
 
-mainmenu .navbar-desktop a:hover{
+.mainmenu .navbar-desktop a:hover{
   color: #B118C8;
 }
 
 
-mainmenu .navbar-desktop a:active{
+.mainmenu .navbar-desktop a:active{
   color: #B118C8;
 }
 
@@ -93,34 +93,34 @@ mainmenu .navbar-desktop a:active{
 
 
 @media only screen and (min-width: 1301px){
-  mainmenu .navbar-desktop{
+  .mainmenu .navbar-desktop{
     width: 100%;
   }
-   mainmenu{
+   .mainmenu{
      width:100%;
    }
-  mainmenu .navbar-toggler{
+  .mainmenu .navbar-toggler{
     display: none;
   }
-  mainmenu .navbar-menu{
+  .mainmenu .navbar-menu{
     display:none;
   }
-  mainmenu .navbar-nav{
+  .mainmenu .navbar-nav{
     display:none;
   }
 }
 
 @media only screen and (max-width: 1300px){
-  mainmenu .navbar-desktop{
+  .mainmenu .navbar-desktop{
     display: none;
   }
-  mainmenu .navbar-toggler{
+  .mainmenu .navbar-toggler{
     display:block;
   }
-  mainmenu .navbar-menu{
+  .mainmenu .navbar-menu{
     display:none;
   }
-  mainmenu .navbar-nav{
+  .mainmenu .navbar-nav{
     display:none;
   }
 

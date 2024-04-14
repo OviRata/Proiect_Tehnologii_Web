@@ -5,25 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentation WeGA</title>
+
+  <style>
+    img{
+      width:50%;
+    }
+  </style>
+
 </head>
 <body prefix="schema: http://schema.org">
 <header>
   <h1>Web Gardening</h1>
+
 </header>
 
-<div role="content-info">
-  <dl>
-    <dt>Authors: A3</dt>
+<div role="contentinfo">
+    <h3>Authors: A3</h3>
     <ul>
       <li>Rața Ovidiu </li>
       <li>Romanescu Adia Ioana</li>
     </ul>
-  </dl>
 </div>
 
 
 
-<section id="table-of-contents" role="table-of-contents">
+<section id="table-of-contents">
   <h2>
     Table of contents
   </h2>
@@ -93,19 +99,37 @@
 
   </ul>
 
-  <p>4. <a href="#system-features">System features</a></p>
 
-  <p>5. <a href="#non-functional-requirements">Non-functional requirements</a></p>
+  <p>4. <a href="#development-history"> Development History </a></p>
+  <ul>
+
+    <li>
+      4.1 <a href="#mockup-stage">Mock-up Stage</a>
+    </li>
+
+    <li>
+      4.2 <a href="#frontend-stage">Front-End Development Stage</a>
+    </li>
+
+    <li>
+      4.3 <a href="#backend-stage">Back-End Development Stage</a>
+    </li>
+
+  </ul>
+
+  <p>5. <a href="#system-features">System features</a></p>
+
+  <p>6. <a href="#non-functional-requirements">Non-functional requirements</a></p>
   <ul>
     <li>
-      5.1 <a href="#performance-requirements">Performance Requirements</a>
+      6.1 <a href="#performance-requirements">Performance Requirements</a>
     </li>
     <li>
-      5.2 <a href="#security-requirements">Security Requirements</a>
+      6.2 <a href="#security-requirements">Security Requirements</a>
     </li>
   </ul>
 
-  <p>6. <a href="#references">References</a></p>
+  <p>7. <a href="#references">References</a></p>
   <ul>
 
   </ul>
@@ -114,7 +138,7 @@
 
 
 
-<section id="introduction" role="doc-introduction">
+<section id="introduction" >
   <h2>1. Introduction</h2>
 
   <h3 id="motivation">1.1 Motivation</h3>
@@ -138,7 +162,7 @@
 
 
 
-<section id="description" role="doc-description">
+<section id="description">
   <h2>2. Description</h2>
 
   <h3 id="perspective"> 2.1 Product perspective</h3>
@@ -171,7 +195,7 @@
 
 </section>
 
-<section id="external-interface-requirements" role="doc-external-interface-requirements">
+<section id="external-interface-requirements">
   <h2>3. Interface requirements</h2>
   <h3 id="user-interfaces"> 3.1 User Interfaces  </h3>
 
@@ -179,8 +203,10 @@
     Index page
   </h4>
   <div class="interface-item">
-    <img src="img/Report/index.png" alt="" width="50%">
-    <p>This is the first page a user will see when accessing the website. From here, the user can go to any other page, via the menu.
+
+    <img src="img/Report/index.png" alt="" style={width:50%} >
+
+      <p>This is the first page a user will see when accessing the website. From here, the user can go to any other page, via the menu.
       This page is responsible for listing all the available products on the website.
     </p>
   </div>
@@ -189,7 +215,7 @@
     Login page
   </h4>
   <div class="interface-item">
-    <img src="img/Report/login.png" alt="" width="50%">
+    <img src="img/Report/login.png" alt="" style={width:50%}>
     <div>
       <p>This is the page used to log into an user's account. The required fields for logging in are the username and the password. There is also a checkbox for the user to specify that their credentials should be stored locally.</p>
       <p>In case the user forgot their password, they can click on the "Forgot password" link, from where they can reset the forgotten password.</p>
@@ -201,7 +227,7 @@
     Signup page
   </h4>
   <div class="interface-item">
-    <img src="img/Report/signup.png" alt="" width="50%">
+    <img src="img/Report/signup.png" alt="" style={width:50%}>
     <p>This is the page used to create an user account. The required fields are the username, the fullname, email, the password and a field for confirming the password. The email and the username must uniquely identify a user, so you cannot create multiple accounts with the same email address or the same username.</p>
   </div>
 
@@ -209,7 +235,7 @@
     Password reset page
   </h4>
   <div class="interface-item">
-    <img src="img/Report/passwordReset.png" alt="" width="50%">
+    <img src="img/Report/passwordReset.png" alt="" style={width:50%} >
     <p>This page can be used in order to reset your password, in case you forgot it. The required field is the email address associated with your account. After that, you will receive an email from where you can input your new password that you will use for logging in.</p>
   </div>
 
@@ -217,7 +243,7 @@
     My account
   </h4>
   <div class="interface-item">
-    <img src="img/Report/myAccount.png" alt="" width="50%">
+    <img src="img/Report/myAccount.png" alt="" style={width:50%} >
     <p>This page can be used to check for notifications and edit your account information and settings.
       If you are not logged in, after pressing the "My account" button in the upper menu, you will be redirected to a page, that allows you to either login, or create an account.</p>
   </div>
@@ -226,7 +252,7 @@
     My garden
   </h4>
   <div class="interface-item">
-    <img src="img/Report/myGarden.png" alt="" width="50%">
+    <img src="img/Report/myGarden.png" alt="" style={width:50%} >
     <p>This page can be used to check the current status of your planted flowers, and information about the weather in the environment where the plants are growing. You can check each item's preferred environment and the current environment by clicking on their attached button.
       The user can also see the products which they offer for sale on this page.
     </p>
@@ -236,7 +262,7 @@
     Shopping cart
   </h4>
   <div class="interface-item">
-    <img src="img/Report/shoppingCart.png" alt="" width="50%">
+    <img src="img/Report/shoppingCart.png" alt="" style={width:50%} >
     <p>You can use this page in order to finish your purchase. There, you can review the total payment for buying the added flowers.</p>
   </div>
 
@@ -245,7 +271,7 @@
   </h4>
 
   <div class="interface-item">
-    <img src="img/Report/search.png" alt="" width="50%">
+    <img src="img/Report/search.png" alt="" style={width:50%}  >
     <div>
       <p>
         This page allows you to find the products you are searching for, by name.
@@ -258,7 +284,7 @@
   </h4>
 
   <div class="interface-item">
-    <img src="img/Report/myNotifications.png" alt="" width="50%">
+    <img src="img/Report/myNotifications.png" alt="" style={width:50%}  >
     <div>
       <p>
         This page allows the user to view his notifications.
@@ -273,50 +299,48 @@
 
 
 
-<section id="development-history" role="doc-development-history">
+<section id="development-history">
   <h2>4. Development History</h2>
 
-  <h3>4.1 Mock-up stage</h3>
+  <h3 id="mockup-stage">4.1 Mock-up stage</h3>
   <p>
     During the mock-up stage, we have developed mock-ups of the pages of the application.
     This is an important step during the development of a product, for the reason that the process of technical implementation relies on and is lead by the sketches designed during this stage.
     Some of them can be viewed below:
   <figure>
-    <img src="img/Report/mockups/SignUpForm.png" alt="" width="50%">
+    <img src="img/Report/mockups/SignUpForm.png" alt="" style={width:50%} >
     <figcaption>Figure 1: Sign Up form Mockup </figcaption>
   </figure>
 
   <figure>
-    <img src="img/Report/mockups/shoppingCart.png" alt="" width="50%">
+    <img src="img/Report/mockups/shoppingCart.png" alt="" style={width:50%}  >
     <figcaption>Figure 2: Shopping Cart Mockup </figcaption>
   </figure>
 
   <figure>
-    <img src="img/Report/mockups/MyNotifications.png" alt="" width="50%">
+    <img src="img/Report/mockups/MyNotifications.png" alt="" style={width:50%}  >
     <figcaption>Figure 3: "My Notifications" Mockup </figcaption>
   </figure>
 
 
   <figure>
-    <img src="img/Report/mockups/myGarden.png" alt="" width="50%">
+    <img src="img/Report/mockups/myGarden.png" alt="" style={width:50%}  >
     <figcaption>Figure 3: "My Garden" Mockup </figcaption>
   </figure>
 
-  </p>
 
-
-  <h3>
+  <h3 id="frontend-stage">
     4.2 Front-End Development stage
   </h3>
   <p>
-
+  .
   </p>
 
-  <h3>
+  <h3 id="backend-stage">
     4.3 Back-End Development stage
   </h3>
   <p>
-
+  .
   </p>
 
 </section>
@@ -325,7 +349,7 @@
 
 
 
-<section id="system-features" role="doc-external-system-features">
+<section id="system-features">
   <h2>5. System features</h2>
   <h3>5.1 Login/Logout</h3>
   <p>The website allows a user to log in and out of the application. Having an account is mandatory in order to access to full suite of features in the app. In order to login, the user must provide their email or username, together with the password associated with their account. The website will also offer them the choice of whether or not they wish to stay logged in in their current browser.</p>
@@ -355,7 +379,7 @@
 </section>
 
 
-<section id="non-functional-requirements" role="doc-non-functional-requirements">
+<section id="non-functional-requirements">
   <h2>6. Non-functional requirements</h2>
   <h3 id="performance-requirements"> 6.1 Performance Requirements  </h3>
   <ul>
@@ -385,7 +409,7 @@
 
 
 
-<section id="references" role="doc-references">
+<section id="references">
   <h2>7. References</h2>
 
   <ul>

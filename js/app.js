@@ -19,3 +19,11 @@ function signUpButtonPressed(){
   console.log("Inputted confirm password: "+confirmPassword);
 
 }
+
+
+
+function gotoPage(pageLocation){
+  console.log('entered');
+  window.location.replace(pageLocation);
+  window.reload();
+}
