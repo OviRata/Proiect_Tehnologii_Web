@@ -20,7 +20,7 @@ mainmenu .logo{
   float: left;
   margin-left: 1.5rem;
 }
-mainmenu .navbar{
+mainmenu .navbar-desktop{
   width: 100%;
   color: #333333;
   background-color: #ffffff;
@@ -28,17 +28,183 @@ mainmenu .navbar{
   text-align: right;
   font-size: 1.5rem;
 }
-mainmenu .navbar a{
+mainmenu .navbar-desktop a{
   color:inherit;
   background-color: #ffffff;
   padding: 1rem;
 }
 
-mainmenu .navbar a:hover{
+mainmenu .navbar-desktop a:hover{
   color: #B118C8;
 }
 
 
-mainmenu .navbar a:active{
+mainmenu .navbar-desktop a:active{
   color: #B118C8;
 }
+
+
+
+
+
+
+
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar-toggler span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #596475;
+  margin: 5px;
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1301px){
+  mainmenu .navbar-desktop{
+    width: 100%;
+  }
+   mainmenu{
+     width:100%;
+   }
+  mainmenu .navbar-toggler{
+    display: none;
+  }
+  mainmenu .navbar-menu{
+    display:none;
+  }
+  mainmenu .navbar-nav{
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 1300px){
+  mainmenu .navbar-desktop{
+    display: none;
+  }
+  mainmenu .navbar-toggler{
+    display:block;
+  }
+  mainmenu .navbar-menu{
+    display:none;
+  }
+  mainmenu .navbar-nav{
+    display:none;
+  }
+
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-toggler.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggler.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+
+  .navbar-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    display: none;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+    background: #ffffff;
+  }
+
+
+  .navbar-menu{
+    height: 300px;
+    background: #ffffff;
+    padding: 0px;
+    margin-bottom: 100px;
+  }
+
+  .navbar-nav{
+    background: #ffffff;
+  }
+
+  .navbar-menu a{
+    color:inherit;
+    background-color: #ffffff;
+    padding: 1rem;
+    font-size: 20px;
+  }
+
+  .navbar-menu a:hover{
+    color: #B118C8;
+  }
+
+
+  .navbar-menu a:active{
+    color: #B118C8;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

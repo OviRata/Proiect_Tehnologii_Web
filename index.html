@@ -13,16 +13,37 @@
 
 <body>
 <div class="flex-wrapper">
-<mainmenu>
-  <a href="index.html" class="logo">
-    Bloom Buddy</a>
-  <div class="navbar">
-    <a href="search.html">Search</a>
-    <a href="mygarden.html">My garden</a>
-    <a href="myshoppingcart.html">My shopping cart</a>
-    <a href="MyAccountNotLoggedIn.html">My account</a>
-  </div>
-</mainmenu>
+    <mainmenu>
+      <a href="index.html" class="logo">
+        Bloom Buddy</a>
+      <div class="navbar-desktop">
+        <a href="search.html">Search</a>
+        <a href="mygarden.html">My garden</a>
+        <a href="myshoppingcart.html">My shopping cart</a>
+        <a href="MyAccountNotLoggedIn.html">My account</a>
+      </div>
+
+      <button class="navbar-toggler" id="navbar-toggler">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+
+
+      <script src="js/navbar-script.js"></script>
+    </mainmenu>
+    <div class="navbar-menu" id="navbar-menu">
+      <ul class="navbar-nav" id = "navbar-nav">
+        <li class="nav-item"> <a href="search.html">Search</a></li>
+        <li class="nav-item"><a href="mygarden.html">My garden</a></li>
+        <li class="nav-item"><a href="myshoppingcart.html">My shopping cart</a></li>
+        <li class="nav-item"><a href="MyAccountNotLoggedIn.html">My account</a></li>
+      </ul>
+    </div>
+
+
   <div class="content">
   <div class="mainTitle">
     <a class="heading">
