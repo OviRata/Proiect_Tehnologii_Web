@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation WeGA</title>
+</head>
+<body prefix="schema: http://schema.org">
+<header>
+  <h1>Web Gardening</h1>
+</header>
+
+<div role="content-info">
+  <dl>
+    <dt>Authors: A3</dt>
+    <ul>
+      <li>Rața Ovidiu </li>
+      <li>Romanescu Adia Ioana</li>
+    </ul>
+  </dl>
+</div>
+
+
+
+<section id="table-of-contents" role="table-of-contents">
+  <h2>
+    Table of contents
+  </h2>
+
+  <p>1. <a href="#introduction">Introduction</a></p>
+  <ul>
+
+    <li>
+      1.1 <a href="#motivation">Motivation</a>
+    </li>
+
+    <li>
+      1.2 <a href="#target-audience">Target Audience</a>
+    </li>
+
+  </ul>
+
+  <p>2. <a href="#description">Description</a></p>
+  <ul>
+
+    <li>
+      2.1 <a href="#perspective">Product Perspective</a>
+    </li>
+
+    <li>
+      2.2 <a href="#functionality">Functionality</a>
+    </li>
+
+    <li>
+      2.3 <a href="#environment">Environment</a>
+    </li>
+
+    <li>
+      2.4 <a href="#constratints">Development Constraints</a>
+    </li>
+
+    <li>
+      2.5 <a href="#documentation">Documentation</a>
+    </li>
+
+
+    <li>
+      2.6 <a href="#assumptions">Assumptions and Dependencies</a>
+    </li>
+
+    <li>
+      2.7 <a href="#architecture">Architecture</a>
+    </li>
+
+
+  </ul>
+
+  <p>3. <a href="#external-interface-requirements"> Interface requirements</a></p>
+  <ul>
+
+    <li>
+      3.1 <a href="#user-interfaces">User Interfaces</a>
+    </li>
+
+    <li>
+      3.2 <a href="#software-interfaces">Software Interfaces</a>
+    </li>
+
+    <li>
+      3.3 <a href="#communication-interfaces">Communication Interfaces</a>
+    </li>
+
+  </ul>
+
+  <p>4. <a href="#system-features">System features</a></p>
+
+  <p>5. <a href="#non-functional-requirements">Non-functional requirements</a></p>
+  <ul>
+    <li>
+      5.1 <a href="#performance-requirements">Performance Requirements</a>
+    </li>
+    <li>
+      5.2 <a href="#security-requirements">Security Requirements</a>
+    </li>
+  </ul>
+
+  <p>6. <a href="#references">References</a></p>
+  <ul>
+
+  </ul>
+
+</section>
+
+
+
+<section id="introduction" role="doc-introduction">
+  <h2>1. Introduction</h2>
+
+  <h3 id="motivation">1.1 Motivation</h3>
+  <p>
+    The presented software product, titled <i>Web Garden</i>, allows users to use a wide variety of functionalities.
+    The main purpose of the project, is to create a platform, that allows the users to buy and sell flowers, quickly and securely.
+    The user can create an account on our platform, which will allow him to participate in the flower market, and buy or sell any avaliable amount of flowers.
+    The website also allows users to manage their own garden, and to determine which flowers are still growing, and which are ready for cultivation and selling.
+    The stage of development of the flowers is determined based on the color saturation, obtained after analyzing the images of the garden, obtained from sensors or cameras, placed around it by the user.
+    Users will get email and browser notifications, when flowers become ready for cultivation and selling, and when orders are placed for the flowers they sell.
+    The notifications can be viewed in the user's email, and also on our website.
+  </p>
+
+  <h3 id="target-audience">1.2 Target Audience</h3>
+  <p>
+    Our product is intended for people that are directly involved in the flower market, that need to sell or buy flowers as efficiently as possible, and who can use some help with growing flowers and gardening.
+    Casual users, that just ocasionally need to buy some flowers, are also welcome on our website, which provides easy-to-use and efficient interfaces, which helps them find the best prices for any flower they may need.
+  </p>
+
+</section>
+
+
+
+<section id="description" role="doc-description">
+  <h2>2. Description</h2>
+
+  <h3 id="perspective"> 2.1 Product perspective</h3>
+  Web Garden is a novel, self-contained, stand-alone product that is available to users online, intended to connect customers and sellers on the flower-market, and to help horticulturists in managing their garden.
+  <h3 id="functionality"> 2.2 Functionality</h3>
+  The presented product offers users the following functionalities:
+  <ul>
+    <li>login/logout</li>
+    <li>sign up</li>
+    <li>change password</li>
+    <li>follow the development of flowers</li>
+    <li>buy flowers</li>
+    <li>sell flowers</li>
+    <li>receive notifications on the current weather and the state of the flowers</li>
+  </ul>
+  <h3 id="environment"> 2.3 Environment  </h3>
+  This is a web application that can be accessed through any of the widely and freely available browsers (Chrome, Firefox, Opera, Safari, etc.). As a result, the product runs independent of the operating system, and so it can be accessed by Windows, Linux or MacOS  users.
+  There are no known conflicts with any other application on a user's computer.
+  <h3 id="constraints"> 2.4 Development Constraints  </h3>
+  This application has been written entirely in HTML, CSS and Javascript. On the server side, it uses Node.JS for handling client requests.
+  It does not use any frameworks.
+  <h3 id="documentation"> 2.5 Documentation  </h3>
+  The current document has the role of user documentation. It can be accessed on the github repository of our product.
+  <h3 id="assumptions"> 2.6 Assumptions  </h3>
+  This application is dependent on the current Web Technologies standards. It also depends on the Node.JS technology.
+  Issues with these technologies can reflect upon the functioning of our website.
+  <h3 id="architecture"> 2.7 Architecture  </h3>
+
+
+
+</section>
+
+<section id="external-interface-requirements" role="doc-external-interface-requirements">
+  <h2>3. Interface requirements</h2>
+  <h3 id="user-interfaces"> 3.1 User Interfaces  </h3>
+
+  <h4>
+    Index page
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/index.png" alt="" width="50%">
+    <p>This is the first page a user will see when accessing the website. From here, the user can go to any other page, via the menu.
+      This page is responsible for listing all the available products on the website.
+    </p>
+  </div>
+
+  <h4>
+    Login page
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/login.png" alt="" width="50%">
+    <div>
+      <p>This is the page used to log into an user's account. The required fields for logging in are the username and the password. There is also a checkbox for the user to specify that their credentials should be stored locally.</p>
+      <p>In case the user forgot their password, they can click on the "Forgot password" link, from where they can reset the forgotten password.</p>
+      <p>In case the user is not regiestered, they can click on the "Register" link, which will redirect them to the signup page.</p>
+    </div>
+  </div>
+
+  <h4>
+    Signup page
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/signup.png" alt="" width="50%">
+    <p>This is the page used to create an user account. The required fields are the username, the fullname, email, the password and a field for confirming the password. The email and the username must uniquely identify a user, so you cannot create multiple accounts with the same email address or the same username.</p>
+  </div>
+
+  <h4>
+    Password reset page
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/passwordReset.png" alt="" width="50%">
+    <p>This page can be used in order to reset your password, in case you forgot it. The required field is the email address associated with your account. After that, you will receive an email from where you can input your new password that you will use for logging in.</p>
+  </div>
+
+  <h4>
+    My account
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/myAccount.png" alt="" width="50%">
+    <p>This page can be used to check for notifications and edit your account information and settings.
+      If you are not logged in, after pressing the "My account" button in the upper menu, you will be redirected to a page, that allows you to either login, or create an account.</p>
+  </div>
+
+  <h4>
+    My garden
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/myGarden.png" alt="" width="50%">
+    <p>This page can be used to check the current status of your planted flowers, and information about the weather in the environment where the plants are growing. You can check each item's preferred environment and the current environment by clicking on their attached button.
+      The user can also see the products which they offer for sale on this page.
+    </p>
+  </div>
+
+  <h4>
+    Shopping cart
+  </h4>
+  <div class="interface-item">
+    <img src="img/Report/shoppingCart.png" alt="" width="50%">
+    <p>You can use this page in order to finish your purchase. There, you can review the total payment for buying the added flowers.</p>
+  </div>
+
+  <h4>
+    Search page
+  </h4>
+
+  <div class="interface-item">
+    <img src="img/Report/search.png" alt="" width="50%">
+    <div>
+      <p>
+        This page allows you to find the products you are searching for, by name.
+      </p>
+    </div>
+  </div>
+
+  <h4>
+    Notifications page
+  </h4>
+
+  <div class="interface-item">
+    <img src="img/Report/myNotifications.png" alt="" width="50%">
+    <div>
+      <p>
+        This page allows the user to view his notifications.
+      </p>
+    </div>
+  </div>
+
+  <h3 id="software-interfaces"> 3.1 Software Interfaces  </h3>
+  <h3 id="communication-interfaces"> 3.1 Communication Interfaces  </h3>
+</section>
+
+
+
+
+<section id="development-history" role="doc-development-history">
+  <h2>4. Development History</h2>
+
+  <h3>4.1 Mock-up stage</h3>
+  <p>
+    During the mock-up stage, we have developed mock-ups of the pages of the application.
+    This is an important step during the development of a product, for the reason that the process of technical implementation relies on and is lead by the sketches designed during this stage.
+    Some of them can be viewed below:
+  <figure>
+    <img src="img/Report/mockups/SignUpForm.png" alt="" width="50%">
+    <figcaption>Figure 1: Sign Up form Mockup </figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/Report/mockups/shoppingCart.png" alt="" width="50%">
+    <figcaption>Figure 2: Shopping Cart Mockup </figcaption>
+  </figure>
+
+  <figure>
+    <img src="img/Report/mockups/MyNotifications.png" alt="" width="50%">
+    <figcaption>Figure 3: "My Notifications" Mockup </figcaption>
+  </figure>
+
+
+  <figure>
+    <img src="img/Report/mockups/myGarden.png" alt="" width="50%">
+    <figcaption>Figure 3: "My Garden" Mockup </figcaption>
+  </figure>
+
+  </p>
+
+
+  <h3>
+    4.2 Front-End Development stage
+  </h3>
+  <p>
+
+  </p>
+
+  <h3>
+    4.3 Back-End Development stage
+  </h3>
+  <p>
+
+  </p>
+
+</section>
+
+
+
+
+
+<section id="system-features" role="doc-external-system-features">
+  <h2>5. System features</h2>
+  <h3>5.1 Login/Logout</h3>
+  <p>The website allows a user to log in and out of the application. Having an account is mandatory in order to access to full suite of features in the app. In order to login, the user must provide their email or username, together with the password associated with their account. The website will also offer them the choice of whether or not they wish to stay logged in in their current browser.</p>
+
+  <h3>5.2 Sign Up</h3>
+  <p>In order to sign up, a client who is not already a registered user must navigate to the Sign Up page and introduce the following details: email address, full name, username and password. Afterwards, they will receive an email asking them to confirm their address. </p>
+
+  <h3>5.3 Change password</h3>
+  <p>For security reasons, the database does not store the passwords of the users. Instead, the user who forgot their password and can no longer access their account must enter their email address in the input field and await an email that will provide them with a link to introduce a new password.</p>
+
+  <h3>5.4 Follow the development of flowers</h3>
+  <p>In order to do this, the user who is looking to sell flowers must go to the 'My Garden' page on the website and check the section labelled ... </p>
+
+  <h3>5.5 Buy flowers</h3>
+  <p>In order to buy a flower, the logged in user must first select the flower that they wish to buy, then click the 'Add to cart ' button on the product page, or the shopping cart item next to the flower. They will then be redirected to their shopping, where they will be able to see all the products they have added to their basket. There, they will be able to complete their order and will be redirected to the payment page.</p>
+
+  <h3>5.6 Sell flowers</h3>
+  <p>In order to sell a flower, the logged in user must go to the specific form page and input the required information about the product he's about to auction. These range from basic properties like name, price and description to more specific information, such as optimal conditions for growing or indexing data, such as season of plants. Upon clicling submit, the user will be redirected to the product page of the plant, displayed for sale. </p>
+
+  <h3>5.7 Receive notifications about your flowers</h3>
+  <p>
+    When the specific flower species is determined to be ready for cultivation and sale, the user will receive notifications regarding the need to cultivate the flowers.
+    Notifications about the orders put for flowers sold by the user are also being sent via email, and can be viewed directly on the website.
+  </p>
+
+
+</section>
+
+
+<section id="non-functional-requirements" role="doc-non-functional-requirements">
+  <h2>6. Non-functional requirements</h2>
+  <h3 id="performance-requirements"> 6.1 Performance Requirements  </h3>
+  <ul>
+    <li>
+      <p>The webpage should preferably score at least 90 points on <a href="https://pagespeed.web.dev/">PageSpeed Insights</a>.</p>
+    </li>
+    <li>
+      <p>The site and all its pages have to be responsive on all main types of display resolutions, whether it's Phone, Tablet, Laptop or Desktop. Obscure devices such as your bootleg wireless earphones with a display on the case and internet access do not count.</p>
+    </li>
+  </ul>
+  <h3 id="security-requirements"> 6.2 Security Requirements  </h3>
+  <ul>
+    <li>
+      <p>Passwords will not be stored in the database, but rather their hashed version.</p>
+    </li>
+    <li>
+      <p>Every information entered by the user shall follow GDPR regulations.</p>
+    </li>
+    <li>
+      <p>Every user input should, preferably, be properly sanitized in order to avoid Database Injections.</p>
+    </li>
+    <li>
+      <p>Every html file should, preferably, be properly sanitized in order to avoid Cross Site Scripting</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<section id="references" role="doc-references">
+  <h2>7. References</h2>
+
+  <ul>
+    <li>Github repo: <a href="https://github.com/OviRata/Proiect_Tehnologii_Web">https://github.com/OviRata/Proiect_Tehnologii_Web</a></li>
+    <li>Source for the icons: <a href="https://unpkg.com">https://unpkg.com/</a></li>
+    <li>Font resources: <a href="https://unpkg.com">https://unpkg.com</a></li>
+    <li>W3Schools HTML Element Reference: <a href="https://www.w3schools.com/tags/default.asp">www.w3schools.com/tags/default.asp</a></li>
+    <li>W3Schools CSS Reference: <a href="https://www.w3schools.com/cssref/index.php">www.w3schools.com/cssref/index.php</a></li>
+    <li>Web Technologies Course: <a href="https://edu.info.uaic.ro/web-technologies/index.html">https://edu.info.uaic.ro/web-technologies/index.html</a></li>
+  </ul>
+
+
+</section>
+
+
+</body>
+</html>
