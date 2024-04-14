@@ -45,16 +45,22 @@ function createProductCard(product) {
 }
 
 
-function addProductCards(number) {
+
+
+function addProductCards(number, id) {
   // debug purpose only
   console.log("Adding product cards...");
-  var grid = document.getElementById('product-grid');
+  if(typeof id=='undefined'){
+    id="product-grid";
+  }
+  var grid = document.getElementById(id);
   products.forEach(function(product) {
-   if(number===0 || product.userID===number){
-    var card = createProductCard(product);
-    grid.appendChild(card);}
+    if(number===0 || product.userID===number){
+      var card = createProductCard(product);
+      grid.appendChild(card);}
   });
 }
+
 function viewProductDetails(product) {
   console.log("Viewing details for:", product.name);
   var productPageContainer = document.getElementById('product-page-container');
@@ -99,12 +105,16 @@ function addToCart(product) {
   // [!] Need to add product adding logic
   console.log('Product added to cart:', product.name);
 }
-function initializeProductGrid(number) {
+
+
+
+function initializeProductGrid(number, id) {
 
   document.addEventListener('DOMContentLoaded', function() {
-    addProductCards(number);
+    addProductCards(number, id);
   });
 }
+
 function initializeAllProductsGrid() {
   document.addEventListener('DOMContentLoaded', function() {
     addProductCards(0);

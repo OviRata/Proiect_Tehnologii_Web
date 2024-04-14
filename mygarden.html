@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/menustyle.css">
   <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="css/mygarden.css">
 </head>
 
 <body>
@@ -30,14 +31,52 @@
         your own garden
       </a>
     </div>
-    <div class="product-grid" id="product-grid"></div>
-    <div id="product-page-container"></div>
+
+    <div class="weather-container">
+      <div class="weather-title">
+        <h1>Weather</h1>
+      </div>
+      <div>
+        <h1 class="temperature-info">30</h1>
+        <h1 class="humidity-info">80%</h1>
+        <h1 class="pressure-info">1 atm</h1>
+      </div>
+    </div>
+
+    <div class="growing-plants-container">
+      <div class="growing-plants-title">
+        <h1>Growing Plants</h1>
+      </div>
+      <div class="product-grid" id="product-grid1"></div>
+      <div id="product-page-container"></div>
+    </div>
+
+    <div class="grown-plants-container">
+      <div class="grown-plants-title">
+        <h1>Grown Plants</h1>
+      </div>
+      <div class="product-grid" id="product-grid2"></div>
+      <div id="product-page-container2"></div>
+    </div>
+
+
+    <div class="plants-for-sale-container">
+      <div class="plants-for-sale-title">
+        <h1>Plants for Sale</h1>
+      </div>
+      <div class="product-grid" id="product-grid3"></div>
+      <div id="product-page-container3"></div>
+    </div>
+
   </div>
 </div>
 <script type="module" src="js/products-grid.js"></script>
 <script type="module">
   import { initializeProductGrid } from './js/products-grid.js';
-  initializeProductGrid(1);
+  initializeProductGrid(1, "product-grid1");
+  initializeProductGrid(2, "product-grid2");
+  initializeProductGrid(1, "product-grid3");
+  initializeProductGrid(2, "product-grid3");
 </script>
 
 </body>

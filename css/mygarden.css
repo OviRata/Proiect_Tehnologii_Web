@@ -1,0 +1,79 @@
+.growing-plants-container .growing-plants-title{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 3px solid #596475;
+  border-bottom: 3px solid #596475;
+}
+
+.growing-plants-container .growing-plants-title h1{
+  text-align: center;
+  color: #596475;
+}
+
+
+.grown-plants-container .grown-plants-title{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 3px solid #596475;
+  border-bottom: 3px solid #596475;
+}
+
+.grown-plants-container .grown-plants-title h1{
+  text-align: center;
+  color: #596475;
+}
+
+
+
+
+.plants-for-sale-container .plants-for-sale-title{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 3px solid #596475;
+  border-bottom: 3px solid #596475;
+}
+
+.plants-for-sale-container .plants-for-sale-title h1{
+  text-align: center;
+  color: #596475;
+}
+
+
+.weather-container .weather-title{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 3px solid #596475;
+  border-bottom: 3px solid #596475;
+}
+
+.weather-container .weather-title h1{
+  text-align: center;
+  color: #596475;
+}
+
+.weather-container .temperature-info{
+  text-align: center;
+  color: #596475;
+}
+
+.weather-container .humidity-info{
+  text-align: center;
+  color: #596475;
+}
+
+.weather-container .pressure-info{
+  text-align: center;
+  color: #596475;
+}
