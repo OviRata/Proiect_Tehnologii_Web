@@ -2,13 +2,13 @@
 function initializeAll(){
 
   var products = [
-    {userID: 2, name: "Iridarium", image: "/img/iridarium.jpg", price: 10.00, description: "Description of Product 1"},
-    {userID: 1, name: "Lalele", image: "/img/lalele.jpg", price: 15.00, description: "Description of Product 1"},
-    {userID: 0, name: "Hortesia", image: "/img/hortesia.jpg", price: 26.00, description: "Description of Product 1"},
+    {userID: 2, name: "Iridarium", image: "./img/iridarium.jpg", price: 10.00, description: "Description of Product 1"},
+    {userID: 1, name: "Lalele", image: "./img/lalele.jpg", price: 15.00, description: "Description of Product 1"},
+    {userID: 0, name: "Hortesia", image: "./img/hortesia.jpg", price: 26.00, description: "Description of Product 1"},
     {
       userID: 0,
       name: "Limba mielului",
-      image: "/img/limba_mielului_2.jpg",
+      image: "./img/limba_mielului_2.jpg",
       price: 12.00,
       description: "Description of Product 1"
     },
