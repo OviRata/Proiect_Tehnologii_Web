@@ -3,6 +3,17 @@ function loginButtonPressed(){
   let password = document.getElementById("password-input").value
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
+
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+    .then(response => response.json())
+    .then(data => alert(data.message))
+    .catch(error => console.error('Error:', error));
 }
 
 
@@ -18,5 +29,15 @@ function signUpButtonPressed(){
   console.log("Inputted password: "+password);
   console.log("Inputted confirm password: "+confirmPassword);
 
+  fetch('/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ username, password })
+  })
+    .then(response => response.json())
+    .then(data => alert(data.message))
+    .catch(error => console.error('Error:', error));
 }
 
