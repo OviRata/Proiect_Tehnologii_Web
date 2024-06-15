@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const users = [];
 const {sendJson,serveFile,parseBody,handleGetFileRequest} = require('./utilities.js');
-const { register, login } = require('./controllers/login+register.js');
+const { register, login } = require('./controllers/authBackEnd.js');
 const {createServer}= require('node:http');
 const server=createServer((req,res)=>{})
 
