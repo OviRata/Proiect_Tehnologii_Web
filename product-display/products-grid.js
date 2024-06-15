@@ -1,12 +1,4 @@
 
-var products = [
-  {userID:2, name: "Iridarium", image: "./img/iridarium.jpg", price: "$10.00", description: "Description of Product 1"  },
-  { userID:1, name: "Lalele", image: "./img/lalele.jpg", price: "$15.00", description: "Description of Product 1"  },
-  { userID:0, name: "Hortesia", image: "./img/hortesia.jpg", price: "$26.00" , description: "Description of Product 1" },
-  { userID:0, name: "Limba mielului", image: "./img/limba_mielului_2.jpg", price: "$12.00", description: "Description of Product 1"  },
-
-];
-
 function createProductCard(product) {
   console.log(product);
   // debug purposes only
@@ -48,15 +40,16 @@ function createProductCard(product) {
 
 
 function addProductCards(number, id) {
-  // debug purpose only
+
   console.log("Adding product cards...");
   if(typeof id=='undefined'){
     id="product-grid";
   }
-  var grid = document.getElementById(id);
+  let grid = document.getElementById(id);
   products.forEach(function(product) {
     if(number===0 || product.userID===number){
-      var card = createProductCard(product);
+      const card = createProductCard(product);
+      console.log(card);
       grid.appendChild(card);}
   });
 }

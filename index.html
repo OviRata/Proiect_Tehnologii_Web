@@ -7,9 +7,9 @@
 
   <title>Web Gardening</title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/menustyle.css">
-  <link rel="stylesheet" href="css/product-card.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/menustyle.css">
+  <link rel="stylesheet" href="resources/css/product-card.css">
 
   <style>
     .mainTitle{
@@ -32,7 +32,7 @@
       <a href="search.html">Search</a>
       <a href="mygarden.html">My garden</a>
       <a href="myshoppingcart.html">My shopping cart</a>
-      <a href="MyAccountNotLoggedIn.html">My account</a>
+      <a href="accountpages/MyAccountNotLoggedIn.html">My account</a>
     </div>
 
     <button class="navbar-toggler" id="navbar-toggler">
@@ -41,17 +41,14 @@
       <span></span>
     </button>
 
-
-
-
-    <script src="js/navbar-script.js"></script>
+    <script src="resources/js/navbar-script.js"></script>
   </div>
     <div class="navbar-menu" id="navbar-menu">
       <ul class="navbar-nav" id = "navbar-nav">
         <li class="nav-item"> <a href="search.html">Search</a></li>
         <li class="nav-item"><a href="mygarden.html">My garden</a></li>
         <li class="nav-item"><a href="myshoppingcart.html">My shopping cart</a></li>
-        <li class="nav-item"><a href="MyAccountNotLoggedIn.html">My account</a></li>
+        <li class="nav-item"><a href="accountpages/MyAccountNotLoggedIn.html">My account</a></li>
       </ul>
     </div>
 
@@ -67,10 +64,10 @@
   <div id="product-page-container"></div>
 </div>
 </div>
-
-<script src="/js/products-grid.js"></script>
+<script src="product-display/flowers_for_debug.js"></script>
+<script src="./product-display/products-grid.js"></script>
 <script>
-  initializeProductGrid(1, "product-grid1")
+  initializeProductGrid(2,"product-grid")
 </script>
 
 

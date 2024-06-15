@@ -7,7 +7,14 @@ const serveFile = (filePath, contentType, response) => {
     if (error) {
       if (error.code === 'ENOENT') {
         response.writeHead(404, { 'Content-Type': 'text/html' });
-        response.end('<h1>404 Not Found</h1>', 'utf-8');
+        fs.readFile('./404.html', (errorAux, contentAux) =>{
+          if (errorAux) {
+            response.end('404 - Not Found','utf-8');
+          }
+          else{
+            response.end(contentAux,'utf-8');
+          }
+        })
       } else {
         response.writeHead(500);
         response.end(`Server Error: ${error.code}`, 'utf-8');

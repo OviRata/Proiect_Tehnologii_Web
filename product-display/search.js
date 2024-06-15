@@ -1,13 +1,4 @@
 
-//import { initializeProductGrid } from './products-grid';
-
-var products = [
-  { name: "Iridarium", image: "./img/iridarium.jpg", price: "$10.00", description: "Description of Product 1"  },
-  { name: "Lalele", image: "./img/lalele.jpg", price: "$15.00", description: "Description of Product 1"  },
-  { name: "Hortesia", image: "./img/hortesia.jpg", price: "$26.00" , description: "Description of Product 1" },
-  { name: "Limba mielului", image: "./img/limba_mielului_2.jpg", price: "$12.00", description: "Description of Product 1"  },
-
-];
 document.addEventListener('DOMContentLoaded', function() {
   // Call the function to execute the code
   initializeProductGrid();
