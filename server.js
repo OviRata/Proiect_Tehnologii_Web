@@ -10,6 +10,17 @@ const server=createServer((req,res)=>{})
 
 server.on("request",(req,res)=>{
 
+  if (path.toString().toLowerCase().includes('login') && path!=='/login') {
+    res.writeHead(302, { 'Location': '/login' });
+    res.end();
+    return;
+  }
+  else if(path.toString().toLowerCase().includes('register') && path!=='/register') {
+    res.writeHead(302, { 'Location': '/register' });
+    res.end();
+    return;
+  }
+
   if (path === '/register' && method === 'post') {
     register(req, res);
   } else if (path === '/login' && method === 'post') {

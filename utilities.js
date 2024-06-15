@@ -32,16 +32,16 @@ const serveFile = (filePath, contentType, response) => {
 };
 function handleGetFileRequest(req,res)
 {
+
   let filePath = '.' + req.url;
-  if (filePath == './') {
+  if (filePath === './') {
     filePath = './index.html';
   }
   ///works but [!] any modifications in file structure => :(
   const baseDir = path.join(__dirname, 'login+register');
-  if (req.url === '/login') {
+  if (req.url === '/login'|| req.url.toLowerCase().includes('login')) {
     filePath = path.join(baseDir, 'login.html');
-    console.log(filePath);
-  } else if (req.url === '/register') {
+  } else if (req.url === '/register' || req.url.toLowerCase().includes('signup')) {
     filePath = path.join(baseDir, 'register.html');
   }
   else if(req.url==='/login_register_logic.js'){
