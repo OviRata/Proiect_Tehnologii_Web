@@ -8,6 +8,8 @@ function sendJson(res, statusCode, data) {
 
 
 const serveFile = (filePath, contentType, response) => {
+
+  console.log(filePath+" for "+contentType);
   fs.readFile(filePath, (error, content) => {
     if (error) {
       if (error.code === 'ENOENT') {
