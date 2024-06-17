@@ -6,7 +6,6 @@ function gotoPage(pageLocation){
 }
 
 
-import { generateURL } from './urlHelper.js';
 
 function setNavigationLinks() {
   document.getElementById('search').href = generateURL('search');

@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8080'; // This could be dynamically set based on environment
+const baseURL = 'http://localhost:3030'; // This could be dynamically set based on environment
 
 const routes = {
   home: '/',
@@ -11,5 +11,4 @@ const routes = {
 
 };
 
-export {baseURL, routes};
 
