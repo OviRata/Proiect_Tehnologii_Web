@@ -8,7 +8,7 @@ function gotoPage(pageLocation){
 
 import { generateURL } from './urlHelper.js';
 
-function setNavigationLinks() {
+export function setNavigationLinks() {
   document.getElementById('search').href = generateURL('search');
   document.getElementById('mygarden').href = generateURL('mygarden');
   document.getElementById('mycart').href = generateURL('mycart');

@@ -20,39 +20,12 @@
       font-size: 4rem;
     }
   </style>
-
+  <script src="./resources/loadmenu.js" type="module"></script>
 </head>
 
 <body>
 <div class="flex-wrapper">
-  <div class="mainmenu">
-    <a href="index.html" class="logo">
-      Bloom Buddy</a>
-    <div class="navbar-desktop">
-      <li class="nav-item"> <a href="#" id="search1">Search</a></li>
-      <li class="nav-item"><a href="#" id="mygarden1">My garden</a></li>
-      <li class="nav-item"><a href="#" id="mycart1">My shopping cart</a></li>
-      <li class="nav-item"><a href="#" id="myAccount1">My account</a></li>
-    </div>
-
-    <button class="navbar-toggler" id="navbar-toggler">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <script src="./resources/js/navbar-script.js"></script>
-  </div>
-    <div class="navbar-menu" id="navbar-menu">
-      <ul class="navbar-nav" id = "navbar-nav">
-        <li class="nav-item"> <a href="#" id="search">Search</a></li>
-        <li class="nav-item"><a href="#" id="mygarden">My garden</a></li>
-        <li class="nav-item"><a href="#" id="mycart">My shopping cart</a></li>
-        <li class="nav-item"><a href="#" id="myAccount">My account</a></li>
-      </ul>
-    </div>
-
-
+  <div id="menu-container" style="width: 100%"></div>
   <div class="content">
   <div class="mainTitle">
     <a class="heading">
@@ -69,16 +42,8 @@
 <script>
   initializeProductGrid(2,"product-grid")
 </script>
-<script src="./resources/js/app.js" type="module"></script>
-
-
 
 </body>
-
-
-
-
-
 
 </html>
 
