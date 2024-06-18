@@ -7,6 +7,7 @@ function gotoPage(pageLocation){
 }
 
 function generateURL(routeKey) {
+  console.log("generated: "+`${baseURL}${routes[routeKey]}`);
   return `${baseURL}${routes[routeKey]}`;
 }
 
