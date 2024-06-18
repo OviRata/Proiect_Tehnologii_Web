@@ -34,7 +34,7 @@ function signUpButtonPressed(){
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ username, password })
+    body: JSON.stringify({ username,email, password })
   })
     .then(response => response.json())
     .then(data => alert(data.message))

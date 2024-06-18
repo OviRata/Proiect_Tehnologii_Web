@@ -9,7 +9,7 @@ function sendJson(res, statusCode, data) {
 
 const serveFile = (filePath, contentType, response) => {
 
-  console.log(filePath+" for "+contentType);
+ // console.log(filePath+" for "+contentType);
   fs.readFile(filePath, (error, content) => {
     if (error) {
       if (error.code === 'ENOENT') {
@@ -41,9 +41,9 @@ function handleGetFileRequest(req,res)
   }
   ///works but [!] any modifications in file structure => :(
   const baseDir = path.join(__dirname, 'login+register');
-  if (req.url === '/login'|| req.url.toLowerCase().includes('login')) {
+  if (req.url === '/login'|| (req.url.toLowerCase().includes('login') && !req.url.toLowerCase().includes('register'))  ){
     filePath = path.join(baseDir, 'login.html');
-  } else if (req.url === '/register' || req.url.toLowerCase().includes('register')) {
+  } else if (req.url === '/register' || (req.url.toLowerCase().includes('register')&& !req.url.toLowerCase().includes('login') )){
     filePath = path.join(baseDir, 'register.html');
   }
   else if(req.url==='/login_register_logic.js'){
@@ -71,17 +71,21 @@ function handleGetFileRequest(req,res)
 
   serveFile(filePath, contentType, res);
 }
-function parseBody(req, callback) {
-  const decoder = new StringDecoder('utf-8');
-  let buffer = '';
-
-  req.on('data', (data) => {
-    buffer += decoder.write(data);
+const parseBody = (req, callback) => {
+  let body = '';
+  req.on('data', chunk => {
+    body += chunk.toString();
   });
-
   req.on('end', () => {
-    buffer += decoder.end();
-    callback(JSON.parse(buffer));
+    try {
+      const parsedBody = JSON.parse(body);
+      callback(null, parsedBody);
+    } catch (err) {
+      callback(err);
+    }
   });
-}
+  req.on('error', err => {
+    callback(err);
+  });
+};
 module.exports = { sendJson, serveFile, parseBody, handleGetFileRequest };
