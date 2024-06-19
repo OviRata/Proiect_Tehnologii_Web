@@ -10,6 +10,18 @@ function sendJson(res, statusCode, data) {
 const serveFile = (filePath, contentType, response) => {
 
   console.log(filePath+" for "+contentType);
+  realFilePath = "";
+  for(i=0; i<filePath.length; i++){
+
+    if( filePath[i]=='?' ){
+      break;
+    }
+    realFilePath=realFilePath+filePath[i];
+  }
+  filePath=realFilePath;
+
+  console.log("real file path: "+filePath);
+
   fs.readFile(filePath, (error, content) => {
     if (error) {
       if (error.code === 'ENOENT') {
