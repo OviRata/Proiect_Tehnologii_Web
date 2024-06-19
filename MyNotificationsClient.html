@@ -9,7 +9,8 @@
   <meta name="description" content="">
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/menustyle.css">
-  <link rel="stylesheet" href="resources/css/shoppingcart.css">
+  <link rel="stylesheet" href="resources/css/notifications_styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
   <script src="../resources/js/role.js"></script>
@@ -17,18 +18,11 @@
   <script src="./resources/js/urlHelper.js"></script>
   <script src="./resources/js/app.js"></script>
 
-  <script src="./resources/js/shoppingCart.js"></script>
-
 </head>
-
-<body
-
-  onload="initializeAll()"
-
->
+<body>
 <div class="flex-wrapper">
   <div class="mainmenu">
-    <a href="index.html" class="logo" id="home">
+    <a href="index.html" class="logo" id="home" >
       Bloom Buddy</a>
     <div class="navbar-desktop">
       <li class="nav-item"> <a href="#" id="search1">Search</a></li>
@@ -56,19 +50,44 @@
   </div>
 
 
-  <div class="mainTitle">
-    Shopping cart
-  </div>
-  <div class="shopping-cart">
-  </div>
-  <div class="checkout-section">
-    <div class="total-cost">
-      Total Cost: <span id="total-cost-value">0.00</span>
-    </div>
-    <button id="continue-to-payment">Continue to Payment</button>
-  </div>
-</div>
 
+  <div class = "notifications-container">
+
+    <h1 class = "notifications-title">
+      My Notifications
+    </h1>
+
+    <ul class="notifications-list-container">
+      <li>
+        <div class="notification">
+          <div class="notification-icon">
+            <img src="resources/notification-icon.png" alt="Notification Icon">
+          </div>
+          <div class="notification-content">
+            <p>You have a new message</p>
+            <span class="notification-time">2 hours ago</span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="notification">
+          <div class="notification-icon">
+            <img src="resources/notification-icon.png" alt="Notification Icon">
+          </div>
+          <div class="notification-content">
+            <p>You have a new friend request</p>
+            <span class="notification-time">Yesterday</span>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+</div>
 </body>
 </html>
 
