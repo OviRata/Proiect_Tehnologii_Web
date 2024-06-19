@@ -49,7 +49,7 @@ const routes = {
     notifications: '/MyNotificationsVendor.html',
 
     myAccount: '/accountpages/MyAccountVendor.html',
-    mygarden:'/mygarden.html',
+    mygarden:'/homePageVendor.html',
 
     myAccount1: '/accountpages/MyAccountVendor.html',
     mygarden1: '/mygarden.html',
