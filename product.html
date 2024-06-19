@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="resources/css/productpage-styles.css">
 
 
+  <script src="./resources/js/role.js"></script>
   <script src="./resources/js/config.js"></script>
   <script src="./resources/js/urlHelper.js"></script>
   <script src="./resources/js/app.js"></script>
@@ -70,9 +71,17 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Parse product data from URL query parameter
-    var urlParams = new URLSearchParams(window.location.search);
-    var productData = urlParams.get('product');
+    urlString =baseURL+"/product.html?product=%7B%22userID%22%3A2%2C%22name%22%3A%22Iridarium%22%2C%22image%22%3A%22.%2Fproduct-display%2Fflowers%2Firidarium.jpg%22%2C%22price%22%3A%22%2410.00%22%2C%22description%22%3A%22Description%20of%20Product%201%22%7D";
+    console.log(urlString);
+    var urlParams = new URLSearchParams(
+      urlString
+    );
+
+    var productData = localStorage.getItem("futureJSON");
+    console.log(productData);
+    console.log("got from memory");
     var product = JSON.parse(decodeURIComponent(productData));
+    console.log(product);
 
     // Populate product page with product details
     document.getElementById('product-name').textContent = product.name;

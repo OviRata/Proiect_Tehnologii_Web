@@ -25,9 +25,12 @@ function initializeAll(){
     var image = document.createElement('img');
     image.src = product.image;
     image.addEventListener('click', function () {
-      var productUrl = baseURL+'./product.html?product=' + encodeURIComponent(JSON.stringify(product));
+      var productUrl = baseURL+'/product.html';
       window.location.href = baseURL+"/product.html";
     });
+
+    //console.log( 'product.html?product=' + encodeURIComponent(JSON.stringify(product)) );
+
     imageDiv.appendChild(image);
     item.appendChild(imageDiv);
 
