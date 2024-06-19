@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="resources/css/menustyle.css">
   <link rel="stylesheet" href="resources/css/product-card.css">
   <link rel="stylesheet" href="resources/css/mygarden.css">
+  <link rel="stylesheet" href="resources/css/homePageVendor.css">
 
 
   <script src="../resources/js/role.js"></script>
@@ -69,31 +70,80 @@
       </a>
     </div>
 
-    <div class="weather-container">
-      <div class="weather-title">
-        <h1>Weather</h1>
-      </div>
-      <div>
-        <h1 class="temperature-info">30</h1>
-        <h1 class="humidity-info">80%</h1>
-        <h1 class="pressure-info">1 atm</h1>
-      </div>
-    </div>
+<!--    <div class="weather-container">-->
+<!--      <div class="weather-title">-->
+<!--        <h1>Weather</h1>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <h1 class="temperature-info">30</h1>-->
+<!--        <h1 class="humidity-info">80%</h1>-->
+<!--        <h1 class="pressure-info">1 atm</h1>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <div class="growing-plants-container">
       <div class="growing-plants-title">
         <h1>Growing Plants</h1>
       </div>
+
+      <div class="plant-button-container">
+        <button id="plant-button">Plant New Flower</button>
+        <script>
+          let buttonUrl = baseURL+'/plantFlower.html';
+          console.log(buttonUrl);
+          //document.getElementById("plant-button").href=buttonUrl;
+          document.getElementById("plant-button").onclick=function(){
+            gotoPage(buttonUrl);
+          };
+        </script>
+      </div>
+
       <div class="product-grid" id="product-grid1"></div>
       <div id="product-page-container"></div>
     </div>
 
     <div class="grown-plants-container">
+
+
+
       <div class="grown-plants-title">
         <h1>Grown Plants</h1>
       </div>
+
+      <div class="move-specific-flowers-to-sale-container">
+
+        <form id="search-form" class="search-form">
+          <input type="text" id="search-input" placeholder="input-flowers">
+        </form>
+
+        <button type="submit" id="move-specific-flowers-to-sale-button">Move Specific Flowers to Sale</button>
+
+
+
+          <script>
+            document.getElementById("move-specific-flowers-to-sale-button").onclick=
+              function(){
+                console.log("clicked move specific");
+                let flowerName = document.getElementById("search-input").value;
+                console.log(flowerName);
+                if(flowerName!=""){
+                  eraseFromProductGrid(flowerName, "product-grid2" );
+                  addToProductGrid(flowerName, "product-grid3" );
+                }
+              };
+          </script>
+      </div>
+
       <div class="product-grid" id="product-grid2"></div>
       <div id="product-page-container2"></div>
+
+      <div class="move-all-grown-to-sale-container">
+        <button id="move-all-grown-to-sale-button">Move All to Sale</button>
+        <script>
+          //add all to sale
+        </script>
+      </div>
+
     </div>
 
 

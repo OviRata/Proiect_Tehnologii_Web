@@ -1,0 +1,95 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Web Gardening</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/menustyle.css">
+  <link rel="stylesheet" href="resources/css/product-card.css">
+  <link rel="stylesheet" href="resources/css/plantFlower.css">
+
+  <style>
+    .mainTitle{
+      padding: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 4rem;
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+<div class="flex-wrapper">
+  <div class="mainmenu">
+    <a href="./homePageClient.html" class="logo" id="home">
+      Bloom Buddy</a>
+    <div class="navbar-desktop">
+      <li class="nav-item"> <a href="#" id="search1">Search</a></li>
+      <li class="nav-item"><a href="#" id="mycart1">My shopping cart</a></li>
+      <li class="nav-item"><a href="#" id="myAccount1">My account</a></li>
+    </div>
+
+    <button class="navbar-toggler" id="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <script src="./resources/js/navbar-script.js"></script>
+  </div>
+  <div class="navbar-menu" id="navbar-menu">
+    <ul class="navbar-nav" id = "navbar-nav">
+      <li class="nav-item"> <a href="#" id="search">Search</a></li>
+      <li class="nav-item"><a href="#" id="mycart">My shopping cart</a></li>
+      <li class="nav-item"><a href="#" id="myAccount">My account</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="../resources/js/role.js"></script>
+<script src="./resources/js/config.js"></script>
+<script src="./resources/js/urlHelper.js"></script>
+<script src="./resources/js/app.js"></script>
+
+
+
+<form action="/submit_flower" method="post" enctype="multipart/form-data">
+  <label for="flower_name">Flower Name:</label>
+  <input type="text" id="flower_name" name="flower_name" required>
+
+  <label for="flower_image">Flower Image:</label>
+  <input type="file" id="flower_image" name="flower_image" accept="image/*" required>
+
+  <label for="flower_price">Flower Price:</label>
+  <input type="number" id="flower_price" name="flower_price" step="0.01" required>
+
+  <button type="submit">Add Flower</button>
+</form>
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>
+
+
