@@ -18,7 +18,7 @@ const serveFile = (filePath, contentType, response) => {
     }
     realFilePath=realFilePath+filePath[i];
   }
-  filePath=realFilePath;
+  //filePath=realFilePath;
 
   console.log("real file path: "+filePath);
 

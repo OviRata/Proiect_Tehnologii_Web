@@ -23,8 +23,16 @@ function createProductCard(product) {
   var button = document.createElement('a');
   button.textContent = 'View Details';
   button.classList.add('view-details');
-  button.href = 'product.html?product=' + encodeURIComponent(JSON.stringify(product));
+  button.href = 'product.html';
   button.target = '_blank';
+
+  console.log(  'product.html?product=' + encodeURIComponent(JSON.stringify(product)) );
+  console.log( JSON.stringify(product) );
+
+  button.onclick=function(){
+    localStorage.setItem("futureJSON", JSON.stringify(product) );
+    //gotoPage("product.html");
+  }
 
   info.appendChild(title);
   info.appendChild(price);
