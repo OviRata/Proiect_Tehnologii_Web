@@ -57,7 +57,7 @@
 
 
   <div class="form-wrapper">
-  <form>
+  <form id="reg-form">
     <h1>Sign Up</h1>
     <div class = "input-box">
       <input type="text" placeholder="Username" id="username-input" required>
@@ -84,9 +84,13 @@
       <i class='bx bxs-lock-alt' ></i>
     </div>
 
-    <button type="submit" class="btn" onclick="signUpButtonPressed()">Sign Up</button>
+    <input type="submit" value="Submit" class="btn">
 
   </form>
+    <script>
+      const form = document.getElementById("reg-form");
+      form.addEventListener("submit", signUpButtonPressed);
+    </script>
     </div>
 </div>
 

@@ -17,7 +17,8 @@ function loginButtonPressed(){
 }
 
 
-function signUpButtonPressed(){
+async function signUpButtonPressed(event){
+  event.preventDefault();
   let username = document.getElementById("username-input").value
   let fullName = document.getElementById("fullname-input").value
   let email = document.getElementById("email-input").value
@@ -29,7 +30,7 @@ function signUpButtonPressed(){
   console.log("Inputted password: "+password);
   console.log("Inputted confirm password: "+confirmPassword);
 
-  fetch('/register', {
+  const result = await fetch('/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -37,7 +38,14 @@ function signUpButtonPressed(){
     body: JSON.stringify({ username, password })
   })
     .then(response => response.json())
-    .then(data => alert(data.message))
     .catch(error => console.error('Error:', error));
+
+  if(result.status==='ok'){
+    alert('Success');
+  }
+  else{
+    alert(result.error);
+  }
+
 }
 
