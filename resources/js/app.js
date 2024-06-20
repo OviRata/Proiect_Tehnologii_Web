@@ -31,6 +31,7 @@ function setNavigationLinks() {
   setNavigationLinkOnElement('mygarden1');
   setNavigationLinkOnElement('mycart1');
   setNavigationLinkOnElement('myAccount1');
+  setNavigationLinkOnElement('notifications');
 
   setNavigationLinkOnElement('home');
   // setNavigationLinkOnElementByClass("logo", 'home');

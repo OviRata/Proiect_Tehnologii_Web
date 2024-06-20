@@ -1,1 +1,1 @@
-let globalRole = "notlogged";
+let globalRole = "client";
