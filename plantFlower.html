@@ -12,6 +12,14 @@
   <link rel="stylesheet" href="resources/css/product-card.css">
   <link rel="stylesheet" href="resources/css/plantFlower.css">
 
+
+  <script src="./resources/js/role.js"></script>
+  <script src="./resources/js/config.js"></script>
+  <script src="./resources/js/urlHelper.js"></script>
+  <script src="./resources/js/app.js"></script>
+  <script src="./resources/js/menuByRole.js"></script>
+
+
   <style>
     .mainTitle{
       padding: 20px;
@@ -29,12 +37,13 @@
 <body>
 <div class="flex-wrapper">
   <div class="mainmenu">
-    <a href="./homePageClient.html" class="logo" id="home">
+    <a href="index.html" class="logo" id="home">
       Bloom Buddy</a>
     <div class="navbar-desktop">
-      <li class="nav-item"> <a href="#" id="search1">Search</a></li>
-      <li class="nav-item"><a href="#" id="mycart1">My shopping cart</a></li>
-      <li class="nav-item"><a href="#" id="myAccount1">My account</a></li>
+      <li class="nav-item" id="list-search1"> <a href="#" id="search1">Search</a></li>
+      <li class="nav-item" id="list-mygarden1"><a href="#" id="mygarden1">My garden</a></li>
+      <li class="nav-item" id="list-mycart1"><a href="#" id="mycart1">My shopping cart</a></li>
+      <li class="nav-item" id="list-myAccount1"><a href="#" id="myAccount1">My account</a></li>
     </div>
 
     <button class="navbar-toggler" id="navbar-toggler">
@@ -43,22 +52,26 @@
       <span></span>
     </button>
 
+
+
+
     <script src="./resources/js/navbar-script.js"></script>
   </div>
   <div class="navbar-menu" id="navbar-menu">
     <ul class="navbar-nav" id = "navbar-nav">
-      <li class="nav-item"> <a href="#" id="search">Search</a></li>
-      <li class="nav-item"><a href="#" id="mycart">My shopping cart</a></li>
-      <li class="nav-item"><a href="#" id="myAccount">My account</a></li>
+      <li class="nav-item" id="list-search"> <a href="#" id="search">Search</a></li>
+      <li class="nav-item" id="list-mygarden"><a href="#" id="mygarden">My garden</a></li>
+      <li class="nav-item" id="list-mycart"><a href="#" id="mycart">My shopping cart</a></li>
+      <li class="nav-item" id="list-myAccount"><a href="#" id="myAccount">My account</a></li>
     </ul>
   </div>
 </div>
 
-
-<script src="../resources/js/role.js"></script>
-<script src="./resources/js/config.js"></script>
-<script src="./resources/js/urlHelper.js"></script>
-<script src="./resources/js/app.js"></script>
+  <script src="./resources/js/role.js"></script>
+  <script src="./resources/js/config.js"></script>
+  <script src="./resources/js/urlHelper.js"></script>
+  <script src="./resources/js/app.js"></script>
+  <script src="./resources/js/menuByRole.js"></script>
 
 
 
@@ -78,6 +91,9 @@
 
 
 
+<script>
+  hideForRole(globalRole);
+</script>
 
 
 
