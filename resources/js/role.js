@@ -1,1 +1,1 @@
-let globalRole = "client";
+let globalRole = "vendor";

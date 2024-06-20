@@ -20,7 +20,7 @@ input[type="text"], input[type="number"], input[type="file"] {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-button {
+.add-button {
   padding: 10px 15px;
   background-color: #4CAF50;
   color: white;
@@ -28,6 +28,6 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-button:hover {
+.add-button:hover {
   background-color: #45a049;
 }
