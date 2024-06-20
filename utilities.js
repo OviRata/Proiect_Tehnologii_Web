@@ -53,13 +53,13 @@ function handleGetFileRequest(req,res)
   }
   ///works but [!] any modifications in file structure => :(
   const baseDir = path.join(__dirname, 'login+register');
-  if (req.url === '/login'|| req.url.toLowerCase().includes('login')) {
-    filePath = path.join(baseDir, 'login.html');
+  if(req.url==='/login_register_logic.js' || req.url.toLowerCase().includes('login_register_logic.js')) {
+    filePath=path.join(baseDir,'login_register_logic.js');
   } else if (req.url === '/register' || req.url.toLowerCase().includes('register')) {
     filePath = path.join(baseDir, 'register.html');
   }
-  else if(req.url==='/login_register_logic.js'){
-    filePath=path.join(baseDir,'login_register_logic.js');
+  else if (req.url === '/login'|| req.url.toLowerCase().includes('login')) {
+    filePath = path.join(baseDir, 'login.html');
   }
 
   const extname = String(path.extname(filePath)).toLowerCase();
