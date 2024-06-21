@@ -1,0 +1,102 @@
+const Product = require('../db/model/Product');
+const User = require('../db/model/User');
+const {sendJson} = require("../utilities");
+
+const formidable = require('formidable');
+const fs = require('fs');
+
+const getUserByUsername= async (username)=>{
+  return User.findOne({username:username}).exec();
+}
+
+
+
+const createNewImageFilePath= async ()=>{
+  for(let i=1; ;i++){
+    let name = 'flower'+i+'.jpg'
+    let newFilePath = './product-display/flowers/'+name;
+    if( fs.existsSync(newFilePath) ){
+      continue;
+    }
+    else{
+      return name;
+    }
+  }
+}
+
+
+const createProduct = async (req, res) => {
+  const form = new formidable.IncomingForm();
+  form.parse(req, async (err, fields, files)=>{
+    if(err){
+      return sendJson(res, 500, {error:"error parsing form data"});
+    }
+
+
+    const oldpath = files.image[0].filepath;
+    //const newpath = path.join('./img',files.image.filename);
+
+    let imageName = await createNewImageFilePath();
+    console.log(files.image[0]);
+    let src = (files.image[0]).filepath;
+    console.log(src);
+    let buffer = fs.readFileSync(src);
+    console.log('buffer read');
+    console.log(imageName);
+    fs.writeFile("./product-display/flowers/"+imageName, buffer, (err) => {
+      console.error(err)
+    })
+
+    const name = fields.name[0];
+    const price = fields.price[0];
+    const temperature=fields.temperature[0];
+    const soil=fields.soil[0];
+    const humidity=fields.humidity[0];
+    const water=fields.water[0];
+    const description=fields.description[0];
+    const stage = fields.stage[0];
+
+    const tokenUser = req.user;
+    console.log(tokenUser);
+    const user = await getUserByUsername(tokenUser.username);
+
+    console.log(user);
+
+    result = await Product.create({
+      "userID":user._id,
+      "name":name,
+      "price":price,
+      "temperature":temperature,
+      "imageName":imageName,
+      "soil":soil,
+      "humidity":humidity,
+      "water":water,
+      "stage":stage,
+      "description":description
+    });
+
+
+    return sendJson(res, 203, {message:"Product created!"});
+
+  } );
+}
+
+
+
+const getAllProductsOfUser = async (req, res) =>{
+  if( !req?.user?.username ){
+    return sendJson(res, 400, {error:"Bad request"});
+  }
+  const user = await User.find({username:req.user.username});
+  if(!user){
+    return sendJson(res, 409, {error:"User not found"});
+  }
+  const products = await Product.find( {userID:user._id} ).exec();
+
+  console.log(products);
+
+  sendJson( res, 203, {products: products } );
+}
+
+
+module.exports = {getAllProductsOfUser, createProduct}
