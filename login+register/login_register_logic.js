@@ -1,19 +1,41 @@
-function loginButtonPressed(){
+
+async function loginButtonPressed(event){
+  event.preventDefault();
+
+
+
+
   let username = document.getElementById("username-input").value
   let password = document.getElementById("password-input").value
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
 
-  fetch('/login', {
+  const result = await fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ username, password })
   })
-    .then(response => response.json())
-    .then(data => alert(data.message))
     .catch(error => console.error('Error:', error));
+
+  resultJson = await result.json();
+  if(result.status<300 && result.status>=200){
+    alert(resultJson.message);
+  }
+  else{
+    alert(resultJson.error);
+  }
+
+  console.log(resultJson.token);
+
+  localStorage.setItem( "accessToken" , resultJson.token );
+  //console.log( getPayload() );
+
+  payloadObject = getPayload();
+  //globalRole = payloadObject.role;
+  localStorage.setItem("globalRole", payloadObject.role);
+  location.reload();
 }
 
 
