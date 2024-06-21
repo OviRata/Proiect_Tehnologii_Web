@@ -1,10 +1,13 @@
 const users = []; // [! to modify> add DB]
+const {sendJson,serveFile,parseBody,handleGetFileRequest} = require('../utilities.js');
 
-function register(req, res) {
-  parseBody(req, (err, body) => {
+ function register(req, res) {
+
+   function f(body, err){
     if (err) {
       return sendJson(res, 400, { error: 'Invalid JSON format' });
     }
+    console.log(body);
     const { username, password } = body;
     if (!username || !password) {
       return sendJson(res, 400, { error: 'Username and password are required' });
@@ -16,8 +19,11 @@ function register(req, res) {
     }
 
     users.push({ username, password });
+    console.log('successfull register');
     return sendJson(res, 200, { message: 'User registered successfully' });
-  });
+  }
+
+  f( (parseBody(req)) );
 }
 
 function login(req, res) {

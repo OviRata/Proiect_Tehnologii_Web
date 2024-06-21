@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { StringDecoder } = require('node:string_decoder');
 
 function sendJson(res, statusCode, data) {
   res.writeHead(statusCode, { 'Content-Type': 'application/json' });
@@ -52,9 +53,11 @@ function handleGetFileRequest(req,res)
     filePath = './index.html';
   }
   ///works but [!] any modifications in file structure => :(
+  console.log("before:"+filePath);
   const baseDir = path.join(__dirname, 'login+register');
   if(req.url==='/login_register_logic.js' || req.url.toLowerCase().includes('login_register_logic.js')) {
     filePath=path.join(baseDir,'login_register_logic.js');
+    console.log("fp"+filePath);
   } else if (req.url === '/register' || req.url.toLowerCase().includes('register')) {
     filePath = path.join(baseDir, 'register.html');
   }
@@ -83,17 +86,32 @@ function handleGetFileRequest(req,res)
 
   serveFile(filePath, contentType, res);
 }
-function parseBody(req, callback) {
-  const decoder = new StringDecoder('utf-8');
-  let buffer = '';
+function parseBody(req) {
+  return ((resolve, reject) => {
+    let bodyRaw = '';
+    req.on('data', chunk => bodyRaw += chunk);
 
-  req.on('data', (data) => {
-    buffer += decoder.write(data);
-  });
+    let body = {};
 
-  req.on('end', () => {
-    buffer += decoder.end();
-    callback(JSON.parse(buffer));
+    req.on('end', () => {
+      try {
+        switch(req.headers['content-type']) {
+          case 'application/x-www-form-urlencoded':
+            for(const pair of bodyRaw.split('&')) {
+              const [key, value] = pair.split('=', 2).map(decodeURIComponent);
+              body[key] = value;
+            }
+            break;
+          case 'application/json':
+            body = JSON.parse(bodyRaw);
+            break;
+        }
+      } catch {
+        reject("Error parsing: " + bodyRaw);
+      }
+
+      resolve(body);
+    });
   });
 }
 module.exports = { sendJson, serveFile, parseBody, handleGetFileRequest };
