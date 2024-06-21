@@ -7,9 +7,13 @@ const {createServer}= require('node:http');
 const {getBodyFromRequest}=require('./bodyParser.js');
 const {generateToken} = require("./authentification/jwt");
 
+const {verifyToken} = require("./authentification/verifyToken");
+const formidable = require('formidable');
+const jwt = require("jsonwebtoken");
+
 const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
-
+const productController = require('./controllers/productController');
 
 
 require('dotenv').config();
@@ -65,7 +69,14 @@ const server=createServer( async (req,res)=> {
     return loginController.handleLogin(req, res);
 
 
-  } else {
+  }
+  if(req.url==='/vendor/products' && req.method === 'POST') {
+    return verifyToken(req, res, productController.createProduct );
+  }
+  else if(req.url==='/vendor/products' && req.method === 'GET') {
+    return verifyToken(req, res, productController.getAllProductsOfUser );
+  }
+  else {
     console.log("requested simple file");
     handleGetFileRequest(req, res);
   }

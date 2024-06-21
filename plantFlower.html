@@ -70,7 +70,7 @@
 
 
 
-<form action="/submit_flower" method="post" enctype="multipart/form-data">
+<form id="flower-form" action="/submit_flower" method="post" enctype="multipart/form-data">
   <label for="flower_name">Flower Name:</label>
   <input type="text" id="flower_name" name="flower_name" required>
 
@@ -79,15 +79,35 @@
 
   <label for="flower_price">Flower Price:</label>
   <input type="number" id="flower_price" name="flower_price" step="0.01" required>
+  <label for="soil">Soil:</label>
+  <input type="text" id="soil" name="soil" required>
 
-  <button class="add-button" type="submit">Add Flower</button>
+  <label for="temperature">Temperature:</label>
+  <input type="text" id="temperature" name="temperature" required>
+  <label for="humidity">Humidity:</label>
+  <input type="text" id="humidity" name="humidity" required>
+  <label for="water">Water:</label>
+  <input type="text" id="water" name="water" required>
+
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" required>
+
+
+  <input class="add-button" type="submit">Add Flower
 </form>
 
 
 
+<script src="./resources/js/vendor/addFlower.js"></script>
 
 <script>
+
   hideForRole(globalRole);
+
+
+  form = document.getElementById("flower-form");
+  form.addEventListener('submit', addFlower);
+
 </script>
 
 

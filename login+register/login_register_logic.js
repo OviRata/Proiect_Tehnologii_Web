@@ -34,7 +34,12 @@ async function loginButtonPressed(event){
 
   payloadObject = getPayload();
   //globalRole = payloadObject.role;
+  console
   localStorage.setItem("globalRole", payloadObject.role);
+  localStorage.setItem( "globalUsername" , payloadObject.username );
+  localStorage.setItem( "globalFullname" , payloadObject.fullname );
+  localStorage.setItem( "globalEmail" , payloadObject.email );
+
   location.reload();
 }
 
