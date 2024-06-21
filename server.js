@@ -8,6 +8,9 @@ const {getBodyFromRequest}=require('./bodyParser.js');
 const {generateToken} = require("./authentification/jwt");
 
 const registerController = require('./controllers/registerController');
+const loginController = require('./controllers/loginController');
+
+
 
 require('dotenv').config();
 
@@ -56,7 +59,10 @@ const server=createServer( async (req,res)=> {
 
   } else if (req.url === '/login' && req.method === 'POST') {
     //login(req, res);
-
+    console.log('got to login');
+    const requestObject = await getBodyFromRequest(req);
+    req.body=JSON.parse(requestObject);
+    return loginController.handleLogin(req, res);
 
 
   } else {
