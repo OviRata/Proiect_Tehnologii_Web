@@ -77,10 +77,10 @@ const server=createServer( async (req,res)=> {
     return verifyToken(req, res, productController.getAllProductsOfUser );
   }
   else if(req.url==='/client/products' && req.method==='GET'){
-    return verifyToken(req, res, productController.getAllProducts );
+    return verifyToken(req, res, productController.getAllProductsForSale );
   }
   else if(req.url==='/vendor/delete' && req.method==='DELETE') {
-    return verifyToken(req, res, productController.deleteProduct);
+    return verifyToken(req, res, productController.deleteProduct );
   }
   else {
     console.log("requested simple file");
