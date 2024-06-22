@@ -1,12 +1,10 @@
 {
-  "name": " ",
+  "name": "proiect_tehnologii_web",
   "version": "0.0.1",
   "description": "",
   "private": true,
-  "keywords": [
-    ""
-  ],
-  "license": "",
+  "keywords": [],
+  "license": "ISC",
   "author": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,10 +20,22 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "formidable": "^3.5.1",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.7.0",
     "mongoose": "^8.4.3",
     "node-localstorage": "^3.0.5"
-  }
+  },
+  "main": "bodyParser.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OviRata/Proiect_Tehnologii_Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OviRata/Proiect_Tehnologii_Web/issues"
+  },
+  "homepage": "https://github.com/OviRata/Proiect_Tehnologii_Web#readme"
 }
