@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const {sendJson} = require("../utilities");
 
 function verifyToken(req, res, next) {
 
@@ -19,7 +20,7 @@ function verifyToken(req, res, next) {
   });
 
   if (!verifyResponse) {
-    sendJsonResponse(res, 403, JSON.stringify({ message: "Forbidden" }));
+    sendJson(res, 403, { message: "Forbidden" });
     return;
   }
 

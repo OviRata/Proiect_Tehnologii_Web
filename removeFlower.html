@@ -70,46 +70,28 @@
 
 
 
-<form id="flower-form" action="/submit_flower" method="post" enctype="multipart/form-data">
+<form id="remove-flower-form" action="/submit_flower" method="post" enctype="multipart/form-data">
   <label for="flower_name">Flower Name:</label>
   <input type="text" id="flower_name" name="flower_name" required>
 
-  <label for="flower_image">Flower Image:</label>
-  <input type="file" id="flower_image" name="flower_image" accept="image/*" required>
-
-  <label for="flower_price">Flower Price:</label>
-  <input type="number" id="flower_price" name="flower_price" step="0.01" required>
-  <label for="soil">Soil:</label>
-  <input type="text" id="soil" name="soil" required>
-
-  <label for="temperature">Temperature:</label>
-  <input type="text" id="temperature" name="temperature" required>
-  <label for="humidity">Humidity:</label>
-  <input type="text" id="humidity" name="humidity" required>
-  <label for="water">Water:</label>
-  <input type="text" id="water" name="water" required>
 
   <label for="stage">Stage:</label>
   <input type="text" id="stage" name="stage" required>
 
-  <label for="description">Description:</label>
-  <input type="text" id="description" name="description" required>
 
-
-  <input class="add-button" type="submit" value="Add Flower">
+  <input class="remove-button" type="submit" value="Remove Flower">
 </form>
 
 
 
 <script src="./resources/js/vendor/addFlower.js"></script>
-
+<script src="./resources/js/vendor/deleteFlowers.js"></script>
 <script>
 
   hideForRole(globalRole);
 
-
-  form = document.getElementById("flower-form");
-  form.addEventListener('submit', addFlower);
+  const form = document.getElementById('remove-flower-form');
+  form.addEventListener('submit', deleteFlowers);
 
 </script>
 
