@@ -9,7 +9,7 @@ const addFlower = async (event)=>{
   let temperature = document.getElementById('temperature').value;
   let humidity = document.getElementById('humidity').value;
   let water = document.getElementById('water').value;
-  let stage = 'planted';
+  let stage = document.getElementById('stage').value;
   let description = document.getElementById('description').value;
 
   const formData = new FormData();

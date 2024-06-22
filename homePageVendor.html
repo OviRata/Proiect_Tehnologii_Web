@@ -103,7 +103,7 @@
         </script>
       </div>
 
-      <div class="product-grid" id="product-grid1"></div>
+      <div class="product-grid" id="planted-grid"></div>
       <div id="product-page-container"></div>
     </div>
 
@@ -132,14 +132,14 @@
                 let flowerName = document.getElementById("search-input").value;
                 console.log(flowerName);
                 if(flowerName!=""){
-                  eraseFromProductGrid(flowerName, "product-grid2" );
-                  addToProductGrid(flowerName, "product-grid3" );
+                  //eraseFromProductGrid(flowerName, "product-grid2" );
+                  //addToProductGrid(flowerName, "product-grid3" );
                 }
               };
           </script>
       </div>
 
-      <div class="product-grid" id="product-grid2"></div>
+      <div class="product-grid" id="grown-grid"></div>
       <div id="product-page-container2"></div>
 
       <div class="move-all-grown-to-sale-container">
@@ -156,7 +156,7 @@
       <div class="plants-for-sale-title">
         <h1>Plants for Sale</h1>
       </div>
-      <div class="product-grid" id="product-grid3"></div>
+      <div class="product-grid" id="sale-grid"></div>
       <div id="product-page-container3"></div>
     </div>
 
@@ -165,14 +165,43 @@
 
 <script src="./product-display/flowers_for_debug.js"></script>
 <script src="./product-display/products-grid.js"></script>
-
+<script src="./resources/js/vendor/getFlowers.js"></script>
 
 <script>
   // import { initializeProductGrid } from './js/products-grid.js';
-  initializeProductGrid(1, "product-grid1");
-  initializeProductGrid(2, "product-grid2");
-  initializeProductGrid(1, "product-grid3");
-  initializeProductGrid(2, "product-grid3");
+  let plantedFlowers, grownFlowers, saleFlowers;
+  (async ()=> {
+    plantedFlowers = await getFlowersOnStage('planted');
+    grownFlowers = await getFlowersOnStage('grown');
+    saleFlowers = await getFlowersOnStage('sale');
+    console.log(plantedFlowers);
+    console.log('here');
+    plantedGrid = document.getElementById('planted-grid');
+    grownGrid = document.getElementById('grown-grid');
+    saleGrid = document.getElementById('sale-grid');
+
+
+    for( let i in plantedFlowers ){
+      plant = plantedFlowers.at(i);
+      card = createProductCard( plant );
+      plantedGrid.appendChild(card);
+    }
+
+    for( let i in grownFlowers ){
+      plant = grownFlowers.at(i);
+      card = createProductCard( plant );
+      grownGrid.appendChild(card);
+    }
+
+    for( let i in saleFlowers ){
+      plant = saleFlowers.at(i);
+      card = createProductCard( plant );
+      saleGrid.appendChild(card);
+    }
+  })();
+
+
+
 </script>
 
 <script>

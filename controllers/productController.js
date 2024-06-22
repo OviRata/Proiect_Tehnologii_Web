@@ -87,15 +87,18 @@ const getAllProductsOfUser = async (req, res) =>{
   if( !req?.user?.username ){
     return sendJson(res, 400, {error:"Bad request"});
   }
-  const user = await User.find({username:req.user.username});
+  const user = await User.findOne({username:req.user.username});
+  console.log(req.user);
+  console.log(user);
   if(!user){
     return sendJson(res, 409, {error:"User not found"});
   }
+  console.log(user._id);
   const products = await Product.find( {userID:user._id} ).exec();
 
   console.log(products);
 
-  sendJson( res, 203, {products: products } );
+  sendJson( res, 203, {products: products, message:'products sent' } );
 }
 
 
