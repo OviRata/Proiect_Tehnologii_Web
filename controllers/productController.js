@@ -169,6 +169,18 @@ const getAllProductsForSale = async (req, res) => {
   sendJson(res,203,{products:saleProducts, message:'products sent'});
 }
 
+const getAllProductsForSaleNotLogged = async (req, res) => {
+
+  const products = await Product.find().exec();
+  console.log(products);
+  const saleProducts=products.filter(
+    (product)=>{
+      return product.stage==='sale';
+    }
+  );
+  sendJson(res,203,{products:saleProducts, message:'products sent'});
+}
+
 
 const moveSpecificFlowerStage = async (req, res) => {
   if(!req?.user?.username) {
@@ -204,4 +216,4 @@ const moveSpecificFlowerStage = async (req, res) => {
 
 }
 
-module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct, getAllProductsForSale, moveSpecificFlowerStage}
+module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct, getAllProductsForSale, moveSpecificFlowerStage, getAllProductsForSaleNotLogged}

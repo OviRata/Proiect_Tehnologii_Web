@@ -15,20 +15,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const query = searchInput.value.trim().toLowerCase();
     console.log(query);
 
-    ( async ()=> {
-      products = await getSearchFlowers();
-      console.log(typeof products);
-      console.log(products);
+    ( async ()=>
+      {
+          if(globalRole==='client'){
+            products = await getSearchFlowers();
+            console.log(typeof products);
+            console.log(products);
 
-      // Filter products based on search query
-      const filteredProducts = products.filter(function (product) {
+            // Filter products based on search query
+            const filteredProducts = products.filter(function (product) {
 
 
-        return product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
-      });
+              return product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
+            });
 
-      // Display search results
-      displaySearchResults(filteredProducts);
+            // Display search results
+            displaySearchResults(filteredProducts);
+      }
+          else{
+            products = await getFlowers();
+            console.log(typeof products);
+            console.log(products);
+
+            // Filter products based on search query
+            const filteredProducts = products.filter(function (product) {
+
+
+              return product.name.toLowerCase().includes(query) || product.description.toLowerCase().includes(query);
+            });
+
+            // Display search results
+            displaySearchResults(filteredProducts);
+          }
+
     })();
   });
 

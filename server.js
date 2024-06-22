@@ -72,6 +72,9 @@ const server=createServer( async (req,res)=> {
   else if( req.url==='/vendor/products/move/specific' && req.method==='PUT' ){
     return verifyToken(req, res, productController.moveSpecificFlowerStage );
   }
+  else if(req.url==='/notlogged/products' && req.method==='GET'){
+    return productController.getAllProductsForSaleNotLogged(req, res);
+  }
   else {
     console.log("requested simple file");
     handleGetFileRequest(req, res);
