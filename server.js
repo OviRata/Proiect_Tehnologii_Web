@@ -12,6 +12,7 @@ const jwt = require("jsonwebtoken");
 const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
 const productController = require('./controllers/productController');
+const userController = require('./controllers/userController');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -75,10 +76,17 @@ const server=createServer( async (req,res)=> {
   else if(req.url==='/notlogged/products' && req.method==='GET'){
     return productController.getAllProductsForSaleNotLogged(req, res);
   }
+  else if(req.url==='/user/change' && req.method==='PUT'){
+    return verifyToken(req, res, userController.changeUserInfo );
+  }
   else {
     console.log("requested simple file");
     handleGetFileRequest(req, res);
   }
+
+
+
+
 
 }
 );
