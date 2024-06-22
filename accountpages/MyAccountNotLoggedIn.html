@@ -82,7 +82,12 @@
 
 
 <script>
-  hideForRole(globalRole);
+    console.log("logging out");
+    localStorage.setItem("globalRole","notlogged");
+    localStorage.removeItem("globalUsername");
+    localStorage.removeItem("globalEmail");
+    localStorage.removeItem("globalFullname");
+    hideForRole(globalRole);
 </script>
 
 
