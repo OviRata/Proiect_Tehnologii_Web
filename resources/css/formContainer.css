@@ -29,7 +29,7 @@
   }
 
 
-  .input-box input {
+  .input-box input, select{
     width: 92%;
     height: 100%;
     background: transparent;
