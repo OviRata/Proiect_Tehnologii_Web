@@ -25,7 +25,7 @@
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.5);
 }
 
-.searchBar button[type="submit"] {
+.searchBar .submit-button[type="submit"] {
   padding: 10px 20px;
   background-color: #B118C8;
   color: #fff;
@@ -35,7 +35,7 @@
   font-size: 16px;
 }
 
-.searchBar button[type="submit"]:hover {
+.searchBar .submit-button[type="submit"]:hover {
   background-color: #596475;
 }
 
@@ -64,7 +64,7 @@
 
 @media only screen and (min-width: 767px) and (max-width: 1300px){
 
-  .searchBar .search-form button{
+  .searchBar .search-form .submit-button{
     width: 20%;
     font-size: 32px;
     height: 90px;
@@ -90,7 +90,7 @@
 
 @media only screen and (max-width: 767px){
 
-  .searchBar .search-form button{
+  .searchBar .search-form .submit-button{
     width: 30%;
 
     height: 50px;
