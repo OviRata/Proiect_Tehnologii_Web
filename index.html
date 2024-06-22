@@ -78,11 +78,11 @@
 
 <script src="./product-display/flowers_for_debug.js"></script>
 <script src="./product-display/products-grid.js"></script>
-
+<script src="./resources/js/notlogged/getProducts.js"></script>
 <script>
   //initializeProductGrid(2,"product-grid")
   (async ()=>{
-    saleProducts = await getFlowersOnStage('sale');
+    saleProducts = await getFlowers();
     for(let i in saleProducts){
       if(i>=4)break;
       document.getElementById('product-grid').appendChild( createProductCard( saleProducts.at(i) ) );
