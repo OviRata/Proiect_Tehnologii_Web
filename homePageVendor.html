@@ -65,7 +65,7 @@
     </ul>
   </div>
 
-
+  <script src="./resources/js/vendor/moveToSale.js"></script>
 
   <div class="content">
     <div class="mainTitle">
@@ -127,21 +127,11 @@
           <input type="text" id="search-input" placeholder="input-flowers">
         </form>
 
-        <button type="submit" id="move-specific-flowers-to-sale-button">Move Specific Flowers to Sale</button>
+        <button id="move-specific-flowers-to-sale-button" onclick="(async ()=>{await moveSpecificToSale()})()" >Move Specific Flowers to Sale</button>
 
 
 
           <script>
-            document.getElementById("move-specific-flowers-to-sale-button").onclick=
-              function(){
-                console.log("clicked move specific");
-                let flowerName = document.getElementById("search-input").value;
-                console.log(flowerName);
-                if(flowerName!=""){
-                  //eraseFromProductGrid(flowerName, "product-grid2" );
-                  //addToProductGrid(flowerName, "product-grid3" );
-                }
-              };
           </script>
       </div>
 
@@ -149,10 +139,8 @@
       <div id="product-page-container2"></div>
 
       <div class="move-all-grown-to-sale-container">
-        <button id="move-all-grown-to-sale-button">Move All to Sale</button>
-        <script>
-          //add all to sale
-        </script>
+        <button id="move-all-grown-to-sale-button" onclick="(async ()=>{await moveAllToSale()})()">Move All to Sale</button>
+
       </div>
 
     </div>
