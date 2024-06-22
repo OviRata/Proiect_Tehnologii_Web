@@ -101,5 +101,52 @@ const getAllProductsOfUser = async (req, res) =>{
   sendJson( res, 203, {products: products, message:'products sent' } );
 }
 
+const getAllProducts = async (req, res) => {
+  if(!req?.user?.username) {
+    return sendJson(res, 409, {error: "Bad request"});
+  }
+  const user = await User.findOne({username:req.user.username});
+  if(!user){
+    return sendJson(res, 409, {error:"User not found"});
+  }
+  const products = await Product.find().exec();
+  console.log(products);
+  sendJson(res,203,{products:products, message:'products sent'});
+}
 
-module.exports = {getAllProductsOfUser, createProduct}
+const deleteProduct = async (req, res) => {
+  if(!req?.user?.username) {
+    return sendJson(res, 409, {error: "Bad request"});
+  }
+  const user = await User.findOne({username:req.user.username});
+  if(!user){
+    return sendJson(res, 409, {error:"User not found"});
+  }
+  productName = req.headers['name'];
+  productStage = req.headers['stage'];
+
+  const flowers = await Product.find( {name:productName, stage:productStage} ).exec();
+  for(let i in flowers){
+    let imageName = flowers.at(i).imageName;
+    console.log(flowers.at(i));
+    console.log('unlinking: '+'./product-display/flowers/'+imageName);
+    try {
+      fs.unlinkSync('./product-display/flowers/' + imageName,
+
+        function (err) {
+          if (err) throw err;
+          console.log('File deleted!');
+        }
+
+        );
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  const result = await Product.deleteMany( {name:productName, stage:productStage} ).exec();
+  sendJson(res, 200, {message:"Products with given name and stage have been deleted"});
+}
+
+module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct}

@@ -93,12 +93,18 @@
 
       <div class="plant-button-container">
         <button id="plant-button">Plant New Flower</button>
+        <button id="remove-plant-button">Remove Plant</button>
         <script>
           let buttonUrl = baseURL+'/plantFlower.html';
           console.log(buttonUrl);
           //document.getElementById("plant-button").href=buttonUrl;
           document.getElementById("plant-button").onclick=function(){
             gotoPage(buttonUrl);
+          };
+
+          newButtonUrl=baseURL+'/removeFlower.html';
+          document.getElementById('remove-plant-button').onclick=function(){
+            gotoPage(newButtonUrl);
           };
         </script>
       </div>
