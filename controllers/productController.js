@@ -4,6 +4,7 @@ const {sendJson} = require("../utilities");
 
 const formidable = require('formidable');
 const fs = require('fs');
+const {getBodyFromRequest} = require("../bodyParser");
 
 const getUserByUsername= async (username)=>{
   return User.findOne({username:username}).exec();
@@ -169,4 +170,38 @@ const getAllProductsForSale = async (req, res) => {
 }
 
 
-module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct, getAllProductsForSale}
+const moveSpecificFlowerStage = async (req, res) => {
+  if(!req?.user?.username) {
+    return sendJson(res, 409, {error: "Bad request"});
+  }
+  const user = await User.findOne({username:req.user.username});
+  if(!user){
+    return sendJson(res, 409, {error:"User not found"});
+  }
+
+  const requestObject = await getBodyFromRequest(req);
+  req.body=JSON.parse(requestObject);
+  console.log(requestObject);
+
+  const flowerName =  req.body.flowerName;
+  const currentStage= req.body.currentStage;
+  const finalStage = req.body.finalStage;
+
+  console.log(flowerName);
+  console.log(currentStage);
+  console.log(finalStage);
+
+  const flower = await Product.findOne({name:flowerName, stage:currentStage});
+
+  if(!flower){
+    return sendJson(res, 409, {error:"Such flower does not exist"});
+  }
+
+  flower.stage=finalStage;
+  flower.save();
+
+  return sendJson(res, 200, {message:"Product successfully updated."} );
+
+}
+
+module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct, getAllProductsForSale, moveSpecificFlowerStage}
