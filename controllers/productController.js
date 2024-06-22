@@ -149,4 +149,24 @@ const deleteProduct = async (req, res) => {
   sendJson(res, 200, {message:"Products with given name and stage have been deleted"});
 }
 
-module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct}
+
+const getAllProductsForSale = async (req, res) => {
+  if(!req?.user?.username) {
+    return sendJson(res, 409, {error: "Bad request"});
+  }
+  const user = await User.findOne({username:req.user.username});
+  if(!user){
+    return sendJson(res, 409, {error:"User not found"});
+  }
+  const products = await Product.find().exec();
+  console.log(products);
+  const saleProducts=products.filter(
+    (product)=>{
+      return product.stage==='sale';
+    }
+  );
+  sendJson(res,203,{products:saleProducts, message:'products sent'});
+}
+
+
+module.exports = {getAllProductsOfUser, createProduct, getAllProducts, deleteProduct, getAllProductsForSale}

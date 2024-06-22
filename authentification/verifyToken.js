@@ -8,7 +8,7 @@ function verifyToken(req, res, next) {
   const token = authHeader && authHeader.split(" ")[1];
 
   if (token === null || token === 'null' || token === undefined) {
-    return sendJson(res, 401, JSON.stringify({ message: "Unauthorized" }));
+    return sendJson(res, 401, { message: "Unauthorized" });
   }
 
   const verifyResponse = jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
