@@ -78,9 +78,19 @@
 
 <script src="./product-display/flowers_for_debug.js"></script>
 <script src="./product-display/products-grid.js"></script>
+<script src="./resources/js/client/getSearchFlowers.js"></script>
 
 <script>
-  initializeProductGrid(2,"product-grid")
+  (async ()=>{
+    saleProducts = await getSearchFlowers();
+    let cnt = 0;
+    for(let i in saleProducts){
+      //if(i>=4)break;
+      if(saleProducts.at(i).stage!=='sale')continue;
+      cnt++;
+      document.getElementById('product-grid').appendChild( createProductCard( saleProducts.at(i) ) );
+    }
+  })();
 </script>
 
 <script>
