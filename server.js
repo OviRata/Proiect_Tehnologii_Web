@@ -6,19 +6,13 @@ const {sendJson,serveFile,parseBody,handleGetFileRequest} = require('./utilities
 const {createServer}= require('node:http');
 const {getBodyFromRequest}=require('./bodyParser.js');
 const {generateToken} = require("./authentification/jwt");
-
 const {verifyToken} = require("./authentification/verifyToken");
 const formidable = require('formidable');
 const jwt = require("jsonwebtoken");
-
 const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
 const productController = require('./controllers/productController');
-
-
 require('dotenv').config();
-
-
 
 const mongoose = require('mongoose');
 const connectDB = require('./db/dbConn');
@@ -26,7 +20,7 @@ const PORT = process.env.PORT || 3030;
 
 
 const server=createServer( async (req,res)=> {
-  //console.log(req.url!=='/register');
+
   if( req.url.toLowerCase().includes('login_register_logic.js') ){
     handleGetFileRequest(req, res);
     return;
@@ -47,22 +41,15 @@ const server=createServer( async (req,res)=> {
 
 
   if ( req.url==='/register' && req.method === 'POST') {
-    //register(req, res);
 
     const requestObject = await getBodyFromRequest(req);
     req.body=JSON.parse(requestObject);
 
     console.log(requestObject);
     console.log(typeof requestObject);
-
-    // const token = generateToken();
-    // console.log(token);
-
-   return registerController.handleNewUser(req,res);
-    //return sendJson(res, 200, { message: 'User registered successfully', status:200 });
+    return registerController.handleNewUser(req,res);
 
   } else if (req.url === '/login' && req.method === 'POST') {
-    //login(req, res);
     console.log('got to login');
     const requestObject = await getBodyFromRequest(req);
     req.body=JSON.parse(requestObject);

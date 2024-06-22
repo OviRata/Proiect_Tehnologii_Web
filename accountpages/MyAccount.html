@@ -102,11 +102,7 @@
   </div>
 
   <div class = "logout-button-container">
-    <button
-      onclick="
-        gotoPage('MyAccountNotLoggedIn.html');
-      "
-      >Logout</button>
+    <button  id="logoutBtn">Logout</button>
   </div>
 
 
@@ -116,6 +112,15 @@
 
 
 <script>
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    console.log("logging out");
+    localStorage.setItem("globalRole","notlogged");
+    localStorage.removeItem("globalUsername");
+    localStorage.removeItem("globalEmail");
+    localStorage.removeItem("globalFullname");
+    localStorage.removeItem("accessToken");
+    window.location.href = "/accountpages/MyAccountNotLoggedIn.html";
+  });
   hideForRole(globalRole);
 </script>
 
