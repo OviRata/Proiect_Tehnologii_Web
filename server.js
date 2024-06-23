@@ -13,6 +13,8 @@ const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
 const productController = require('./controllers/productController');
 const userController = require('./controllers/userController');
+const sensorController = require('./controllers/sensorController');
+
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -78,6 +80,9 @@ const server=createServer( async (req,res)=> {
   }
   else if(req.url==='/user/change' && req.method==='PUT'){
     return verifyToken(req, res, userController.changeUserInfo );
+  }
+  else if( req.url==='/sensor/notification' && req.method==='POST' ){
+    return sensorController.getNotificationFromSensor(req, res);
   }
   else {
     console.log("requested simple file");
