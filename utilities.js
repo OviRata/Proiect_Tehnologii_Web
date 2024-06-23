@@ -58,7 +58,11 @@ function handleGetFileRequest(req,res)
   if(req.url==='/login_register_logic.js' || req.url.toLowerCase().includes('login_register_logic.js')) {
     filePath=path.join(baseDir,'login_register_logic.js');
     console.log("fp"+filePath);
-  } else if (req.url === '/register' || req.url.toLowerCase().includes('register')) {
+  } else if(req.url==='/formValidation.js' || req.url.toLowerCase().includes('formValidation.js')) {
+    filePath=path.join(baseDir,'formValidation.js');
+    console.log("fp"+filePath);
+  }
+  else if (req.url === '/register' || req.url.toLowerCase().includes('register')) {
     filePath = path.join(baseDir, 'register.html');
   }
   else if (req.url === '/login'|| req.url.toLowerCase().includes('login')) {
