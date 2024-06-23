@@ -22,6 +22,8 @@
 }
 .mainmenu .navbar-desktop{
   width: 100%;
+  display: flex;
+  list-style-type:none;
   color: #333333;
   background-color: #ffffff;
   float: right;
