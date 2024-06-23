@@ -92,19 +92,12 @@
             document.getElementById("email").value=globalEmail;
             //document.getElementById("email").disabled=true;
           </script>
-
-          <label for="bio">Bio:</label>
-          <textarea id="bio" name="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
         </form>
+
         <script src="../resources/js/loggedUser/changeData.js"></script>
         <script src="../authentification/extractPayLoad.js"></script>
         <button id="save-changes-button" onclick="((async ()=>{await changeData();})())" >Save Changes</button>
 
-      </div>
-      <div class="profile-avatar">
-        <img src="../resources/img/avatar.jpg" alt="Profile Picture">
-        <input type="file" id="avatar" name="avatar" accept="image/*">
-        <label for="avatar">Change Avatar</label>
       </div>
 
     </div>

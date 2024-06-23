@@ -68,8 +68,6 @@
 </div>
 
 
-
-
 <form id="flower-form" action="/submit_flower" method="post" enctype="multipart/form-data">
   <label for="flower_name">Flower Name:</label>
   <input type="text" id="flower_name" name="flower_name" required>
@@ -90,7 +88,11 @@
   <input type="text" id="water" name="water" required>
 
   <label for="stage">Stage:</label>
-  <input type="text" id="stage" name="stage" required>
+  <select id="stage" name="stage" required>
+    <option value="grown">Grown</option>
+    <option value="sale">For sale</option>
+    <option value="planted">Planted</option>
+  </select>
 
   <label for="description">Description:</label>
   <input type="text" id="description" name="description" required>

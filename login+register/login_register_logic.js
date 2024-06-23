@@ -7,7 +7,8 @@ async function loginButtonPressed(event){
   let password = document.getElementById("password-input").value
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
-  let errors=validateLoginForm(username, password);
+ // let errors=validateLoginForm(username, password);
+  let errors="";
   if(errors.length ){
     alert("Login data isn't valid:\n"+errors+"\nPlease try again using valid input.");
     return ;
@@ -32,17 +33,15 @@ async function loginButtonPressed(event){
   console.log(resultJson.token);
 
   localStorage.setItem( "accessToken" , resultJson.token );
-  //console.log( getPayload() );
-
    payloadObject = getPayload();
-  //globalRole = payloadObject.role;
 
   localStorage.setItem("globalRole", payloadObject.role);
   localStorage.setItem( "globalUsername" , payloadObject.username );
   localStorage.setItem( "globalFullname" , payloadObject.fullname );
   localStorage.setItem( "globalEmail" , payloadObject.email );
 
-  location.reload();
+  location.href = '/index.html';
+  //location.reload();
 }
 
 
@@ -80,12 +79,9 @@ async function signUpButtonPressed(event){
 
    resultJson = await result.json();
 
-  // console.log(result);
-  // console.log(result.status);
-  // console.log(resultJson);
-  //
   if(result.status<300 && result.status>=200){
     alert(resultJson.message);
+    location.href = '/login';
   }
   else{
     alert(resultJson.error);
