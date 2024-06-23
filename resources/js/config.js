@@ -28,13 +28,13 @@ const routes = {
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
-    notifications: '/MyNotificationsClient.html',
+    notifications: '/MyNotifications.html',
 
-    myAccount: '/accountpages/MyAccountClient.html',
+    myAccount: '/accountpages/MyAccount.html',
     search: '/search.html',
     mycart:'/myshoppingcart.html',
 
-    myAccount1: '/accountpages/MyAccountClient.html',
+    myAccount1: '/accountpages/MyAccount.html',
     search1: '/search.html',
     mycart1:'/myshoppingcart.html',
 
@@ -46,12 +46,12 @@ const routes = {
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
-    notifications: '/MyNotificationsVendor.html',
+    notifications: '/MyNotifications.html',
 
-    myAccount: '/accountpages/MyAccountVendor.html',
+    myAccount: '/accountpages/MyAccount.html',
     mygarden:'/homePageVendor.html',
 
-    myAccount1: '/accountpages/MyAccountVendor.html',
+    myAccount1: '/accountpages/MyAccount.html',
     mygarden1: '/mygarden.html',
 
     product:'/product.html'

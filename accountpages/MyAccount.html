@@ -13,6 +13,7 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
+
   <script src="../resources/js/role.js"></script>
   <script src="../resources/js/config.js"></script>
   <script src="../resources/js/urlHelper.js"></script>
@@ -55,13 +56,7 @@
   </div>
 
   <div class = "notification-button-container">
-      <button
-
-        onclick="
-          gotoPage('MyNotifications.html');
-        "
-
-      >My Notifications </button>
+    <a  id="notifications" > <button>My Notifications </button> </a>
   </div>
 
 
@@ -84,13 +79,27 @@
             document.getElementById("type").disabled=false;
             document.getElementById("type").value=globalRole;
             document.getElementById("type").disabled=true;
+
+            document.getElementById("username").disabled=false;
+            document.getElementById("username").value=globalUsername;
+            //document.getElementById("username").disabled=true;
+
+            document.getElementById("fullname").disabled=false;
+            document.getElementById("fullname").value=globalFullName;
+            //document.getElementById("fullname").disabled=true;
+
+            document.getElementById("email").disabled=false;
+            document.getElementById("email").value=globalEmail;
+            //document.getElementById("email").disabled=true;
           </script>
 
           <label for="bio">Bio:</label>
           <textarea id="bio" name="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
-
-          <button type="submit">Save Changes</button>
         </form>
+        <script src="../resources/js/loggedUser/changeData.js"></script>
+        <script src="../authentification/extractPayLoad.js"></script>
+        <button id="save-changes-button" onclick="((async ()=>{await changeData();})())" >Save Changes</button>
+
       </div>
       <div class="profile-avatar">
         <img src="../resources/img/avatar.jpg" alt="Profile Picture">
@@ -102,7 +111,8 @@
   </div>
 
   <div class = "logout-button-container">
-    <button  id="logoutBtn">Logout</button>
+    <button id="logoutBtn"
+    >Logout</button>
   </div>
 
 
@@ -119,6 +129,8 @@
     localStorage.removeItem("globalEmail");
     localStorage.removeItem("globalFullname");
     localStorage.removeItem("accessToken");
+    localStorage.removeItem('cartProducts');
+    localStorage.removeItem('cartProductsCount');
     window.location.href = "/accountpages/MyAccountNotLoggedIn.html";
   });
   hideForRole(globalRole);
