@@ -22,6 +22,10 @@ const connectDB = require('./db/dbConn');
 const PORT = process.env.PORT || 3030;
 
 
+const {createDummyNotifications}= require('./dummyCode/createDummyNotifications');
+
+createDummyNotifications();
+
 const server=createServer( async (req,res)=> {
 
   if( req.url.toLowerCase().includes('login_register_logic.js') ){
@@ -81,8 +85,16 @@ const server=createServer( async (req,res)=> {
   else if(req.url==='/user/change' && req.method==='PUT'){
     return verifyToken(req, res, userController.changeUserInfo );
   }
-  else if( req.url==='/sensor/notification' && req.method==='POST' ){
+  else if( req.url==='/sensor/notifications' && req.method==='POST' ){
     return sensorController.getNotificationFromSensor(req, res);
+  }
+  else if( req.url==='/user/notifications' && req.method==='GET' ){
+    //get all notifications of user
+    return verifyToken( req, res, userController.getUserNotifications );
+  }
+  else if(req.url==='/user/notifications' && req.method==='DELETE'){
+    //delete a notification of user
+    return verifyToken( req, res, userController.deleteUserNotification );
   }
   else {
     console.log("requested simple file");
