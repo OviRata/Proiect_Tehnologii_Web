@@ -23,11 +23,37 @@
   <style>
     .mainTitle{
       padding: 20px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 90px;
+      margin-bottom: 90px;
       text-align: center;
-      font-size: 4rem;
+      font-size: 3rem;
     }
+
+    .home-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3%;
+      margin-top:2%;
+      margin-bottom: 2%;
+    }
+    .home-button-container button{
+      display: block;
+      padding: 20px;
+      background-color: #B118C8;
+      color: #F9F8F8;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    @media (max-width: 768px)  {
+      .mainTitle{
+        font-size: 2rem;
+        margin-bottom: 50px;
+      }
+    }
+
   </style>
 
 </head>
@@ -75,11 +101,20 @@
         Please check your email adress :)
       </div>
     </div>
+    <div class="home-button-container">
+      <button id="go-to-home">Continue shopping</button>
+    </div>
   </div>
 </div>
 
 
 </body>
+<script>
+  document.getElementById("go-to-home").addEventListener("click", function() {
+    window.location.href = "/";
+  });
+
+</script>
 </html>
 
 
