@@ -60,4 +60,3 @@ function validateLoginForm(username, password) {
   return errors;
 }
 
-module.exports={validateLoginForm,validateRegisterForm};

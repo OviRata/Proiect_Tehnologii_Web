@@ -1,5 +1,4 @@
-const {validateRegisterForm, validateLoginForm}=require('./formValidation.js');
-const {sendJson} = require("../utilities");
+
 async function loginButtonPressed(event){
   event.preventDefault();
 
@@ -9,7 +8,7 @@ async function loginButtonPressed(event){
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
   let errors=validateLoginForm(username, password);
-  if(errors){
+  if(errors.length ){
     alert("Login data isn't valid:\n"+errors+"\nPlease try again using valid input.");
     return ;
   }
@@ -22,7 +21,7 @@ async function loginButtonPressed(event){
   })
     .catch(error => console.error('Error:', error));
 
-  resultJson = await result.json();
+   resultJson = await result.json();
   if(result.status<300 && result.status>=200){
     alert(resultJson.message);
   }
@@ -35,7 +34,7 @@ async function loginButtonPressed(event){
   localStorage.setItem( "accessToken" , resultJson.token );
   //console.log( getPayload() );
 
-  payloadObject = getPayload();
+   payloadObject = getPayload();
   //globalRole = payloadObject.role;
 
   localStorage.setItem("globalRole", payloadObject.role);
@@ -63,7 +62,7 @@ async function signUpButtonPressed(event){
   console.log("Inputted confirm password: "+confirmPassword);
 
   let errors=validateRegisterForm(username, fullName, email, role, password, confirmPassword);
-  if(errors){
+  if(errors.length){
     alert("Registration data isn't valid:\n"+errors+"\nPlease try again using valid input.");
     return ;
   }
@@ -79,7 +78,7 @@ async function signUpButtonPressed(event){
 
   console.log(result);
 
-  resultJson = await result.json();
+   resultJson = await result.json();
 
   // console.log(result);
   // console.log(result.status);
