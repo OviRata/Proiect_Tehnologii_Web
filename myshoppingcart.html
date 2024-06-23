@@ -75,7 +75,62 @@
 <script>
   initializeAll();
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const continueToPaymentButton = document.getElementById('continue-to-payment');
 
+    continueToPaymentButton.addEventListener('click', async () => {
+      try {
+        const userEmail = localStorage.getItem("globalEmail");
+        const cartProductsCount = JSON.parse(localStorage.getItem("cartProductsCount"));
+        const cartProds = JSON.parse(localStorage.getItem("cartProducts"));
+        const productsJson = cartProds.map(product => {
+          return {
+            name: product.name,
+            price: product.price
+          };
+        });
+
+        const productsWithQuantity = productsJson.map((product, index) => {
+          return {
+            ...product,
+            quantity: cartProductsCount[index] || 0
+          };
+        });
+
+        if (!productsJson || !userEmail || !productsWithQuantity) {
+          throw new Error('Products or user email not found.');
+        }
+
+        const response = await fetch('/sendorderdetails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            productsWithQuantity,
+            userEmail
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to send order details.');
+        }
+        const responseData = await response.json();
+        console.log('Order details sent:', responseData);
+
+        localStorage.setItem("cartProducts", JSON.stringify([]));
+        localStorage.setItem("cartProductsCount", JSON.stringify([]));
+
+        window.location.href = '/placeOrder.html';
+      } catch (error) {
+        console.error('Error:', error.message);
+        alert('Error: Failed to send order details. Please try again later.');
+      }
+    });
+  });
+
+</script>
 <script>
   hideForRole(globalRole);
 </script>
