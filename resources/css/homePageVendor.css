@@ -68,6 +68,7 @@
   justify-content: center;
   gap: 3%;
   margin-top:2%;
+  margin-bottom: 2%;
 }
 .plant-button-container button{
   display: block;
