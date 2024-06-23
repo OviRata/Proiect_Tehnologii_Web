@@ -18,7 +18,7 @@
   <script src="./resources/js/urlHelper.js"></script>
   <script src="./resources/js/app.js"></script>
   <script src="./resources/js/menuByRole.js"></script>
-
+  <script src="./resources/js/notlogged/getProducts.js"></script>
   <script src="./resources/js/export.js"></script>
 
 
@@ -101,8 +101,9 @@
 </script>
 
 <script>
-  document.getElementById('export-csv').addEventListener('click', exportCSVFlowers(saleProducts));
-  document.getElementById('export-json').addEventListener('click', exportJSONFlowers(saleProducts));
+
+  document.getElementById('export-csv').addEventListener('click', exportCSV);
+  document.getElementById('export-json').addEventListener('click', exportJSON);
   hideForRole(globalRole);
 </script>
 
