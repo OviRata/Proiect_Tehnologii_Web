@@ -7,23 +7,25 @@
 
   <title>Web Garden</title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="resources/css/style.css">
-  <link rel="stylesheet" href="resources/css/menustyle.css">
-  <link rel="stylesheet" href="resources/css/notifications_styles.css">
+  <link rel="stylesheet" href="../../resources/css/style.css">
+  <link rel="stylesheet" href="../../resources/css/menustyle.css">
+  <link rel="stylesheet" href="../../resources/css/notifications_styles.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-  <script src="./resources/js/role.js"></script>
-  <script src="./resources/js/config.js"></script>
-  <script src="./resources/js/urlHelper.js"></script>
-  <script src="./resources/js/app.js"></script>
-  <script src="./resources/js/menuByRole.js"></script>
+  <script src="../../resources/js/role.js"></script>
+  <script src="../../resources/js/config.js"></script>
+  <script src="../../resources/js/urlHelper.js"></script>
+  <script src="../../resources/js/app.js"></script>
+  <script src="../../resources/js/menuByRole.js"></script>
+
+  <script src="../../resources/js/mynotifications.js"></script>
 
 </head>
 <body>
 <div class="flex-wrapper">
   <div class="mainmenu">
-    <a href="index.html" class="logo" id="home">
+    <a href="../../index.html" class="logo" id="home">
       Bloom Buddy</a>
     <div class="navbar-desktop">
       <li class="nav-item" id="list-search1"> <a href="#" id="search1">Search</a></li>
@@ -38,10 +40,7 @@
       <span></span>
     </button>
 
-
-
-
-    <script src="./resources/js/navbar-script.js"></script>
+    <script src="../../resources/js/navbar-script.js"></script>
   </div>
   <div class="navbar-menu" id="navbar-menu">
     <ul class="navbar-nav" id = "navbar-nav">
@@ -52,8 +51,6 @@
     </ul>
   </div>
 
-
-
   <div class = "notifications-container">
 
     <h1 class = "notifications-title">
@@ -61,30 +58,6 @@
     </h1>
 
     <ul class="notifications-list-container">
-      <li>
-        <div class="notification">
-          <div class="notification-icon">
-            <img src="resources/notification-icon.png" alt="Notification Icon">
-          </div>
-          <div class="notification-content">
-            <p>You have a new message</p>
-            <span class="notification-time">2 hours ago</span>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="notification">
-          <div class="notification-icon">
-            <img src="resources/notification-icon.png" alt="Notification Icon">
-          </div>
-          <div class="notification-content">
-            <p>You have a new friend request</p>
-            <span class="notification-time">Yesterday</span>
-          </div>
-        </div>
-      </li>
-
     </ul>
 
   </div>
@@ -95,8 +68,6 @@
 <script>
   hideForRole(globalRole);
 </script>
-
-
 
 
 </body>
