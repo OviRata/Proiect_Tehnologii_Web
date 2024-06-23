@@ -11,6 +11,7 @@ const {generateToken} = require("./authentification/jwt");
 const {verifyToken} = require("./authentification/verifyToken");
 const formidable = require('formidable');
 const jwt = require("jsonwebtoken");
+const emailController = require("./controllers/orderEmailController");
 const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
 const productController = require('./controllers/productController');
@@ -62,10 +63,13 @@ const server=createServer( async (req,res)=> {
     const requestObject = await getBodyFromRequest(req);
     req.body=JSON.parse(requestObject);
     return loginController.handleLogin(req, res);
-
-
   }
-  if(req.url==='/vendor/products' && req.method === 'POST') {
+  else if(req.url==='/sendorderdetails' && req.method === 'POST') {
+    const requestObject = await getBodyFromRequest(req);
+    req.body=JSON.parse(requestObject);
+    return emailController.handleOrderEmail(req, res);
+  }
+  else if(req.url==='/vendor/products' && req.method === 'POST') {
     return verifyToken(req, res, productController.createProduct );
   }
   else if(req.url==='/vendor/products' && req.method === 'GET') {
