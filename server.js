@@ -17,6 +17,7 @@ const productController = require('./controllers/productController');
 const userController = require('./controllers/userController');
 const sensorController = require('./controllers/sensorController');
 
+
 require('dotenv').config();
 
 const mongoose = require('mongoose');
@@ -56,6 +57,10 @@ const notifications = [
 const {createDummyNotifications}= require('./dummyCode/dummyNotifications');
 
 createDummyNotifications();
+
+const {registerAdmin}=require('./db/adminRegistering.js');
+
+registerAdmin();
 
 const server=createServer( async (req,res)=> {
 

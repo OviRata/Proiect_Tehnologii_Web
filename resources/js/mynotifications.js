@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     </div>
                     <div class="notification-content">
                         <p>${notification.content}</p>
-                        <h1 style="display:none">${notification._id}</h1>
-
                         <span class="notification-time">${notification.createdAt}</span>
                     </div>
                     <button class = 'delete-btn' onclick="

@@ -33,6 +33,18 @@ function hideForNotLogged(){
 }
 
 
+function hideForAdmin(){
+  hideElement( document.getElementById('list-mycart') );
+  hideElement(document.getElementById("list-search"));
+  hideElement(document.getElementById("list-mygarden"));
+
+  hideElement(document.getElementById("add-to-cart"));
+
+  hideElement( document.getElementById('list-mycart1') );
+  hideElement(document.getElementById("list-search1"));
+  hideElement(document.getElementById("list-mygarden1"));
+}
+
 function hideForRole(role){
   console.log("hiding for "+globalRole);
   if(role==="client"){
@@ -44,6 +56,11 @@ function hideForRole(role){
   if(role==="notlogged") {
     hideForNotLogged();
   }
+
+  if(role==='admin'){
+    hideForAdmin();
+  }
+
 }
 
 
