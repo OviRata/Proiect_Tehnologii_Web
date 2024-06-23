@@ -130,6 +130,8 @@
     localStorage.removeItem("globalEmail");
     localStorage.removeItem("globalFullname");
     localStorage.removeItem("accessToken");
+    localStorage.removeItem('cartProducts');
+    localStorage.removeItem('cartProductsCount');
     window.location.href = "/accountpages/MyAccountNotLoggedIn.html";
   });
   hideForRole(globalRole);
