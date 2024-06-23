@@ -3,13 +3,15 @@ async function loginButtonPressed(event){
   event.preventDefault();
 
 
-
-
   let username = document.getElementById("username-input").value
   let password = document.getElementById("password-input").value
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
-
+  let errors=validateLoginForm(username, password);
+  if(errors.length ){
+    alert("Login data isn't valid:\n"+errors+"\nPlease try again using valid input.");
+    return ;
+  }
   const result = await fetch('/login', {
     method: 'POST',
     headers: {
@@ -19,7 +21,7 @@ async function loginButtonPressed(event){
   })
     .catch(error => console.error('Error:', error));
 
-  resultJson = await result.json();
+   resultJson = await result.json();
   if(result.status<300 && result.status>=200){
     alert(resultJson.message);
   }
@@ -32,8 +34,9 @@ async function loginButtonPressed(event){
   localStorage.setItem( "accessToken" , resultJson.token );
   //console.log( getPayload() );
 
-  payloadObject = getPayload();
+   payloadObject = getPayload();
   //globalRole = payloadObject.role;
+
   localStorage.setItem("globalRole", payloadObject.role);
   localStorage.setItem( "globalUsername" , payloadObject.username );
   localStorage.setItem( "globalFullname" , payloadObject.fullname );
@@ -58,9 +61,10 @@ async function signUpButtonPressed(event){
   console.log("Inputted password: "+password);
   console.log("Inputted confirm password: "+confirmPassword);
 
-  if(password!=confirmPassword){
-    alert("password is not the same as confirm password!!!");
-    return;
+  let errors=validateRegisterForm(username, fullName, email, role, password, confirmPassword);
+  if(errors.length){
+    alert("Registration data isn't valid:\n"+errors+"\nPlease try again using valid input.");
+    return ;
   }
 
   const result = await fetch('/register', {
@@ -74,7 +78,7 @@ async function signUpButtonPressed(event){
 
   console.log(result);
 
-  resultJson = await result.json();
+   resultJson = await result.json();
 
   // console.log(result);
   // console.log(result.status);
@@ -88,4 +92,3 @@ async function signUpButtonPressed(event){
   }
 
 }
-
