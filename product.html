@@ -64,8 +64,12 @@
       <p id="product-humidity" class="product-humidity"></p>
       <p id="product-water" class="product-water"></p>
       <p id="product-temperature" class="product-temperature"></p>
+
+      <script src="./resources/js/client/getSearchFlowers.js"></script>
+      <script src="./resources/js/client/addToCartButton.js"></script>
       <button id="add-to-cart" class="add-to-cart"
-        onclick="gotoPage('myshoppingcart.html')"
+        onclick=" ( async ()=>{ await addToCart() } )();
+        //gotoPage('myshoppingcart.html'); "
       >
         Add to Cart</button>
     </div>
