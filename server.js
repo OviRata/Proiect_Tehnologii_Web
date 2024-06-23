@@ -53,7 +53,7 @@ const notifications = [
 
 */
 
-const {createDummyNotifications}= require('./dummyCode/createDummyNotifications');
+const {createDummyNotifications}= require('./dummyCode/dummyNotifications');
 
 createDummyNotifications();
 

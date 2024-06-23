@@ -57,7 +57,9 @@ const deleteUserNotification = async( req, res)=>{
     return sendJson(res, 409, {error:"User not found"});
   }
 
-  const notificationID = req.headers['notificationID'];
+  const notificationID = req.headers['notificationid'];
+  console.log(notificationID);
+  console.log(req.headers);
   const notification = await Notification.findOne({ _id: notificationID });
   if(!notification){
     return sendJson(res, 409, {error:"Notification with such id not found"});

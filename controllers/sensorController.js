@@ -3,7 +3,6 @@ const {sendJson} = require("../utilities");
 const User = require("../db/model/User");
 
 const Notification = require("../db/model/Notification");
-const {sendJson} = require("../utilities");
 
 const getNotificationFromSensor = async (req, res)=>{
 
