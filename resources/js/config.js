@@ -6,7 +6,7 @@ const routes = {
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
-    notifications: '/MyNotifications.html',
+    notifications: '/accountpages/mynotifications/MyNotifications.html',
 
     myAccount: '/accountpages/MyAccountNotLoggedIn.html',
     search: '/search.html',
@@ -28,7 +28,7 @@ const routes = {
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
-    notifications: '/MyNotifications.html',
+    notifications: '/accountpages/mynotifications/MyNotifications.html',
 
     myAccount: '/accountpages/MyAccount.html',
     search: '/search.html',
@@ -46,7 +46,7 @@ const routes = {
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
-    notifications: '/MyNotifications.html',
+    notifications: '/accountpages/mynotifications/MyNotifications.html',
 
     myAccount: '/accountpages/MyAccount.html',
     mygarden:'/homePageVendor.html',
