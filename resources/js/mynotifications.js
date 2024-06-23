@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (result.status < 300 && result.status >= 200) {
       console.log(resultJson.message);
-      displayNotifications(resultJson);
+      displayNotifications(resultJson.notifications);
     } else {
       console.error('Error fetching notifications:', error);
       displayNoNotifications();
@@ -40,8 +40,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Function to display notifications
   function displayNotifications(notifications) {
     notificationsList.innerHTML = ''; // Clear existing notifications
-
+    let currentNumber=0;
     notifications.forEach(notification => {
+      currentNumber++;
       const listItem = document.createElement('li');
       listItem.innerHTML = `
                 <div class="notification">
@@ -49,9 +50,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         <img src="../../resources/notification-icon.png" alt="Notification Icon">
                     </div>
                     <div class="notification-content">
-                        <p>${notification.message}</p>
-                        <span class="notification-time">${notification.time}</span>
+                        <p>${notification.content}</p>
+                        <h1 style="display:none">${notification._id}</h1>
+
+                        <span class="notification-time">${notification.createdAt}</span>
                     </div>
+                    <button class = 'delete-btn' onclick="
+                        (async ()=>{
+                          await deleteNotification('${notification._id}');
+                        })();
+                     "  >
+                        X
+                    </button>
+
                 </div>
             `;
       notificationsList.appendChild(listItem);

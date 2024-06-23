@@ -19,4 +19,4 @@ const createDummyNotifications=async ()=>{
 
 
 
-module.exports(createDummyNotifications);
+module.exports={createDummyNotifications};
