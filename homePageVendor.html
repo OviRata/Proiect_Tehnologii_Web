@@ -20,6 +20,8 @@
   <script src="./resources/js/app.js"></script>
   <script src="./resources/js/menuByRole.js"></script>
 
+  <script src="./resources/js/export.js"></script>
+
 
   <style>
     .mainTitle{
@@ -73,6 +75,10 @@
         <div class="subheading">explore and take care of</div>
         your own garden
       </a>
+    </div>
+    <div class="plant-button-container">
+      <button id="export-csv">Export as CSV</button>
+      <button id="export-json">Export as JSON</button>
     </div>
 
 <!--    <div class="weather-container">-->
@@ -199,6 +205,8 @@
 </script>
 
 <script>
+  document.getElementById('export-csv').addEventListener('click', exportCSVVendor);
+  document.getElementById('export-json').addEventListener('click', exportJSONVendor);
   hideForRole(globalRole);
 </script>
 
