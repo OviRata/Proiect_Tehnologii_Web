@@ -1,15 +1,18 @@
-
+const {validateRegisterForm, validateLoginForm}=require('./formValidation.js');
+const {sendJson} = require("../utilities");
 async function loginButtonPressed(event){
   event.preventDefault();
-
-
 
 
   let username = document.getElementById("username-input").value
   let password = document.getElementById("password-input").value
   console.log("Inputted username: "+username);
   console.log("Inputted password: "+password);
-
+  let errors=validateLoginForm(username, password);
+  if(errors){
+    alert("Login data isn't valid:\n"+errors+"\nPlease try again using valid input.");
+    return ;
+  }
   const result = await fetch('/login', {
     method: 'POST',
     headers: {
@@ -34,6 +37,7 @@ async function loginButtonPressed(event){
 
   payloadObject = getPayload();
   //globalRole = payloadObject.role;
+
   localStorage.setItem("globalRole", payloadObject.role);
   localStorage.setItem( "globalUsername" , payloadObject.username );
   localStorage.setItem( "globalFullname" , payloadObject.fullname );
@@ -58,9 +62,10 @@ async function signUpButtonPressed(event){
   console.log("Inputted password: "+password);
   console.log("Inputted confirm password: "+confirmPassword);
 
-  if(password!=confirmPassword){
-    alert("password is not the same as confirm password!!!");
-    return;
+  let errors=validateRegisterForm(username, fullName, email, role, password, confirmPassword);
+  if(errors){
+    alert("Registration data isn't valid:\n"+errors+"\nPlease try again using valid input.");
+    return ;
   }
 
   const result = await fetch('/register', {
@@ -88,4 +93,3 @@ async function signUpButtonPressed(event){
   }
 
 }
-
