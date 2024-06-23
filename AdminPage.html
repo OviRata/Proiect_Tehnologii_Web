@@ -1,0 +1,169 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Web Gardening</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/menustyle.css">
+  <link rel="stylesheet" href="resources/css/product-card.css">
+  <link rel="stylesheet" href="resources/css/mygarden.css">
+  <link rel="stylesheet" href="resources/css/homePageVendor.css">
+
+
+  <script src="./resources/js/role.js"></script>
+  <script src="./resources/js/config.js"></script>
+  <script src="./resources/js/urlHelper.js"></script>
+  <script src="./resources/js/app.js"></script>
+  <script src="./resources/js/menuByRole.js"></script>
+
+  <style>
+    .mainTitle{
+      padding: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 4rem;
+    }
+  </style>
+
+</head>
+
+<body>
+<div class="flex-wrapper">
+  <div class="mainmenu">
+    <a href="index.html" class="logo" id="home">
+      Bloom Buddy</a>
+    <div class="navbar-desktop">
+      <li class="nav-item" id="list-search1"> <a href="#" id="search1">Search</a></li>
+      <li class="nav-item" id="list-mygarden1"><a href="#" id="mygarden1">My garden</a></li>
+      <li class="nav-item" id="list-mycart1"><a href="#" id="mycart1">My shopping cart</a></li>
+      <li class="nav-item" id="list-myAccount1"><a href="#" id="myAccount1">My account</a></li>
+    </div>
+
+    <button class="navbar-toggler" id="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+
+
+    <script src="./resources/js/navbar-script.js"></script>
+  </div>
+  <div class="navbar-menu" id="navbar-menu">
+    <ul class="navbar-nav" id = "navbar-nav">
+      <li class="nav-item" id="list-search"> <a href="#" id="search">Search</a></li>
+      <li class="nav-item" id="list-mygarden"><a href="#" id="mygarden">My garden</a></li>
+      <li class="nav-item" id="list-mycart"><a href="#" id="mycart">My shopping cart</a></li>
+      <li class="nav-item" id="list-myAccount"><a href="#" id="myAccount">My account</a></li>
+    </ul>
+  </div>
+
+
+
+
+<script src="./product-display/flowers_for_debug.js"></script>
+<script src="./product-display/products-grid.js"></script>
+<script src="./resources/js/notlogged/getProducts.js"></script>
+
+
+
+<div class="growing-plants-container">
+  <div class="growing-plants-title">
+    <h1>Users</h1>
+  </div>
+
+  <div class="plant-button-container">
+    <button id="remove-user-button">Remove User</button>
+    <script>
+
+      newButtonUrl=baseURL+'/removeFlower.html';
+      document.getElementById('remove-user-button').onclick=function(){
+        gotoPage(newButtonUrl);
+      };
+    </script>
+  </div>
+
+  <div class="product-grid" id="planted-grid"></div>
+  <div id="product-page-container"></div>
+</div>
+
+<div class="grown-plants-container">
+
+
+
+  <div class="grown-plants-title">
+    <h1>Plants</h1>
+  </div>
+
+
+  <div class="plant-button-container">
+    <button id="remove-plant-button">Remove Plant</button>
+    <script>
+
+      newButtonUrl=baseURL+'/removeFlower.html';
+      document.getElementById('remove-plant-button').onclick=function(){
+        gotoPage(newButtonUrl);
+      };
+    </script>
+  </div>
+
+
+
+  <div class="product-grid" id="all-grid"></div>
+
+
+</div>
+
+
+
+</div>
+</div>
+
+<script src="./product-display/flowers_for_debug.js"></script>
+<script src="./product-display/products-grid.js"></script>
+<script src="./resources/js/vendor/getFlowers.js"></script>
+<script  src="./resources/js/client/getSearchFlowers.js"></script>
+
+<script>
+  // import { initializeProductGrid } from './js/products-grid.js';
+  (async ()=> {
+    allFlowers=await getSearchFlowers();
+
+    for(let i in allFlowers){
+      let plant = allFlowers[i];
+      console.log(plant);
+      let productCard = createProductCard(plant);
+      document.getElementById('all-grid').appendChild(productCard);
+    }
+
+  })();
+
+
+
+</script>
+
+
+
+<script>
+  hideForRole(globalRole);
+</script>
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>
+
+

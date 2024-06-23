@@ -128,6 +128,10 @@ const deleteProduct = async (req, res) => {
 
   const flowers = await Product.find( {name:productName, stage:productStage} ).exec();
   for(let i in flowers){
+    let flower = flowers[i];
+
+    if( flower.userID!==user._id && user.role!='admin' )continue;
+
     let imageName = flowers.at(i).imageName;
     console.log(flowers.at(i));
     console.log('unlinking: '+'./product-display/flowers/'+imageName);
@@ -145,8 +149,12 @@ const deleteProduct = async (req, res) => {
       console.log(err);
     }
   }
-
-  const result = await Product.deleteMany( {name:productName, stage:productStage} ).exec();
+  if(user.role==='admin'){
+    const result = await Product.deleteMany({name: productName, stage: productStage}).exec();
+  }
+  else {
+    const result = await Product.deleteMany({name: productName, stage: productStage, userID: user._id}).exec();
+  }
   sendJson(res, 200, {message:"Products with given name and stage have been deleted"});
 }
 

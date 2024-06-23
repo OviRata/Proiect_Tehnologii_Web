@@ -55,6 +55,13 @@ const routes = {
     mygarden1: '/mygarden.html',
 
     product:'/product.html'
+  },
+
+  admin:{
+    home:'/AdminPage.html',
+    myAccount:'/accountPages/MyAccount.html',
+    product:'product.html',
+    notifications:'/accountpages/myNotifications/MyNotifications.html'
   }
 
 };
