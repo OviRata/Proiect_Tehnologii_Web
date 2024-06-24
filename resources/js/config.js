@@ -1,8 +1,8 @@
-const baseURL = 'http://localhost:3030'; // This could be dynamically set based on environment
+const baseURL = 'http://localhost:3030';
 
 const routes = {
   notlogged: {
-    home: '/',
+    home: '/accountpages/myhomes/',
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
@@ -24,7 +24,7 @@ const routes = {
   },
 
   client: {
-    home: '/homePageClient.html',
+    home: '/accountpages/myhomes/homePageClient.html',
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
@@ -42,17 +42,17 @@ const routes = {
   },
 
   vendor: {
-    home: '/homePageVendor.html',
+    home: '/accountpages/myhomes/homePageVendor.html',
     login: '/login+register/login.html',
     register: '/login+register/register.html',
 
     notifications: '/accountpages/mynotifications/MyNotifications.html',
 
     myAccount: '/accountpages/MyAccount.html',
-    mygarden:'/homePageVendor.html',
+    mygarden:'/accountpages/myhomes/homePageVendor.html',
 
     myAccount1: '/accountpages/MyAccount.html',
-    mygarden1: '/homePageVendor.html',
+    mygarden1: '/accountpages/myhomes/homePageVendor.html',
 
     product:'/product.html'
   },
@@ -68,5 +68,3 @@ const routes = {
   }
 
 };
-
-

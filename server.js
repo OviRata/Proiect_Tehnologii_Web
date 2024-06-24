@@ -3,7 +3,7 @@ const fs = require('fs');
 const url = require('url');
 const path = require('path');
 const users = [];
-const {whitelist_nocase, isWithinWhitePath} = require('./whitelist.js');
+const {fileMap,whitelist_nocase, isWithinWhitePath} = require('./whitelist.js');
 const {blackListed} = require('./blacklist.js');
 const {sendJson,serveFile,parseBody,handleGetFileRequest} = require('./utilities.js');
 const {createServer}= require('node:http');
@@ -24,19 +24,34 @@ const adminController = require('./controllers/adminController');
 require('dotenv').config();
 
 const mongoose = require('mongoose');
-const connectDB = require('./db/dbConn');
+const connectDB = require('./database/dbConn');
 const PORT = process.env.PORT || 3030;
 
-const {createDummyNotifications}= require('./dummyCode/dummyNotifications');
+const {createDummyNotifications}= require('./testingPurposes/dummyNotifications');
 
 createDummyNotifications();
 
-const {registerAdmin}=require('./db/adminRegistering.js');
+const {registerAdmin}=require('./database/adminRegistering.js');
 
 registerAdmin();
 
-const server=createServer( async (req,res)=> {
+const replaceCase="/product-display/flowers/";
 
+const server=createServer( async (req,res)=> {
+  if (fileMap[req.url]) {
+      res.writeHead(301, { 'Location': fileMap[req.url] });
+      res.end();
+      return;
+  }
+  const index = req.url.indexOf(replaceCase);
+  if (index !== -1 && (!req.url.includes("productpages")|| req.url.substring(1).includes("/productpages"))) {
+    const filePart = req.url.substring(index + replaceCase.length);
+    const newUrl = path.join("/productpages"+replaceCase, filePart);
+    console.log("WOWWW>"+newUrl);
+    res.writeHead(301, { 'Location': newUrl});
+    res.end();
+    return;
+  }
   if( req.url.toLowerCase().includes('login_register_logic.js') ){
     handleGetFileRequest(req, res);
     return;

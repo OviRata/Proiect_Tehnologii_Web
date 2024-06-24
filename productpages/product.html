@@ -5,23 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Details</title>
-  <link rel="stylesheet" href="resources/css/style.css">
-  <link rel="stylesheet" href="resources/css/menustyle.css">
-  <link rel="stylesheet" href="resources/css/productpage-styles.css">
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/menustyle.css">
+  <link rel="stylesheet" href="../resources/css/productpage-styles.css">
 
 
-  <script src="./resources/js/role.js"></script>
-  <script src="./resources/js/config.js"></script>
-  <script src="./resources/js/urlHelper.js"></script>
-  <script src="./resources/js/app.js"></script>
-  <script src="./resources/js/menuByRole.js"></script>
-  <script src="./resources/js/client/add-to-watchlist.js"></script>
+  <script src="../resources/js/role.js"></script>
+  <script src="../resources/js/config.js"></script>
+  <script src="../resources/js/urlHelper.js"></script>
+  <script src="../resources/js/app.js"></script>
+  <script src="../resources/js/menuByRole.js"></script>
+  <script src="../resources/js/client/add-to-watchlist.js"></script>
 
 </head>
 <body>
 <div class="flex-wrapper">
   <div class="mainmenu">
-    <a href="index.html" class="logo" id="home">
+    <a href="../accountpages/myhomes/index.html" class="logo" id="home">
       Bloom Buddy</a>
     <div class="navbar-desktop">
       <li class="nav-item" id="list-search1"> <a href="#" id="search1">Search</a></li>
@@ -39,7 +39,7 @@
 
 
 
-    <script src="./resources/js/navbar-script.js"></script>
+    <script src="../resources/js/navbar-script.js"></script>
   </div>
   <div class="navbar-menu" id="navbar-menu">
     <ul class="navbar-nav" id = "navbar-nav">
@@ -56,7 +56,7 @@
   <div id="product-details" class="product-details">
     <div class="product-info">
       <h1 id="product-name" class="product-title">.</h1>
-      <img id="product-image" class="product-image" src="." alt=".">
+      <img id="product-image" class="product-image" src=".." alt=".">
     </div>
     <div class="product-data">
       <p id="product-price" class="product-price"></p>
@@ -66,8 +66,8 @@
       <p id="product-water" class="product-water"></p>
       <p id="product-temperature" class="product-temperature"></p>
 
-      <script src="./resources/js/client/getSearchFlowers.js"></script>
-      <script src="./resources/js/client/addToCartButton.js"></script>
+      <script src="../resources/js/client/getSearchFlowers.js"></script>
+      <script src="../resources/js/client/addToCartButton.js"></script>
       <button id="add-to-cart" class="add-to-cart"
         onclick=" ( async ()=>{ await addToCart(); gotoPage('myshoppingcart.html'); } )();
          "
@@ -90,7 +90,7 @@
     console.log(product);
 
     document.getElementById('product-name').textContent = product.name;
-    document.getElementById('product-image').src = './product-display/flowers/'+product.imageName;
+    document.getElementById('product-image').src = './productpages/product-display/flowers/'+product.imageName;
     document.getElementById('product-price').textContent = 'Price: ' + product.price;
     document.getElementById('product-description').textContent = product.description;
     document.getElementById('product-humidity').textContent='Humidity: ' + product.humidity;

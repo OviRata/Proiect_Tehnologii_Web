@@ -1,5 +1,5 @@
-const Product = require('../db/model/Product');
-const User = require('../db/model/User');
+const Product = require('../database/model/Product');
+const User = require('../database/model/User');
 const {sendJson} = require("../utilities");
 
 const formidable = require('formidable');
@@ -44,7 +44,7 @@ const createProduct = async (req, res) => {
     let buffer = fs.readFileSync(src);
     console.log('buffer read');
     console.log(imageName);
-    fs.writeFile("./product-display/flowers/"+imageName, buffer, (err) => {
+    fs.writeFile("./productpages/product-display/flowers/"+imageName, buffer, (err) => {
       console.error(err)
     })
 
@@ -134,9 +134,9 @@ const deleteProduct = async (req, res) => {
 
     let imageName = flowers.at(i).imageName;
     console.log(flowers.at(i));
-    console.log('unlinking: '+'./product-display/flowers/'+imageName);
+    console.log('unlinking: '+'./productpages/product-display/flowers/'+imageName);
     try {
-      fs.unlinkSync('./product-display/flowers/' + imageName,
+      fs.unlinkSync('./productpages/product-display/flowers/' + imageName,
 
         function (err) {
           if (err) throw err;

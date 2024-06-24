@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const {sendJson, parseBody} = require("../utilities");
-const User = require("../db/model/User");
+const User = require("../database/model/User");
 const dotenv = require('dotenv');
 dotenv.config();
 function financial(x) {

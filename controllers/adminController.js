@@ -1,5 +1,5 @@
 const {sendJson} = require("../utilities");
-const User = require("../db/model/User");
+const User = require("../database/model/User");
 const getAllUsers = async (req, res) => {
   if(!req?.user?.username) {
     return sendJson(res, 409, {error: "Bad request"});

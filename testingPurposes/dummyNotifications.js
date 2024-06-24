@@ -1,4 +1,4 @@
-const Notification = require("../db/model/Notification");
+const Notification = require("../database/model/Notification");
 
 
 const createDummyNotifications=async ()=>{

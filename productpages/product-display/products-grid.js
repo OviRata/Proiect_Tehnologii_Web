@@ -6,7 +6,7 @@ function createProductCard(product) {
   card.classList.add('product-card');
 
   var image = document.createElement('img');
-  image.src = './product-display/flowers/'+product.imageName;
+  image.src = './productpages/product-display/flowers/'+product.imageName;
   image.alt = product.name;
 
   var info = document.createElement('div');

@@ -1,17 +1,16 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Web Garden</title>
+  <title>Web Gardening</title>
   <meta name="description" content="">
   <link rel="stylesheet" href="../resources/css/style.css">
   <link rel="stylesheet" href="../resources/css/menustyle.css">
-  <link rel="stylesheet" href="../resources/css/profileContainer.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+  <link rel="stylesheet" href="../resources/css/product-card.css">
+  <link rel="stylesheet" href="../resources/css/homePageVendor.css">
 
 
   <script src="../resources/js/role.js"></script>
@@ -20,13 +19,49 @@
   <script src="../resources/js/app.js"></script>
   <script src="../resources/js/menuByRole.js"></script>
 
+  <script src="../resources/js/export.js"></script>
+  <style>
+    .mainTitle{
+      padding: 20px;
+      margin-top: 90px;
+      margin-bottom: 90px;
+      text-align: center;
+      font-size: 3rem;
+    }
 
-  <script src="../login+register/login_register_logic.js"></script>
+    .home-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3%;
+      margin-top:2%;
+      margin-bottom: 2%;
+    }
+    .home-button-container button{
+      display: block;
+      padding: 20px;
+      background-color: #B118C8;
+      color: #F9F8F8;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    @media (max-width: 768px)  {
+      .mainTitle{
+        font-size: 2rem;
+        margin-bottom: 50px;
+      }
+    }
+
+  </style>
+
 </head>
+
 <body>
 <div class="flex-wrapper">
   <div class="mainmenu">
-    <a href="index.html" class="logo" id="home">
+    <a href="../accountpages/myhomes/index.html" class="logo" id="home">
       Bloom Buddy</a>
     <div class="navbar-desktop">
       <li class="nav-item" id="list-search1"> <a href="#" id="search1">Search</a></li>
@@ -57,41 +92,29 @@
 
 
 
-  <div class="profile-container">
-    <h1 class="profile-container-title">You are currently not logged in.</h1>
-    <div class="profile">
-      <div class="profile-info">
-          <div class="option-button">
-           <button
-           onclick="gotoPage('login.html')"
-           >Login</button>
-          </div>
-          <div class="option-button">
-            <button
-            onclick="gotoPage('register.html')"
-            >Sign Up</button>
-          </div>
+  <div class="content">
+    <div class="mainTitle">
+      <a class="heading">
+        Order succesfully placed!
+      </a>
+      <div class="subheading">
+        Please check your email adress :)
       </div>
-
+    </div>
+    <div class="home-button-container">
+      <button id="go-to-home">Continue shopping</button>
     </div>
   </div>
-
-
-
 </div>
 
 
-<script>
-    console.log("logging out");
-    localStorage.setItem("globalRole","notlogged");
-    localStorage.removeItem("globalUsername");
-    localStorage.removeItem("globalEmail");
-    localStorage.removeItem("globalFullname");
-    hideForRole(globalRole);
-</script>
-
-
-
 </body>
+<script>
+  document.getElementById("go-to-home").addEventListener("click", function() {
+    window.location.href = "/";
+  });
+
+</script>
 </html>
+
 

@@ -1,8 +1,8 @@
 const {getBodyFromRequest} = require("../bodyParser");
 const {sendJson} = require("../utilities");
-const User = require("../db/model/User");
+const User = require("../database/model/User");
 
-const Notification = require("../db/model/Notification");
+const Notification = require("../database/model/Notification");
 
 const getNotificationFromSensor = async (req, res)=>{
 

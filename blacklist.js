@@ -2,7 +2,7 @@ const noNoPaths=[
   "/authentification/jwt.js",
   "/authentification/verifyToken.js",
   "/controllers" ,
-  "/db",
+  "/database",
   "/server.js",
   "/whitelist.js",
   "server.js",

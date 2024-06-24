@@ -1,4 +1,4 @@
-const User = require('../db/model/User');
+const User = require('../database/model/User');
 const bcrypt=require('bcrypt');
 const {sendJson} = require("../utilities");
 

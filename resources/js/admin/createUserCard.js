@@ -5,7 +5,7 @@ function createUserCard(user) {
   card.classList.add('product-card');
 
   var image = document.createElement('img');
-  image.src = './display/userDisplay/defaultUser.png';
+  image.src = './adminpages/userDisplay/defaultUser.png';
   image.alt = user.name;
 
   var info = document.createElement('div');
