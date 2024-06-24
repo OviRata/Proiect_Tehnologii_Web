@@ -15,6 +15,7 @@
   <script src="./resources/js/urlHelper.js"></script>
   <script src="./resources/js/app.js"></script>
   <script src="./resources/js/menuByRole.js"></script>
+  <script src="./resources/js/client/add-to-watchlist.js"></script>
 
 </head>
 <body>
@@ -72,6 +73,8 @@
          "
       >
         Add to Cart</button>
+      <button id="add-to-fav" class="add-to-cart">
+        Add to favorites</button>
     </div>
   </div>
 </div>
@@ -79,12 +82,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Parse product data from URL query parameter
-    // urlString =baseURL+"/product.html?product=%7B%22userID%22%3A2%2C%22name%22%3A%22Iridarium%22%2C%22image%22%3A%22.%2Fproduct-display%2Fflowers%2Firidarium.jpg%22%2C%22price%22%3A%22%2410.00%22%2C%22description%22%3A%22Description%20of%20Product%201%22%7D";
-    // console.log(urlString);
-    // var urlParams = new URLSearchParams(
-    //   urlString
-    // );
 
     var productData = localStorage.getItem("futureJSON");
     console.log(productData);
@@ -92,7 +89,6 @@
     var product = JSON.parse( productData );
     console.log(product);
 
-    // Populate product page with product details
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-image').src = './product-display/flowers/'+product.imageName;
     document.getElementById('product-price').textContent = 'Price: ' + product.price;
@@ -101,12 +97,6 @@
     document.getElementById('product-soil').textContent='Soil: ' + product.soil;
     document.getElementById('product-water').textContent='Water: ' + product.water;
     document.getElementById('product-temperature').textContent='Temperature: ' + product.temperature;
-
-
-
-
-
-
   });
 </script>
 

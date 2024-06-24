@@ -41,8 +41,18 @@ const getUserNotifications = async(req, res)=>{
   }
 
   const userID = user._id;
+  let notifications = await Notification.find({userID:userID});
 
-  const notifications = await Notification.find({userID:userID});
+  const requestObject = await getBodyFromRequest(req);
+  const preferences=JSON.parse(requestObject);
+  const favList=preferences.favorites;
+  const productNameList = favList.map(item => item.productName).filter(Boolean);
+
+  if(productNameList.length!== 0){
+    notifications = notifications.filter(notification => {
+      return productNameList.some(productName => notification.content.includes(productName));
+    });
+  }
 
   sendJson(res,200, {notifications:notifications} );
 
