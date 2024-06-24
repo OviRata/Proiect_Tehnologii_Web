@@ -1,6 +1,7 @@
 const pathsCompletelyWhiteListed=[
   "/product-display/flowers/",
   "/resources/img/",
+  "/display/userDisplay/",
 ]
 const whitelist = [
   "/resources/favicon.ico",
