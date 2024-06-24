@@ -61,7 +61,10 @@ const routes = {
     home:'/AdminPage.html',
     myAccount:'/accountPages/MyAccount.html',
     product:'product.html',
-    notifications:'/accountpages/myNotifications/MyNotifications.html'
+    notifications:'/accountpages/myNotifications/MyNotifications.html',
+
+    home1:'/AdminPage.html',
+    myAccount1:'/accountPages/MyAccount.html'
   }
 
 };
