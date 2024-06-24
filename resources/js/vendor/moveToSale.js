@@ -37,6 +37,7 @@ const moveSpecificToSale = async () => {
   }
 
   await moveFlowerToSale(flowerName, 'grown', 'sale');
+  window.location.reload();
 }
 
 
@@ -49,4 +50,7 @@ const moveAllToSale = async () => {
     flower = grownFlowers.at(i);
     await moveFlowerToSale( flower.name, 'grown', 'sale' )
   }
+
+
+  window.location.reload();
 }
