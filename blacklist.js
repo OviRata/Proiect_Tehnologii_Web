@@ -1,5 +1,6 @@
 const noNoPaths=[
-  "/authentification",
+  "/authentification/jwt.js",
+  "/authentification/verifyToken.js",
   "/controllers" ,
   "/db",
   "/server.js",
