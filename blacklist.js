@@ -3,7 +3,10 @@ const noNoPaths=[
   "/controllers" ,
   "/db",
   "/server.js",
-  "/whitelist.js"
+  "/whitelist.js",
+  "server.js",
+  "blacklist.js",
+  "/blacklist.js"
 ]
 let blackListedPaths=noNoPaths.map(value => value.toLowerCase());
 
