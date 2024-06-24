@@ -3,7 +3,8 @@ const fs = require('fs');
 const url = require('url');
 const path = require('path');
 const users = [];
-
+const {whitelist_nocase, isWithinWhitePath} = require('./whitelist.js');
+const {blackListed} = require('./blacklist.js');
 const {sendJson,serveFile,parseBody,handleGetFileRequest} = require('./utilities.js');
 const {createServer}= require('node:http');
 const {getBodyFromRequest}=require('./bodyParser.js');
@@ -73,7 +74,7 @@ const server=createServer( async (req,res)=> {
   else if(req.url==='/sendorderdetails' && req.method === 'POST') {
     const requestObject = await getBodyFromRequest(req);
     req.body=JSON.parse(requestObject);
-    return emailController.handleOrderEmail(req, res);
+    return verifyToken(req,res, emailController.handleOrderEmail);
   }
   else if(req.url==='/vendor/products' && req.method === 'POST') {
     return verifyToken(req, res, productController.createProduct );
@@ -115,13 +116,15 @@ const server=createServer( async (req,res)=> {
   }
   else {
     console.log("requested simple file");
-    handleGetFileRequest(req, res);
+    if(blackListed(req.url.toLowerCase())){
+      return sendJson(res,403,{message: '[BLACKLIST] Forbidden request.'});
+    }
+    else if(whitelist_nocase.includes(req.url.toLowerCase()))
+      handleGetFileRequest(req, res);
+    else if(isWithinWhitePath(req.url))
+      handleGetFileRequest(req,res);
+    else return sendJson(res,403,{message: 'Forbidden request.'});
   }
-
-
-
-
-
 }
 );
 
