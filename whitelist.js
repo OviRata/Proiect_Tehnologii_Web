@@ -67,7 +67,7 @@ const whitelist = [
   "/resources/js/vendor/moveToSale.js",
 ];
 whitelist.push("/",
-  "/login",
+  "/login", "/formValidation.js", "login_register_logic.js",
   "/register", "/authentification/extractPayLoad.js");
 let whitelist_nocase= whitelist.map(value => value.toLowerCase());
 let pathsWhite_nocase=pathsCompletelyWhiteListed.map(value => value.toLowerCase());
