@@ -52,7 +52,7 @@ const routes = {
     mygarden:'/homePageVendor.html',
 
     myAccount1: '/accountpages/MyAccount.html',
-    mygarden1: '/mygarden.html',
+    mygarden1: '/homePageVendor.html',
 
     product:'/product.html'
   },

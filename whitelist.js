@@ -65,6 +65,7 @@ const whitelist = [
   "/resources/js/vendor/deleteFlowers.js",
   "/resources/js/vendor/getFlowers.js",
   "/resources/js/vendor/moveToSale.js",
+  '/resources/notification-icon.png'
 ];
 whitelist.push("/",
   "/login", "/formValidation.js", "login_register_logic.js",
