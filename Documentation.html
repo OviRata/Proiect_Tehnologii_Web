@@ -304,7 +304,32 @@
 
 
   <h3 id="software-interfaces"> 3.1 Software Interfaces  </h3>
+
   <h3 id="communication-interfaces"> 3.1 Communication Interfaces  </h3>
+  <h3 id="account-interfaces"> 3.1.1 Account Interface  </h3>
+  <p>
+    For this interface, the following endpoints have been implemented: login, register and user/change.
+    They are responsible for managing the users accounts securely and provide assistance in managing the user accounts.
+  </p>
+  <h3 id="product-interfaces"> 3.1.2 Account Interface  </h3>
+  <p>
+    For this interface, the following endpoints have been implemented: vendor/products, vendor/delete, client/products, notlogged/products, vendor/products/movespecific, /sendorderdetails .
+    They are responsible for managing the products of the users, and retrieving information about the products.
+  </p>
+
+  <h3 id="admin-interfaces"> 3.1.3 Admin Interface  </h3>
+  <p>
+    For this interface, the following endpoints have been implemented: admin/users .
+    They are responsible to help the administrator manage the website.
+  </p>
+
+
+  <h3 id="notification-interfaces"> 3.1.4 Notification Interface  </h3>
+  <p>
+    For this interface, the following endpoints have been implemented: /user/notifications , /sensor/notifications.
+    They are responsible for generating notifications based on the information retrieved from the service, responsible for the information about the flowers, and accessing the information about the notifications of the users.
+  </p>
+
 </section>
 
 
@@ -343,9 +368,33 @@
   <h3 id="frontend-stage">
     4.2 Front-End Development stage
   </h3>
+  <h3 id="product-card">
+    4.2.1 Product Cards
+  </h3>
   <p>
-  .
+    During the front end development stage, an automated solution for generating and displaying product/user cards has been implemented.
   </p>
+
+  <h3 id="shopping-cart-implementation">
+    4.2.2 Shopping Cart Implementation
+  </h3>
+  <p>
+    The logic behind the shopping cart, relies mainly on the front-end part of our project. It has been implemented in such a manner, that it is persistent, while the user is logged. The prodduct cart can be updated by adding more items from the list of products. The quantity of a specific item can be increased, decreased, or the item can be completely removed from the current shopping cart option.
+    Also, after the order is placed, an email is sent to the address of the current logged user, about the products he has ordered.
+  </p>
+
+
+  <h3 id="role-separation-implementation">
+    4.2.3 Role-Separation
+  </h3>
+  <p>
+    The key feature which relies on the front end of our application, is the role-separation.
+    A user can have some possible roles, which he can choose during the registration process (client/vendor).
+    When starting the application, the default role is set to notlogged.
+    In the dataBase, there exists a special user, which has the role 'admin'. This is the user, which, while logged in, can manage the application from a panel on the front-end.
+    The role separation affects such properties as: the pages where links lead, what functionalities are available to the user, what types of notification a user can receive.
+  </p>
+
 
   <h3 id="backend-stage">
     4.3 Back-End Development stage

@@ -1,8 +1,8 @@
 const {sendJson} = require("../utilities");
-const User = require('../database/model/User');
+const User = require('../db/model/User');
 const {getBodyFromRequest} = require("../bodyParser");
 const {generateToken} = require("../authentification/jwt");
-const Notification = require('../database/model/Notification');
+const Notification = require('../db/model/Notification');
 
 const changeUserInfo = async (req, res) =>{
   if(!req?.user?.username){
