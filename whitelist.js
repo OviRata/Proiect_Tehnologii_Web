@@ -6,36 +6,22 @@ const pathsCompletelyWhiteListed=[
   "/resources/js/admin/"
 ]
 const whitelist = [
-  "/AdminPage.html",
-  "/userInfo.html",
-  "/resources/favicon.ico",
-  "/resources/icon.png",
-  "/resources/icon.svg",
-  "/resources/notification-icon.png",
-  "/product-display/flowersflower1.jpg",
-  "/",
   "/404.html",
-  "/bodyParser.js",
+  "/AdminPage.html",
   "/ChangePassword.html",
   "/homePageClient.html",
   "/homePageVendor.html",
   "/index.html",
-  "/login",
-  "/register",
   "/mygarden.html",
   "/myshoppingcart.html",
   "/placeOrder.html",
   "/plantFlower.html",
   "/product.html",
   "/removeFlower.html",
+  "/removeUser.html",
   "/Report.html",
   "/search.html",
-  "/server.js",
-  "/utilities.js",
-  "/webpack.common.js",
-  "/webpack.config.dev.js",
-  "/webpack.config.prod.js",
-  "/whitelist.js",
+  "/userInfo.html",
   "/accountpages/MyAccount.html",
   "/accountpages/MyAccountNotLoggedIn.html",
   "/accountpages/mynotifications/MyNotifications.html",
@@ -67,6 +53,9 @@ const whitelist = [
   "/resources/js/role.js",
   "/resources/js/shoppingCart.js",
   "/resources/js/urlHelper.js",
+  "/resources/js/admin/createUserCard.js",
+  "/resources/js/admin/deleteUser.js",
+  "/resources/js/admin/getAllUsers.js",
   "/resources/js/client/addToCartButton.js",
   "/resources/js/client/getSearchFlowers.js",
   "/resources/js/loggedUser/changeData.js",
@@ -77,7 +66,9 @@ const whitelist = [
   "/resources/js/vendor/getFlowers.js",
   "/resources/js/vendor/moveToSale.js",
 ];
-
+whitelist.push("/",
+  "/login",
+  "/register");
 let whitelist_nocase= whitelist.map(value => value.toLowerCase());
 let pathsWhite_nocase=pathsCompletelyWhiteListed.map(value => value.toLowerCase());
 
