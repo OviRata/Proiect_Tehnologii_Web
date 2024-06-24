@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   async function fetchNotifications() {
-    if (!sessionStorage.getItem('favorites')) {
-      sessionStorage.setItem('favorites', JSON.stringify([])); // Initialize as an empty array
+    if (!localStorage.getItem('favorites')) {
+      localStorage.setItem('favorites', JSON.stringify([])); // Initialize as an empty array
     }
-    const favorites = JSON.parse(sessionStorage.getItem('favorites'));
+    const favorites = JSON.parse(localStorage.getItem('favorites'));
     console.log(JSON.stringify(favorites));
     const result = await fetch('/user/notifications', {
       method: 'POST',

@@ -41,19 +41,34 @@ const getUserNotifications = async(req, res)=>{
   }
 
   const userID = user._id;
-  let notifications = await Notification.find({userID:userID});
+  const userType=user.role;
 
   const requestObject = await getBodyFromRequest(req);
   const preferences=JSON.parse(requestObject);
   const favList=preferences.favorites;
-  const productNameList = favList.map(item => item.productName).filter(Boolean);
+  if(favList.length===0){
+    if(userType!=='client'){
+      let notifications = await Notification.find({userID:userID});
+      sendJson(res,200, {notifications:notifications} );
+      return ;
+    }
+    let notifications=[];
+    sendJson(res,200, {notifications:notifications} );
+    return ;
+  }
+  const productNameList = favList.filter(Boolean).map(item => item.productName).filter(Boolean);
+  let notifications = await Notification.find({userID:userID});
 
+  console.log("The notifs were>"+notifications);
   if(productNameList.length!== 0){
     notifications = notifications.filter(notification => {
       return productNameList.some(productName => notification.content.includes(productName));
     });
   }
-
+  else if(userType==="client"){
+    notifications=[];
+  }
+  console.log("The notifs are>"+notifications);
   sendJson(res,200, {notifications:notifications} );
 
 }

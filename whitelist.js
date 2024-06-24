@@ -56,6 +56,7 @@ const whitelist = [
   "/resources/js/admin/deleteUser.js",
   "/resources/js/admin/getAllUsers.js",
   "/resources/js/client/addToCartButton.js",
+  "/resources/js/client/add-to-watchlist.js",
   "/resources/js/client/getSearchFlowers.js",
   "/resources/js/loggedUser/changeData.js",
   "/resources/js/notifications/deleteNotification.js",
@@ -66,7 +67,7 @@ const whitelist = [
   "/resources/js/vendor/moveToSale.js",
   '/resources/notification-icon.png'
 ];
-whitelist.push("/",
+whitelist.push("/","/favicon.ico",
   "/resources/favicon.ico",
   "/resources/icon.png",
   "/resources/icon.svg",
