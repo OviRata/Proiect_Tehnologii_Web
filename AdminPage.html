@@ -80,17 +80,33 @@
 
   <div class="plant-button-container">
     <button id="remove-user-button">Remove User</button>
-    <script>
 
-      newButtonUrl=baseURL+'/removeFlower.html';
-      document.getElementById('remove-user-button').onclick=function(){
-        gotoPage(newButtonUrl);
-      };
-    </script>
   </div>
 
-  <div class="product-grid" id="planted-grid"></div>
-  <div id="product-page-container"></div>
+    <div class="product-grid" id="user-grid"></div>
+
+    <script src='./resources/js/admin/getAllUsers.js'></script>
+    <script src="./resources/js/admin/createUserCard.js" ></script>
+    <script>
+
+      ButtonUrl=baseURL+'/removeUser.html';
+      document.getElementById('remove-user-button').onclick=function(){
+        gotoPage(ButtonUrl);
+      };
+
+      (async () =>{
+        allUsers = await getAllUsers();
+        for(let i in allUsers){
+          user = allUsers[i];
+          userCard = createUserCard(user);
+          let container = document.getElementById('user-grid');
+          container.appendChild(userCard);
+        }
+      })()
+
+    </script>
+
+
 </div>
 
 <div class="grown-plants-container">
@@ -116,6 +132,7 @@
 
 
   <div class="product-grid" id="all-grid"></div>
+
 
 
 </div>

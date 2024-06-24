@@ -17,6 +17,7 @@ const productController = require('./controllers/productController');
 const userController = require('./controllers/userController');
 const sensorController = require('./controllers/sensorController');
 
+const adminController = require('./controllers/adminController');
 
 require('dotenv').config();
 
@@ -131,6 +132,12 @@ const server=createServer( async (req,res)=> {
   else if(req.url==='/user/notifications' && req.method==='DELETE'){
     //delete a notification of user
     return verifyToken( req, res, userController.deleteUserNotification );
+  }
+  else if(req.url==='/admin/users' && req.method==='GET'){
+    return verifyToken(req, res, adminController.getAllUsers );
+  }
+  else if (req.url==='/admin/users' && req.method==='DELETE'){
+    return verifyToken(req, res, adminController.deleteUser );
   }
   else {
     console.log("requested simple file");
