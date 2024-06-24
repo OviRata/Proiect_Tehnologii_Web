@@ -11,6 +11,7 @@ const {generateToken} = require("./authentification/jwt");
 const {verifyToken} = require("./authentification/verifyToken");
 const formidable = require('formidable');
 const jwt = require("jsonwebtoken");
+const emailController = require("./controllers/orderEmailController");
 const registerController = require('./controllers/registerController');
 const loginController = require('./controllers/loginController');
 const productController = require('./controllers/productController');
@@ -24,36 +25,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const connectDB = require('./db/dbConn');
 const PORT = process.env.PORT || 3030;
-/*
-
-const notifications = [
-  {
-    "message": "You have a new message",
-    "time": "2 hours ago"
-  },
-  {
-    "message": "vai de capul nostru",
-    "time": "bambam"
-  }
-];
-    if (req.url.includes('/notifications?') && req.method === 'GET') {
-      /// [!] ONLY FOR TESTING PURPOSES, REMOVE LATER
-      const parsedUrl = url.parse(req.url, true);
-      const accountToken = parsedUrl.query.accessToken;
-      console.log(accountToken);
-
-      if (!accountToken) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'accountToken is required' }));
-        return;
-      }
-
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify(notifications));
-      return ;
-    } else
-
-*/
 
 const {createDummyNotifications}= require('./dummyCode/dummyNotifications');
 
@@ -98,10 +69,13 @@ const server=createServer( async (req,res)=> {
     const requestObject = await getBodyFromRequest(req);
     req.body=JSON.parse(requestObject);
     return loginController.handleLogin(req, res);
-
-
   }
-  if(req.url==='/vendor/products' && req.method === 'POST') {
+  else if(req.url==='/sendorderdetails' && req.method === 'POST') {
+    const requestObject = await getBodyFromRequest(req);
+    req.body=JSON.parse(requestObject);
+    return emailController.handleOrderEmail(req, res);
+  }
+  else if(req.url==='/vendor/products' && req.method === 'POST') {
     return verifyToken(req, res, productController.createProduct );
   }
   else if(req.url==='/vendor/products' && req.method === 'GET') {

@@ -56,6 +56,10 @@
   display: block;
   width: 100%;
   padding: 10px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  height: 60px;
+  font-size: 22px;
   background-color: #B118C8;
   color: #F9F8F8;
   border: none;
@@ -104,6 +108,7 @@
 
 .notification-button-container {
   display: flex;
+  margin:auto;
 }
 .notification-button-container button{
   display: block;
@@ -134,6 +139,7 @@
 .logout-button-container button{
   display: block;
   padding: 10px;
+  margin-bottom: 5%;
   background-color: #B118C8;
   color: #F9F8F8;
   border: none;
@@ -189,7 +195,7 @@
   }
 
   .notification-button-container {
-    margin-top: 13%;
+    margin-top: 7%;
     width: 60%;
   }
   .notification-button-container button{
