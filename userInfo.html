@@ -51,30 +51,30 @@
 
 
 
-<div class="content">
-  <div id="product-details" class="product-details">
-    <div class="product-info">
-      <h1 id="product-name" class="product-title">.</h1>
-      <img id="product-image" class="product-image" src="." alt=".">
-    </div>
-    <div class="product-data">
-      <p id="product-price" class="product-price"></p>
-      <p id="product-description" class="product-description"></p>
-      <p id="product-soil" class="product-soil"></p>
-      <p id="product-humidity" class="product-humidity"></p>
-      <p id="product-water" class="product-water"></p>
-      <p id="product-temperature" class="product-temperature"></p>
+  <div class="content">
+    <div id="product-details" class="product-details">
+      <div class="product-info">
+        <h1 id="product-name" class="product-title">.</h1>
+        <img id="product-image" class="product-image" src="." alt=".">
+      </div>
+      <div class="product-data">
+        <p id="product-price" class="product-price"></p>
 
-      <script src="./resources/js/client/getSearchFlowers.js"></script>
-      <script src="./resources/js/client/addToCartButton.js"></script>
-      <button id="add-to-cart" class="add-to-cart"
-        onclick=" ( async ()=>{ await addToCart(); gotoPage('myshoppingcart.html'); } )();
+
+        <p id="product-soil" class="product-soil"></p>
+        <p id="product-water" class="product-water"></p>
+        <p id="product-temperature" class="product-temperature"></p>
+
+        <script src="./resources/js/client/getSearchFlowers.js"></script>
+        <script src="./resources/js/client/addToCartButton.js"></script>
+        <button id="add-to-cart" class="add-to-cart"
+                onclick=" ( async ()=>{ await addToCart(); gotoPage('myshoppingcart.html'); } )();
          "
-      >
-        Add to Cart</button>
+        >
+          Add to Cart</button>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <script>
@@ -86,23 +86,21 @@
     //   urlString
     // );
 
-    var productData = localStorage.getItem("futureJSON");
-    console.log(productData);
+    var userData = localStorage.getItem("futureJSON");
+    console.log(userData);
     console.log("got from memory");
-    var product = JSON.parse( productData );
-    console.log(product);
+    var user = JSON.parse( userData );
+    console.log(user);
 
     // Populate product page with product details
-    document.getElementById('product-name').textContent = product.name;
-    document.getElementById('product-image').src = './product-display/flowers/'+product.imageName;
-    document.getElementById('product-price').textContent = 'Price: ' + product.price;
-    document.getElementById('product-description').textContent = product.description;
-    document.getElementById('product-humidity').textContent='Humidity: ' + product.humidity;
-    document.getElementById('product-soil').textContent='Soil: ' + product.soil;
-    document.getElementById('product-water').textContent='Water: ' + product.water;
-    document.getElementById('product-temperature').textContent='Temperature: ' + product.temperature;
-
-
+    document.getElementById('product-name').textContent = user.username;
+    document.getElementById('product-image').src = './display/userDisplay/defaultUser.png';
+    document.getElementById('product-price').textContent = 'Id: ' + user._id;
+    //document.getElementById('product-description').textContent = product.description;
+    //document.getElementById('product-humidity').textContent='Humidity: ' + product.humidity;
+    document.getElementById('product-soil').textContent='Full Name: ' + user.fullname;
+    document.getElementById('product-water').textContent='Email: ' + user.email;
+    document.getElementById('product-temperature').textContent='Role: ' + user.role;
 
 
 
