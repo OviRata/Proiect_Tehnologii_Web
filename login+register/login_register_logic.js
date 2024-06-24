@@ -39,8 +39,9 @@ async function loginButtonPressed(event){
   localStorage.setItem( "globalUsername" , payloadObject.username );
   localStorage.setItem( "globalFullname" , payloadObject.fullname );
   localStorage.setItem( "globalEmail" , payloadObject.email );
+  globalRole = payloadObject.role;
 
-  location.href = '/index.html';
+  gotoPage( generateURL('home') );
   //location.reload();
 }
 
