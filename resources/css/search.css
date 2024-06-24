@@ -43,8 +43,8 @@
 
 
 @media only screen and (min-width: 1301px){
-  .searchBar .search-form button{
-    width: 10%;
+  .searchBar .search-form .submit-button{
+    width: 20%;
     height: 70px;
     font-size: 24px;
     border-radius: 32px;

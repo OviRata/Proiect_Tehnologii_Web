@@ -43,6 +43,7 @@ const addFlower = async (event)=>{
   else{
     alert(resultJson.error);
   }
+  gotoPage('/homePageVendor.html');
 }
 
 
