@@ -2,8 +2,12 @@ const pathsCompletelyWhiteListed=[
   "/product-display/flowers/",
   "/resources/img/",
   "/display/userDisplay/",
+  "/admin/",
+  "/resources/js/admin/"
 ]
 const whitelist = [
+  "/AdminPage.html",
+  "/userInfo.html",
   "/resources/favicon.ico",
   "/resources/icon.png",
   "/resources/icon.svg",
