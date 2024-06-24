@@ -56,6 +56,11 @@ const getUserNotifications = async(req, res)=>{
     sendJson(res,200, {notifications:notifications} );
     return ;
   }
+  else if(userType==='vendor'){
+    let notifications = await Notification.find({userID:userID});
+    sendJson(res,200, {notifications:notifications} );
+    return ;
+  }
   const productNameList = favList.filter(Boolean).map(item => item.productName).filter(Boolean);
   let notifications = await Notification.find({userID:userID});
 
