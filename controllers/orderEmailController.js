@@ -74,6 +74,18 @@ const handleOrderEmail = async (req, res) =>{
     let products = req.body.productsWithQuantity;
     let email=req.body.userEmail;
 
+    ///Considering handleOrderEmail is called with verifyToken [!]
+    if(!req?.user?.email){
+      return sendJson(res, 409, {error:"bad request"});
+    }
+    user = await User.findOne({ email: req.user.email });
+    if(!user){
+      return sendJson(res, 409, {error:"User not found"});
+    }
+    if(user.email!==email){
+      return sendJson(res, 401, {error:"Unauthorized user."});
+    }
+
     if (!products || !email) {
       throw new Error('Products or user email missing in request.');
     }
