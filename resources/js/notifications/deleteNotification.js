@@ -17,6 +17,7 @@ const deleteNotification = async (notificationId) =>{
 
   if(result.status < 300 && result.status>=200){
     console.log(resultJson.message);
+    location.reload();
   }
   else{
     console.error(resultJson.error);

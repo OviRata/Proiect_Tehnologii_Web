@@ -100,12 +100,10 @@ const server=createServer( async (req,res)=> {
   else if( req.url==='/sensor/notifications' && req.method==='POST' ){
     return sensorController.getNotificationFromSensor(req, res);
   }
-  else if( req.url==='/user/notifications' && req.method==='GET' ){
-    //get all notifications of user
+  else if( req.url==='/user/notifications' && (req.method==='GET' || req.method==='POST') ){
     return verifyToken( req, res, userController.getUserNotifications );
   }
   else if(req.url==='/user/notifications' && req.method==='DELETE'){
-    //delete a notification of user
     return verifyToken( req, res, userController.deleteUserNotification );
   }
   else if(req.url==='/admin/users' && req.method==='GET'){

@@ -3,7 +3,6 @@ const pathsCompletelyWhiteListed=[
   "/resources/img/",
   "/display/userDisplay/",
   "/admin/",
-  "/resources/js/admin/"
 ]
 const whitelist = [
   "/404.html",
@@ -57,6 +56,7 @@ const whitelist = [
   "/resources/js/admin/deleteUser.js",
   "/resources/js/admin/getAllUsers.js",
   "/resources/js/client/addToCartButton.js",
+  "/resources/js/client/add-to-watchlist.js",
   "/resources/js/client/getSearchFlowers.js",
   "/resources/js/loggedUser/changeData.js",
   "/resources/js/notifications/deleteNotification.js",
@@ -67,7 +67,10 @@ const whitelist = [
   "/resources/js/vendor/moveToSale.js",
   '/resources/notification-icon.png'
 ];
-whitelist.push("/",
+whitelist.push("/","/favicon.ico",
+  "/resources/favicon.ico",
+  "/resources/icon.png",
+  "/resources/icon.svg",
   "/login", "/formValidation.js", "login_register_logic.js",
   "/register", "/authentification/extractPayLoad.js");
 let whitelist_nocase= whitelist.map(value => value.toLowerCase());
@@ -81,3 +84,4 @@ function isWithinWhitePath(str){
 }
 
 module.exports ={whitelist, whitelist_nocase, pathsWhite_nocase, pathsCompletelyWhiteListed, isWithinWhitePath} ;
+

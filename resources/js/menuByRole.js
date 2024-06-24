@@ -16,6 +16,7 @@ function hideForVendor(){
   hideElement(document.getElementById("list-search"));
 
   hideElement(document.getElementById("add-to-cart"));
+  hideElement(document.getElementById("add-to-fav"));
 
   hideElement(document.getElementById("list-mycart1"));
   hideElement(document.getElementById("list-search1"));
@@ -27,6 +28,7 @@ function hideForNotLogged(){
 
 
   hideElement(document.getElementById("add-to-cart"));
+  hideElement(document.getElementById("add-to-fav"));
 
   hideElement(document.getElementById("list-mycart1"));
   hideElement(document.getElementById("list-mygarden1"));
@@ -39,6 +41,7 @@ function hideForAdmin(){
   hideElement(document.getElementById("list-mygarden"));
 
   hideElement(document.getElementById("add-to-cart"));
+  hideElement(document.getElementById("add-to-fav"));
 
   hideElement( document.getElementById('list-mycart1') );
   hideElement(document.getElementById("list-search1"));

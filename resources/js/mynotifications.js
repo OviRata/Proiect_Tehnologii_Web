@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const accessToken = localStorage.getItem('accessToken'); // Retrieve accessToken from localStorage
   const notificationsList = document.querySelector('.notifications-list-container');
 
-  // Function to display "No notifications" message
   function displayNoNotifications() {
     notificationsList.innerHTML = '<li>No notifications available</li>';
   }
@@ -13,18 +12,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     return;
   }
 
-  // Function to fetch notifications from the server
   async function fetchNotifications() {
-    const result = await fetch(
-      '/user/notifications',
-      {
-        method: 'GET',
-        headers: {
-          'authorization': 'Bearer ' + localStorage.getItem('accessToken'),
-          'Content-Type': 'application/json'
-        }
-      }
-    )
+    if (!localStorage.getItem('favorites')) {
+      localStorage.setItem('favorites', JSON.stringify([])); // Initialize as an empty array
+    }
+    const favorites = JSON.parse(localStorage.getItem('favorites'));
+    console.log(JSON.stringify(favorites));
+    const result = await fetch('/user/notifications', {
+      method: 'POST',
+      headers: {
+        'authorization': 'Bearer ' + localStorage.getItem('accessToken'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ favorites }),
+    });
 
     resultJson = await result.json();
 
@@ -37,9 +38,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  // Function to display notifications
+
   function displayNotifications(notifications) {
-    notificationsList.innerHTML = ''; // Clear existing notifications
+    notificationsList.innerHTML = '';
     let currentNumber=0;
     notifications.forEach(notification => {
       currentNumber++;
@@ -67,6 +68,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  // Fetch and display notifications on page load
   fetchNotifications();
 });

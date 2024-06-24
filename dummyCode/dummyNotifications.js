@@ -14,6 +14,18 @@ const createDummyNotifications=async ()=>{
     'low humidity';
 
   const result2 = await Notification.create({userID:userID, content:content});
+  userID='667813423e0db8e52f2939ee';
+  content='Product: un urs\n' +
+    'available!';
+
+  const result3 = await Notification.create({userID:userID, content:content});
+
+  userID='667813423e0db8e52f2939ee';
+  content='Product: orhideea maimuta\n' +
+    'low humidity';
+
+  const result4 = await Notification.create({userID:userID, content:content});
+
 
 }
 
