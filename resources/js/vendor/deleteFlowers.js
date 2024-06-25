@@ -19,9 +19,11 @@ const deleteFlowers = async function ( event ) {
   const resultJson = await result.json();
   if(result.status<300 && result.status>=200){
     console.log(resultJson.message);
+    gotoPage( generateURL('home') );
   }
   else{
     alert(resultJson.error);
   }
+
 
 }

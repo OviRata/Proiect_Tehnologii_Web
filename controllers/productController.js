@@ -15,7 +15,7 @@ const getUserByUsername= async (username)=>{
 const createNewImageFilePath= async ()=>{
   for(let i=1; ;i++){
     let name = 'flower'+i+'.jpg'
-    let newFilePath = './product-display/flowers/'+name;
+    let newFilePath = './productpages/product-display/flowers/'+name;
     if( fs.existsSync(newFilePath) ){
       continue;
     }
@@ -127,10 +127,16 @@ const deleteProduct = async (req, res) => {
   productStage = req.headers['stage'];
 
   const flowers = await Product.find( {name:productName, stage:productStage} ).exec();
+  console.log(flowers.length);
   for(let i in flowers){
     let flower = flowers[i];
+    console.log(flower);
+    console.log(user._id)
+    console.log(flower.userID);
 
-    if( flower.userID!==user._id && user.role!='admin' )continue;
+
+
+    if( flower.userID!==req.user._id && user.role!='admin' )continue;
 
     let imageName = flowers.at(i).imageName;
     console.log(flowers.at(i));
