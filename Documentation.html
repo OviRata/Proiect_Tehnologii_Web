@@ -478,7 +478,7 @@
       <p>For injection prevention (SQL, OS or XSS), we chose to have whitelists and blacklists configured for the project. The white list is configured by a python script outside the project environment, while the blacklist is configured to contain all back end development files.</p>
     </li>
     <li>
-      <p>Before sending a login/register requests that queries the database, the client runs a input validator in order to prevent as many special characters common in XSS or SQL as possible (e.g. '<','>','(',')',';')</p>
+      <p>Before sending a login/register requests that queries the database, the client runs a input validator in order to prevent as many special characters common in XSS or SQL as possible </p>
     </li>
     <li>
       Authorization is assured by using JWTs during requests that manipulate user data.

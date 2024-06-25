@@ -129,6 +129,21 @@
 }
 
 
+.notification-button-container .notification-a-tag{
+  display: block;
+  padding: 10px;
+  background-color: #B118C8;
+  color: #F9F8F8;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.notification-button-container .notification-a-tag:hover{
+  background-color: #596475;
+}
 
 
 
