@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +22,11 @@
 </header>
 
 <div role="contentinfo">
-    <h3>Authors: A3</h3>
-    <ul>
-      <li>Rața Ovidiu </li>
-      <li>Romanescu Adia Ioana</li>
-    </ul>
+  <h3>Authors: A3</h3>
+  <ul>
+    <li>Rața Ovidiu </li>
+    <li>Romanescu Adia Ioana</li>
+  </ul>
 </div>
 
 
@@ -36,85 +38,64 @@
 
   <p>1. <a href="#introduction">Introduction</a></p>
   <ul>
-
     <li>
       1.1 <a href="#motivation">Motivation</a>
     </li>
-
     <li>
       1.2 <a href="#target-audience">Target Audience</a>
     </li>
-
   </ul>
 
   <p>2. <a href="#description">Description</a></p>
   <ul>
-
     <li>
       2.1 <a href="#perspective">Product Perspective</a>
     </li>
-
     <li>
       2.2 <a href="#functionality">Functionality</a>
     </li>
-
     <li>
       2.3 <a href="#environment">Environment</a>
     </li>
-
     <li>
-      2.4 <a href="#constratints">Development Constraints</a>
+      2.4 <a href="#constraints">Development Constraints</a>
     </li>
-
     <li>
       2.5 <a href="#documentation">Documentation</a>
     </li>
-
-
     <li>
       2.6 <a href="#assumptions">Assumptions and Dependencies</a>
     </li>
-
     <li>
       2.7 <a href="#architecture">Architecture</a>
     </li>
-
-
   </ul>
 
   <p>3. <a href="#external-interface-requirements"> Interface requirements</a></p>
   <ul>
-
     <li>
       3.1 <a href="#user-interfaces">User Interfaces</a>
     </li>
-
     <li>
       3.2 <a href="#software-interfaces">Software Interfaces</a>
     </li>
-
     <li>
       3.3 <a href="#communication-interfaces">Communication Interfaces</a>
     </li>
-
   </ul>
 
 
   <p>4. <a href="#development-history"> Development History </a></p>
   <ul>
-
     <li>
       4.1 <a href="#mockup-stage">Mock-up Stage</a>
     </li>
-
     <li>
       4.2 <a href="#frontend-stage">Front-End Development Stage</a>
     </li>
-
     <li>
       4.3 <a href="#backend-stage">Back-End Development Stage</a>
     </li>
-
   </ul>
 
   <p>5. <a href="#system-features">System features</a></p>
@@ -190,9 +171,6 @@
   This application is dependent on the current Web Technologies standards. It also depends on the Node.JS technology.
   Issues with these technologies can reflect upon the functioning of our website.
   <h3 id="architecture"> 2.7 Architecture  </h3>
-
-
-
 </section>
 
 <section id="external-interface-requirements">
@@ -203,10 +181,8 @@
     Index page
   </h4>
   <div class="interface-item">
-
     <img src="resources/img/Report/index.png" alt="" style={width:50%} >
-
-      <p>This is the first page a user will see when accessing the website. From here, the user can go to any other page, via the menu.
+    <p>This is the first page a user will see when accessing the website. From here, the user can go to any other page, via the menu.
       This page is responsible for listing all the available products on the website.
     </p>
   </div>
@@ -261,7 +237,6 @@
   <h4>
     Search page
   </h4>
-
   <div class="interface-item">
     <img src="resources/img/Report/search.png" alt="" style={width:50%}  >
     <div>
@@ -274,7 +249,6 @@
   <h4>
     Notifications page
   </h4>
-
   <div class="interface-item">
     <img src="resources/img/Report/myNotifications.png" alt="" style={width:50%}  >
     <div>
@@ -290,7 +264,6 @@
   <h4>
     Administration Panel
   </h4>
-
   <div class="interface-item">
     <img src="resources/img/Report/admin.png" alt="" style={width:50%}  >
     <div>
@@ -304,7 +277,6 @@
 
 
   <h3 id="software-interfaces"> 3.1 Software Interfaces  </h3>
-
   <h3 id="communication-interfaces"> 3.1 Communication Interfaces  </h3>
   <h3 id="account-interfaces"> 3.1.1 Account Interface  </h3>
   <p>
@@ -323,7 +295,6 @@
     They are responsible to help the administrator manage the website.
   </p>
 
-
   <h3 id="notification-interfaces"> 3.1.4 Notification Interface  </h3>
   <p>
     For this interface, the following endpoints have been implemented: /user/notifications , /sensor/notifications.
@@ -333,11 +304,8 @@
 </section>
 
 
-
-
 <section id="development-history">
   <h2>4. Development History</h2>
-
   <h3 id="mockup-stage">4.1 Mock-up stage</h3>
   <p>
     During the mock-up stage, we have developed mock-ups of the pages of the application.
@@ -403,7 +371,7 @@
     4.3.1 Database
   </h3>
   <p>
-  For this project, we have used MongoDB as the database. Unlike Oracle, Postgres or MySql, MongoDB is a non-relational database, which stores data as documents rather than tables.
+    For this project, we have used MongoDB as the database. Unlike Oracle, Postgres or MySql, MongoDB is a non-relational database, which stores data as documents rather than tables.
     We have decided to use this specific database manager, because we were interested in learning how to work with a new type of databases, as we have worked with relational databases at 3 other courses during the last semesters.
     In order to access and use the database via node.js, we have used the Mongoose library.
     In our MongoDB database, we have 3 collections: users/products and notifications. Their names are suggestive, regarding the data that is stored inside them.

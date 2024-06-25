@@ -16,6 +16,7 @@ const deleteUser = async (event) =>{
 
   if(result.status<300 && result.status>=200){
     console.log(resultJson.message);
+    gotoPage( generateURL('home') );
   }
   else{
     alert(resultJson.error);
