@@ -1,11 +1,8 @@
 # Proiect_Tehnologii_Web
 ### Adia-Ioana Romanescu 2A3
 ### Ovidiu Rața 2A3
-### (Final version of project is on branch 'final')
 
-
-
-
+###### Link video: [https://youtu.be/yqVm8Q4uP-Q](https://youtu.be/DCrO0jckYiM)
 <!DOCTYPE html>
 <html lang="en">
 <head>
